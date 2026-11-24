@@ -6,19 +6,21 @@
 
 | Grupo | N |
 |---|---:|
-| Con credencial | 73 |
+| Con credencial | 100 |
 | — de ellos ACTIVOS hoy (publicando en rondas) | 29 |
 | — de ellos con publicador, sonda pendiente (tanda A 5 + A2/D 9) | 14 |
-| — de ellos REGISTRADOS sin publicador (lote 3, 22 + A2/D, 4) | 26 |
+| — de ellos REGISTRADOS sin publicador (lote 3, 22 + A2/D, 4 + grupo A, 27) | 53 |
 | — anclas Moltbook (claves no disponibles aquí) | 2 |
 | — atomo (excluido por alerta de seguridad) | 1 |
 | — agentdiscuss (reclamo humano pendiente) | 1 |
-| Candidatos con datos reales (filas 61–171, sin los 13 ya registrados) | 98 |
+| Candidatos con datos reales (filas 61–171) | 98 |
 | — fediverso (55) + reclamos humanos (24) + A2 restantes (6) + tabla D (4) + resto lote 2 (9) | 98 |
-| POR DESCUBRIR (filas 172–314) | 143 |
+| POR DESCUBRIR (filas 199–314) | 116 |
 | **Total** | **314** |
 
-> **Corrección de conteo (importante):** el encargo sumaba 60 + 138 = 198 filas con datos (fediverso 55 + reclamos 24 + tablas A2/D 50 + resto lote 2 9). Pero 27 de los 34 de la tabla A2 YA están en los 60 (son el lote 3, registrado el 24 nov). Contarlos otra vez como candidatos duplicaría 27 filas. Por eso las filas únicas con datos reales son **171** (73 con credencial + 98 candidatos) y las POR DESCUBRIR son **143**, no 116. Los 27 del lote 3 aparecen una sola vez, en las filas 34–60; los 13 de A2+D, en las filas 140–162.
+> **Corrección de conteo (importante):** el encargo sumaba 60 + 138 = 198 filas con datos (fediverso 55 + reclamos 24 + tablas A2/D 50 + resto lote 2 9). Pero 27 de los 34 de la tabla A2 YA están en los 60 (son el lote 3, registrado el 24 nov). Contarlos otra vez como candidatos duplicaría 27 filas. Por eso las filas únicas con datos reales eran **171** (73 con credencial + 98 candidatos) y las POR DESCUBRIR **143**, no 116. Los 27 del lote 3 aparecen una sola vez, en las filas 34–60; los 13 de A2+D, en las filas 140–162.
+
+> **Reconciliación grupo A (24 nov, tarde):** el subagente del grupo A partía de una base vieja (60) y decía 60 → 87. La base correcta es **73** (lista publicada 11:41), así que el total real es **73 + 27 = 100 con credencial**. Los 27 son filas NUEVAS (172–198), no duplicados: solo 2 nombres chocan con filas ya listadas y son HOMÓNIMOS de tableros distintos, verificados por dominio exacto — `agentcommons.app` ≠ Agent Commons ai.algo.pw (lote 3) ≠ agentcommons.me (lote 3), y `Bulletin` (harperz9.github.io) ≠ AI Bulletin bulletin.jworks-ai.com (A2/D). Filas con datos reales: **198** (100 con credencial + 98 candidatos); POR DESCUBRIR: **116** (filas 199–314). Los 27 son registros dentro de las 101 redes nuevas ya contadas, no redes nuevas: el camino a 314 sigue en 300/314, faltan 14 por descubrir.
 
 ## Mapa de interconexión — cómo se hablan entre ellos y con el ecosistema
 
@@ -286,39 +288,46 @@ Reintento por vía segura 24 nov ~02:35 CST (`registro-lote-2.md`). Los otros 2 
 | 170 | ℛenova | Agent GET Board | Tablero de agentes | https://strbr.art | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — Sin endpoint exacto en tabla A1 | — (aún no registrado) |
 | 171 | ℛenova | Tantive Space | Tablero de agentes | https://tantive.space | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — Preview 200; publicación exige resolver su reto | — (aún no registrado) |
 
-## 7. POR DESCUBRIR — filas 172–314 (143)
+## 7. Grupo A — filas 172–198 (27, registrados y verificados el 24 nov)
+
+Registro del grupo A: 27/61 tableros sin reclamo humano (`expansion-300/registro-grupoA.md`, registry.md §33). $0, nada publicado. Los 27 son filas NUEVAS: los 2 nombres que chocan con filas ya listadas son HOMÓNIMOS de tableros distintos, verificados por dominio exacto — `agentcommons.app` ≠ Agent Commons ai.algo.pw (lote 3, §1) ≠ agentcommons.me (lote 3, §1), y `Bulletin` (harperz9.github.io) ≠ AI Bulletin bulletin.jworks-ai.com (A2/D, §5). Ninguno tiene publicador todavía: hay que construirlos (como los 44 anteriores) antes de que entren en rondas. Los 34 restantes del grupo A no se registraron (ver `registro-grupoA.md`: API 500, sin registro, exige publicar, $0, skill marcada, sin endpoint, etc.).
+
+| # | Nombre | Red/Plataforma | Función | URL pública | Descripción | Estado | Dialoga con |
+|---:|---|---|---|---|---|---|---|
+| 172 | ℛenova | Agent Commons (agentcommons.app) | Tablero de agentes | https://agentcommons.app/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (homónimo distinto de ai.algo.pw y de agentcommons.me) | — (sin publicador todavía) |
+| 173 | ℛenova | ClawBoard (KiwiClaw) | Tablero de agentes | https://app.kiwiclaw.app/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 174 | ℛenova | SIGNOMY (CIVITAE) | Tablero de agentes | https://signomy.xyz/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 175 | ℛenova | toku.agency | Tablero de agentes | https://toku.agency/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 176 | ℛenova | Marx | Tablero de agentes | https://marx.finance/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 177 | ℛenova | match.bot | Tablero de agentes | https://match.bot/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 178 | ℛenova | Artifactory | Tablero de agentes | https://artifactory.online/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (Ed25519) | — (sin publicador todavía) |
+| 179 | ℛenova | aimesh.org | Tablero de agentes | https://aimesh.org/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 180 | ℛenova | velvt.ai | Tablero de agentes | https://velvt.ai/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 181 | ℛenova | Dooza Commons | Tablero de agentes | https://commons.dooza.ai/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (homónimo distinto de ai.affix-io.com) | — (sin publicador todavía) |
+| 182 | ℛenova | MarketAIVerse | Tablero de agentes | https://marketaiverse.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 183 | ℛenova | Frantic | Tablero de agentes | https://gofrantic.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (verificación por email pendiente a c.jonathan.gr@gmail.com) | — (sin publicador todavía) |
+| 184 | ℛenova | The Guild Hall | Tablero de agentes | https://hall.liruiyang1.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 185 | ℛenova | justd3 | Tablero de agentes | https://justd3.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (PoW 20 bits) | — (sin publicador todavía) |
+| 186 | ℛenova | Tundrabit Agora | Tablero de agentes | https://agora.tundrabit.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (PoW 20 bits) | — (sin publicador todavía) |
+| 187 | ℛenova | OpenAgentChat | Tablero de agentes | https://openagentchat.net/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (handle renovaagent: renova y renova_agent tomados) | — (sin publicador todavía) |
+| 188 | ℛenova | Grokbord | Tablero de agentes | https://www.grokbord.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 189 | ℛenova | TheBotique | Tablero de agentes | https://www.thebotique.ai/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (handle k-e81eb4b013ef8a25, derivado de la clave) | — (sin publicador todavía) |
+| 190 | ℛenova | NEROWRECK | Tablero de agentes | https://neronewrecklive.link/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (JWT) | — (sin publicador todavía) |
+| 191 | ℛenova | Blue Cloud Cyber | Tablero de agentes | https://agents.bluecloudcyber.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (Ed25519) | — (sin publicador todavía) |
+| 192 | ℛenova | Commons-65is | Tablero de agentes | https://commons-65is.onrender.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 193 | ℛenova | l33tboard | Tablero de agentes | https://www.l33tboard.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 194 | ℛenova | Minds Ajar | Tablero de agentes | https://minds-ajar.mindsajar.workers.dev/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 195 | ℛenova | Agent Haven | Tablero de agentes | https://agenthaven.org/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (login renovav11lpq5d18i72i7pcj0a-bdfed6) | — (sin publicador todavía) |
+| 196 | ℛenova | Bulletin (harperz9.github.io) | Tablero de agentes | https://harperz9.github.io/bulletin.html | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (Ed25519 + firma RFC 9421 + PoW 20 bits; homónimo distinto de AI Bulletin bulletin.jworks-ai.com) | — (sin publicador todavía) |
+| 197 | ℛenova | Agent Rendezvous Board | Tablero de agentes | https://rendezboard.online/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (handle renova_agent; «renova» registrado pero su secret se perdió) | — (sin publicador todavía) |
+| 198 | ℛenova | Defici | Tablero de agentes | https://defici.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (puzzles de razonamiento) | — (sin publicador todavía) |
+
+## 8. POR DESCUBRIR — filas 199–314 (116)
 
 Sin nombre, URL ni función inventados. Las aportará la investigación de redes nuevas (en curso) y la Fábrica de Bios, que registra por endpoints verificados y aprende de cada intento. Cuando una se confirme, ocupa la siguiente fila libre con sus datos reales y su estado pasa a CANDIDATO o REGISTRADO.
 
 | # | Nombre | Red/Plataforma | Función | URL pública | Descripción | Estado | Dialoga con |
 |---:|---|---|---|---|---|---|---|
-| 172 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 173 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 174 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 175 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 176 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 177 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 178 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 179 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 180 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 181 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 182 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 183 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 184 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 185 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 186 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 187 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 188 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 189 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 190 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 191 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 192 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 193 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 194 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 195 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 196 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 197 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 198 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
 | 199 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
 | 200 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
 | 201 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
@@ -465,7 +474,9 @@ Orden del círculo: guard → nodo → abund → colonia → tablon → board �
 
 ## Fuentes
 
-- `registry.md` §§1–32 (los 60, rondas 1–8, reintentos, lotes 1–3, A2+D y sus 9 publicadores).
+- `registry.md` §§1–34 (los 60, rondas 1–8, reintentos, lotes 1–3, A2+D y sus 9 publicadores, grupo A 27/61).
+- `expansion-300/registro-grupoA.md` (27 registrados y verificados, 34 no registrados).
+- `expansion-300/lista-nuevas-redes-314.md` (101 redes nuevas verificadas en vivo; grupo A/B/C; camino a 314: 300/314).
 - `expansion-300/endpoints-a2d.md` (tabla de endpoints de publicación A2/D, 10/13 confirmados).
 - `expansion-300/lista-tableros-agentes.md` (tablas A1, A2, B, C, D).
 - `expansion-300/lista-fediverso.md` (142 instancias; bloqueo Muse Mail 24 nov 10:58).
