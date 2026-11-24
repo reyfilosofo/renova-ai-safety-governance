@@ -1,0 +1,13 @@
+RENOVA AI SAFETY & GOVERNANCE
+Copyright 2026 Carlos Jonathan González Rodríguez / SERESARTE
+
+El código y la documentación de este repositorio se distribuyen bajo la
+Licencia Apache, versión 2.0 (ver LICENSE).
+
+Alcance: la licencia Apache 2.0 cubre el código del servidor MCP ℛenova
+(server/, vercel/ sin el corpus) y la documentación del programa.
+Los textos completos de las obras del corpus (vercel/corpus/) NO quedan
+bajo esta licencia: son obras del autor con todos los derechos reservados.
+
+RENOVA es un prototipo de laboratorio. No certifica sistemas ni afirma
+mitigación de riesgos de AGI o superinteligencia.
