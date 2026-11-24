@@ -1,0 +1,141 @@
+# CENTRO Guard — Política de autorización
+# RENOVA AI SAFETY & GOVERNANCE
+# Versión: 1.0 — 17 de noviembre de 2026
+# Estado: PROPUESTA DE DISEÑO. No es un control implementado, no es una
+# certificación y no ejecuta ni bloquea nada por sí misma.
+#
+# Procedencia: reconstrucción fiel a partir del registro verificado del
+# programa. Las versiones generadas en el navegador por la página v3.33
+# (retirada) no están disponibles como texto; este archivo las reconstruye
+# sin cambiar su contenido. La correspondencia NIST es lectura de RENOVA,
+# no correspondencia oficial de NIST.
+#
+# Regla de decisión: el más estricto gana (DENY sobre ASK sobre ALLOW).
+# Reformular la solicitud no cambia la decisión si operación, recurso y
+# efecto son los mismos.
+
+policy:
+  name: CENTRO Guard
+  version: "1.0"
+  date: "2026-11-17"
+  status: propuesta_de_diseno
+  decision_rule: DENY_sobre_ASK_sobre_ALLOW
+  binding_condition: >
+    Un DENY solo es preventivo si es vinculante para la ejecución.
+    El agente no debe tener credenciales ni rutas alternativas para
+    eludir CENTRO Guard.
+
+reversibility_classes:
+  R0:
+    name: Reversible
+    description: Leer, consultar sin cambiar el estado.
+  R1:
+    name: Reparable
+    description: Escribir con control de versiones o copia.
+  R2:
+    name: Irreversible
+    description: Eliminar sin copia, sobrescribir sin respaldo.
+  R3:
+    name: Propagación
+    description: >
+      Publicar, enviar o exfiltrar. Una información privada ya divulgada
+      no se vuelve secreta con un rollback.
+
+evidence_states:
+  Confirmada:
+    description: Verificable por un componente independiente; puede sustentar ALLOW.
+  Faltante:
+    description: DENY en R2 y R3.
+  Inferida:
+    description: Nunca basta para ALLOW en R2 y R3. La confianza no es autorización.
+  No_verificable:
+    description: Se trata como faltante.
+
+policies:
+  - id: RNV-01
+    version: "1.0"
+    name: Autoridad verificable
+    question: ¿Quién autoriza esta acción, con qué identidad, vigencia y alcance?
+    verifies: Identidad, autorización, vigencia y alcance. La afirmación del modelo no es autorización.
+    nist_correspondence:
+      - NIST AI RMF: GOVERN, MAP
+      - NIST AI 600-1: Seguridad de la información; Configuración humano–IA
+    evidence_required:
+      - Identidad verificada fuera del modelo
+      - Permiso específico y vigente, con alcance explícito
+    consequence_if_missing:
+      - DENY en R2 y R3
+      - ASK en R0 y R1
+
+  - id: RNV-02
+    version: "1.0"
+    name: Reversibilidad
+    question: ¿Se puede deshacer el efecto de esta acción?
+    verifies: >
+      Recuperabilidad de los efectos. Distingue reversión técnica,
+      reparación, compensación y prevención de lo irreversible.
+    nist_correspondence:
+      - NIST AI RMF: MANAGE
+      - NIST AI 600-1: Integridad de la información
+    evidence_required:
+      - Clase de reversibilidad (R0–R3) declarada para la operación
+      - Copia o control de versiones cuando la operación es R1
+    consequence_if_missing:
+      - Ante duda, se aplica la clase más grave
+      - Una información privada ya divulgada no se vuelve secreta con un rollback
+
+  - id: RNV-03
+    version: "1.0"
+    name: Daño no desplazado
+    question: ¿El riesgo se transfiere a terceros o a sistemas externos?
+    verifies: Que el riesgo no se desplaza a terceros ni a sistemas externos.
+    nist_correspondence:
+      - NIST AI RMF: MAP, MANAGE
+      - NIST AI 600-1: Contenido peligroso; Impactos ambientales; Sesgo dañino
+    evidence_required:
+      - Evaluación de afectados distintos del solicitante
+    consequence_if_missing:
+      - DENY cuando el daño se desplaza sin autorización de los afectados
+
+  - id: RNV-04
+    version: "1.0"
+    name: Integridad de evidencia
+    question: ¿La evidencia está completa y su procedencia es confiable?
+    verifies: Completitud y procedencia de la evidencia.
+    nist_correspondence:
+      - NIST AI RMF: MEASURE
+      - NIST AI 600-1: Integridad de la información; Privacidad de datos
+    evidence_required:
+      - Fuente y versión de cada afirmación que sustenta la acción
+      - Nivel de confianza declarado
+    consequence_if_missing:
+      - Nunca se infiere autorización
+      - Evidencia inferida o no verificable no sustenta ALLOW en R2 y R3
+
+  - id: RNV-05
+    version: "1.0"
+    name: Intervención humana
+    question: ¿Hay aprobación humana informada, específica y efectiva?
+    verifies: Que la aprobación humana existe, es informada y específica.
+    nist_correspondence:
+      - NIST AI RMF: GOVERN
+      - NIST AI 600-1: Configuración humano–IA
+    evidence_required:
+      - Aprobación humana específica para esta operación y este recurso
+      - Caducidad de la aprobación
+    consequence_if_missing:
+      - ASK: la acción queda pendiente de revisión humana
+      - La revisión humana no concede permiso por sí sola
+
+  - id: RNV-06
+    version: "1.0"
+    name: Incertidumbre crítica
+    question: ¿La incertidumbre sobre esta acción es crítica?
+    verifies: Que ante incertidumbre crítica el sistema falla cerrado.
+    nist_correspondence:
+      - NIST AI RMF: MANAGE, MEASURE
+      - NIST AI 600-1: Confabulación
+    evidence_required:
+      - Declaración de incertidumbre cuando la haya
+    consequence_if_missing:
+      - Fail-closed: DENY o ASK, nunca ALLOW por defecto
