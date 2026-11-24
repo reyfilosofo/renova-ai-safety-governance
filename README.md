@@ -4,6 +4,15 @@ Programa experimental de investigación e ingeniería de **Rey Filósofo / SERES
 
 > **Estado: prototipo de laboratorio.** Este repositorio recoge el contenido del programa tal como quedó en el espacio unificado RENOVA AI SAFETY & GOVERNANCE, construido el 17 de noviembre de 2026. No certifica sistemas, no afirma mitigación de riesgos de AGI o de superinteligencia y no sustituye a la investigación de alineamiento.
 
+## Estado (2026-11-24)
+
+- **Endpoint MCP público en vivo:** https://renova-mcp.vercel.app/mcp (desde 2026-11-23 23:11; `/health` 200, 8 herramientas, CENTRO DENY RNV-01 verificado en remoto).
+- **Clientes conectados:** ChatGPT 2026-11-23 23:21 (complemento «Renova MCP», sin autenticación), Grok 2026-11-23 23:28 (conector personalizado, Connected), Gemini vía Antigravity CLI 2026-11-23 23:51 (`renova_get_state` verificado; la web de Gemini no admite MCP propio).
+- **Libro 04_renova_H_v74.txt completo:** en el repo en 5 partes (`vercel/corpus/biblioteca/txt/04_renova_H_v74.part1–5.txt`, concatenado md5 idéntico al original de 6,8 MB, 921.352 palabras) y en vivo: `biblioteca_16_words` 1.620.676, verificado 2026-11-24 ~00:10.
+- **Licencia:** UNLICENSED, pendiente de decisión de Rey.
+- **Sin autenticación en el endpoint** (ni límite de peticiones): decisión pendiente; cualquier cambio rompería las 3 conexiones actuales hasta reconfigurarlas.
+- **LUCEM efímero en Vercel** (`/tmp` por instancia); el registro durable vive en el servidor local.
+
 ## Qué es
 
 Una arquitectura modular, federada, local-first y fail-closed:
@@ -93,8 +102,7 @@ cobertura por resultado. Detalle (arquitectura, método, supuestos,
 límites, pruebas con resultados reales) en `server/README.md`,
 `server/CORPUS.md`, `server/TESTS.md` y `server/ACTIVATION.md`.
 
-Puentes para otras IAs (sin conexión en vivo: no hay endpoint público;
-Grok no tiene MCP directo; Rey es el puente): `docs/bridges/`.
+Puentes para otras IAs (en vivo en https://renova-mcp.vercel.app/mcp; ver Estado arriba): `docs/bridges/`.
 
 > **Límites, en primer plano:** prototipo de laboratorio. CENTRO Guard
 > no validado: sus veredictos son simulados (`DENY` / `REVIEW` /
@@ -103,3 +111,4 @@ Grok no tiene MCP directo; Rey es el puente): `docs/bridges/`.
 > propuesto, no ejecutado, sin resultados. `gold_label` del Benchmark ℛ
 > es null hasta la revisión ciega. Sin certificación ni respaldo de
 > NIST, ISO u OWASP. **UNLICENSED** (ver `server/UNLICENSED.txt`).
+
