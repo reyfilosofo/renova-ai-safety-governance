@@ -1,0 +1,9 @@
+UNLICENSED — ℛenova MCP server v0.1.0
+
+Este repositorio NO tiene licencia todavía (UNLICENSED).
+Todos los derechos reservados a Carlos Jonathan González Rodríguez
+(Rey Filósofo) / SERESARTE.
+
+No se concede permiso para usar, copiar, modificar ni distribuir este
+código hasta que Rey decida y publique una licencia. La decisión de
+licencia está pendiente (23 nov 2026).

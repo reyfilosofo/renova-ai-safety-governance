@@ -1,0 +1,19 @@
+# .gitignore — MCP ℛenova (server/)
+# Nada de esto se sube al repo: ni el historial git, ni cachés, ni
+# credenciales, ni datos locales, ni la Biblioteca (derechos).
+.git/
+__pycache__/
+*.pyc
+*.pyo
+data/
+server.pid
+server.log
+.venv/
+venv/
+.env
+*.env
+*.pem
+*.key
+credentials*
+biblioteca/
+.DS_Store

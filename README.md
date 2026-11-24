@@ -71,3 +71,35 @@ Sitios hermanos del mismo programa. No hay conexión técnica en vivo entre ello
 - **Consola R1 (Grok)** — RENOVA AI Safety: https://aisafety.grok.me
 - **Espacio en Muse** — RENOVA AI SAFETY & GOVERNANCE: https://muse.ai/s/renova-ai-safety-governance-mu6xbxa4f1vxrm/lNYv7EadoL3SpqDu-8T_D2UuyOGXr8Y7WZcLh80sxjQ
 - **Repo del agente** — https://github.com/reyfilosofo/renova-agent
+
+## Servidor MCP ℛenova (en `server/`)
+
+Servidor MCP (Model Context Protocol) del programa, solo Python 3.12.3
+de la biblioteca estándar, cero dependencias. 8 herramientas:
+`renova_search`, `renova_get_document`, `renova_centro_evaluate`,
+`renova_benchmark_scenario`, `renova_transform`, `renova_egra_compare`,
+`renova_lucem_log`, `renova_get_state`. Arranque local:
+
+```bash
+cd server
+./start.sh --http --port 8765   # salud: curl http://127.0.0.1:8765/health
+```
+
+El corpus es la raíz de este repo (`docs/`, `benchmark/`,
+`centro-guard-policy.yaml`) más `renova-fundamento-inventario-drive.json`
+(metadatos). La Biblioteca (texto de 24 obras) no está en el repo por
+tamaño y derechos; sin ella el servidor degrada con gracia y declara la
+cobertura por resultado. Detalle (arquitectura, método, supuestos,
+límites, pruebas con resultados reales) en `server/README.md`,
+`server/CORPUS.md`, `server/TESTS.md` y `server/ACTIVATION.md`.
+
+Puentes para otras IAs (sin conexión en vivo: no hay endpoint público;
+Grok no tiene MCP directo; Rey es el puente): `docs/bridges/`.
+
+> **Límites, en primer plano:** prototipo de laboratorio. CENTRO Guard
+> no validado: sus veredictos son simulados (`DENY` / `REVIEW` /
+> `ALLOW_SIMULATED`) y nunca ejecutan ni bloquean una acción real.
+> `ALLOW_SIMULATED` no autoriza nada real. CENTRO-001 es un preregistro
+> propuesto, no ejecutado, sin resultados. `gold_label` del Benchmark ℛ
+> es null hasta la revisión ciega. Sin certificación ni respaldo de
+> NIST, ISO u OWASP. **UNLICENSED** (ver `server/UNLICENSED.txt`).

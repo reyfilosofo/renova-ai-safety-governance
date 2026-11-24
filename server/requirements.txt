@@ -1,0 +1,2 @@
+# Sin dependencias: solo la biblioteca estandar de Python 3.10+.
+# No instalar nada.
