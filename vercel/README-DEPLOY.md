@@ -57,3 +57,16 @@ y `/api/mcp` al handler de `server.py`, que no los reconoce → 404
 como `renova_server.py` (no es nombre de entrypoint) y `api/mcp.py` /
 `api/health.py` lo importan así. No volver a poner un `server.py` en
 esta raíz.
+
+## Entrypoint WSGI `app.py` (2026-11-24)
+
+Quitar `server.py` no bastó: sin entrypoint, Vercel no creó ninguna
+función (ni siquiera las de `api/`) y todo pasó a 404, incluida `/`.
+Según la documentación oficial, el preset Python de Vercel tiene
+precedencia sobre las funciones de `api/` y carga un entrypoint
+(`app.py`, `index.py`, `server.py`, `main.py`, `wsgi.py` o `asgi.py`)
+que defina `app`. Por eso el entrypoint es ahora `app.py`, una app
+WSGI stdlib que enruta todo ella misma (`/health`, `/`, `/mcp`, con
+alias `/api/*` por tolerancia). Los wrappers de `api/` quedan como
+respaldo si alguna vez no hay preset. No borrar `app.py` ni renombrar
+`renova_server.py`.
