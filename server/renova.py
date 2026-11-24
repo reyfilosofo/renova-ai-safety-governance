@@ -114,7 +114,11 @@ def main():
     p.add_argument("--evidence-state", default="Faltante", choices=["Confirmada", "Faltante", "Inferida", "No_verificable"])
     p.add_argument("--reversibility-class", default="unknown", choices=["R0", "R1", "R2", "R3", "unknown"])
     p.add_argument("--human-approval", action="store_true")
+    p.add_argument("--human-approval-specific", action="store_true",
+                   help="Aprobacion humana especifica para esta operacion y recurso (RNV-05 en R2/R3)")
     p.add_argument("--displaces-harm", action="store_true")
+    p.add_argument("--affected-approval", action="store_true",
+                   help="Autorizacion de los afectados (RNV-03 con displaces_harm)")
     p.add_argument("--critical-uncertainty", action="store_true")
 
     p = sub.add_parser("transform", help="Renovar un texto (A -> A')")
@@ -162,15 +166,21 @@ def main():
     elif args.command == "state":
         _print_json(tool_get_state())
     elif args.command == "evaluate":
+        # --human-approval implica especifica si no se pasa el flag
+        # separado (compatibilidad con el comportamiento anterior).
+        specific = args.human_approval_specific or args.human_approval
         _print_json(tool_centro_evaluate(args.action, args.operation, args.resource,
                                          args.authority_verified, args.authority_identity,
                                          args.evidence_state, args.reversibility_class,
-                                         args.human_approval, args.human_approval,
-                                         args.displaces_harm, False, args.critical_uncertainty))
+                                         args.human_approval, specific,
+                                         args.displaces_harm, args.affected_approval, args.critical_uncertainty))
     elif args.command == "transform":
         _print_json(tool_transform(" ".join(args.text), args.focus))
     elif args.command == "compare":
-        criteria = json.loads(args.criteria) if args.criteria else None
+        try:
+            criteria = json.loads(args.criteria) if args.criteria else None
+        except json.JSONDecodeError as exc:
+            raise SystemExit(f"error: --criteria no es JSON valido: {exc}")
         _print_json(tool_egra_compare(args.treatment, args.baseline, criteria))
     elif args.command == "log":
         _print_json(tool_lucem_log(args.entry, args.source, args.confidence))

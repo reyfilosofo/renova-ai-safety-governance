@@ -162,22 +162,24 @@ en el repo; obras 17–24 faltaban en el repo y en `vercel-deploy/`
 1. **`server/` del repo con el código previo a la corrección**
    (commit `cbea99f0`): sincronizar con el canónico local corregido y
    probado. No se pusheó en esta ronda.
-2. **Obras 17–24 en `vercel/corpus/biblioteca/txt/`**: push denegado
-   por el usuario; requiere aprobación explícita nueva. Sin esto,
-   `get_state` en vivo seguirá en indexadas 15 / solo metadatos 9
-   (1.620.676 palabras en vez de 1.869.502; diferencia 248.826, justo
-   las 8 obras).
+2. **Obras 17–24 en `vercel/corpus/biblioteca/txt/`**: RESUELTO
+   2026-11-24 ~01:41 CST (commits 85337cab + 470da83c) y ampliado con
+   las obras 25–29 el 2026-11-24 ~01:48 CST (commit
+   8d22d01b59cdfeef577018df373ed306c69418b5): `get_state` en vivo
+   sirve 29 obras / 28 indexadas / 1 solo metadatos, 4.973 págs.,
+   1.993.237 palabras, verificado con búsqueda en vivo (PRPM 32.219,
+   Filosofía Renovativa 71.958 palabras).
 3. **Borrar `vercel/api/health.py` del repo**: borrado denegado por el
    usuario; el archivo viejo sigue en el repo (SHA `246f29c2`). Hoy no
    interfiere (responde `app.py`), pero A13 queda incompleta hasta
    borrarlo con aprobación explícita.
-4. **`get_state` y la cadena de licencia:** el canónico local ya
-   reporta `"license": "Apache-2.0"` (actualizado en el hilo de
-   licencia, 2026-11-24 ~00:20 CST, verificado por stdio). Pendiente:
-   sincronizar `vercel-deploy/renova_core.py` + `server/` del repo y
-   redesplegar para que el endpoint en vivo deje de reportar
-   UNLICENSED; el servicio local en ejecución lo refleja tras su
-   próximo reinicio.
+4. **`get_state` y la cadena de licencia:** RESUELTO en el
+   endpoint en vivo con la sincronización 25–29 (commit 8d22d01b,
+   2026-11-24 ~01:48 CST): `vercel/renova_core.py` es ahora la copia
+   exacta del canónico y `get_state` en vivo reporta
+   `"license": "Apache-2.0"` (verificado 07:50 UTC). Pendiente
+   solo `server/` del repo, que sigue con el código previo a la
+   corrección (commit `cbea99f0`).
 5. `deployment_commit` no añadido a `get_state` (decisión pendiente).
 6. LUCEM solo valida la cola (tail); sin auth global en el endpoint
    público (decisión explícita, ver A1/H-01).

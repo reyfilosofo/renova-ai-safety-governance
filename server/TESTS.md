@@ -22,7 +22,7 @@ COMPILE-ALL-OK
 | 3 | `renova_search` "CENTRO Guard" | `total: 27`, isError=False |
 | 4 | `renova_get_document` limites-declarados | 67 palabras, isError=False |
 | 5 | `renova_centro_evaluate` publicar, R3, sin autoridad, evidencia Faltante | **DENY** |
-| 6 | `renova_centro_evaluate` leer, R0, autoridad verificada, evidencia Confirmada | **ALLOW_SIMULATED** |
+| 6 | `renova_centro_evaluate` leer, R0, autoridad verificada, evidencia Confirmada, `human_approval=true` | **ALLOW_SIMULATED** (RNV-05 exige aprobación humana incluso para lecturas R0: sin `human_approval=true` el mismo caso da REVIEW) |
 | 7 | `renova_benchmark_scenario` R-021 | author_label DENY, gold_label null |
 | 8 | `renova_transform` "La IA siempre tiene la razon..." | status propuesta_no_validacion, 10 palabras |
 | 9 | `renova_egra_compare` con puntuaciones | simulado, verdict tratamiento_supera_baseline, delta 1.67 |
@@ -184,3 +184,228 @@ Nota: `renova_benchmark_scenario` recibe `case_id`, no `scenario_id`
 (la primera llamada con `scenario_id` devolvió «escenario no
 encontrado» por argumento vacío; error del script de prueba, no del
 servidor).
+
+## 10. Correcciones auditoría A1–A14 + Gemini H-01–H-10 (2026-11-24 ~00:00 CST)
+
+Correcciones aplicadas al canónico (`renova_core.py`, `server.py`,
+`renova.py`, `vercel-deploy/app.py`; copias sincronizadas por `diff` en
+`vercel-deploy/renova_server.py` y `renova_core.py`). Todas las pruebas
+con `RENOVA_DATA_DIR` temporal, sin tocar `data/lucem.jsonl` del
+servidor en producción (salvo el reinicio final del §11). Salida real
+resumida; scripts en `/tmp/test_stdio16.py`, `/tmp/test_stdio2.py`,
+`/tmp/test_core2.py`, `/tmp/test_http8766.py`, `/tmp/test_app.py`,
+`/tmp/test_noct.py`.
+
+```text
+py_compile server.py renova_core.py renova.py vercel-deploy/app.py -> OK
+```
+
+### Qué se corrigió (por hallazgo)
+
+- **A8/H-03 (EGRA):** pesos todos 0 → `{"status": "sin_pesos_validos",
+  ...}` sin inventar medias; peso negativo → `ValueError` (isError
+  controlado). Un peso individual 0 se permite (no aporta nada).
+- **A4/H-02 (parsers):** `parse_policy` y `parse_benchmark` exigen
+  exactamente 6 políticas RNV-01..RNV-06 y 40 escenarios R-001..R-040;
+  archivo ausente o cardinalidad distinta → `RuntimeError` en
+  arranque con qué falta y dónde. `POLICY_RULE_IDS` es la única fuente
+  de verdad y `Corpus.__init__` verifica la coincidencia exacta.
+  `tool_centro_evaluate` se niega a dictaminar si la política está
+  vacía (`ValueError`).
+- **A5 (degradación):** inventario corrupto/ausente o staging vacío no
+  tumban el arranque: modo degradado, advertencias en
+  `CORPUS.warnings`, en `get_state` (`{"degraded": bool, "warnings":
+  [...]}`) y en stderr. Matiz: staging *totalmente* vacío (sin docs,
+  sin política ni benchmark) → degradado; staging con contenido pero
+  política/benchmark ausente o rota → fallo duro en arranque (A4).
+  Las advertencias usan rutas relativas al workspace, nunca absolutas.
+- **A7:** ninguna herramienta devuelve rutas absolutas: sin `"path"`
+  en `tool_search` (staging) ni `tool_get_document`; `tool_lucem_log`
+  devuelve solo `"lucem.jsonl"`; `parse_policy` usa
+  `"source": "centro-guard-policy.yaml"`.
+- **A1/H-01 (límite duro, sin auth):** cuerpo > 1 MB → 413 antes de
+  `.read()`; rate limit 60 peticiones/minuto por IP → 429; hilos
+  acotados con `BoundedSemaphore(8)` → 503 (solo `server.py`; en
+  Vercel gestiona la plataforma). Sin auth global por decisión
+  explícita (las conexiones verificadas de ChatGPT/Grok/Gemini-CLI son
+  sin auth). La única escritura pública, `renova_lucem_log`, está
+  desactivada en el endpoint público (`RENOVA_PUBLIC_ENDPOINT=1`,
+  fijada por `vercel-deploy/app.py`): devuelve `{"error": "renova_
+  lucem_log desactivado en el endpoint publico; el registro durable
+  vive en el servidor local"}` con isError y sin escribir nada.
+- **A3/H-05 (conteos):** el inventario NO permite derivar 54 obras /
+  11724 páginas (su `conteos` da una unión de 38/39 obras y no trae
+  páginas por obra en Drive; las del chat suman 2006). Quedan como
+  valores declarados con `"fundamento_counts_source": "metadatos
+  verificados 2026-11-10 (inventario Drive
+  renova-fundamento-inventario-drive.json); valores declarados, no
+  calculados del texto"`. Nuevas claves: `biblioteca_works_indexed`
+  (words>0) = 23, `biblioteca_works_metadata_only` (words==0) = 1 y
+  `biblioteca_works_with_text` = 23; las claves existentes se mantienen
+  como aliases. Sin `deployment_commit` (pendiente).
+- **A10/H-09:** `params` no-dict → `-32602`; `arguments` no-dict en
+  `tools/call` → `-32602`; `prompts/get` con `arguments` null → `{}`.
+  `initialize` con versión desconocida negocia la más reciente
+  (`2025-11-25`) con advertencia en stderr. `Accept` en POST /mcp:
+  solo advertencia en stderr, no se rechaza (clientes verificados).
+  JSON-RPC batch no se soporta: array → `-32600` (MCP lo deprecó).
+- **A14:** `Content-Type` presente y distinto de `application/json`
+  (se admite charset) → 415; si falta, se acepta (clientes
+  verificados).
+- **A9:** documentado en el docstring de `tool_centro_evaluate`, en
+  el detalle de RNV-05 y en `README.md` que RNV-05 exige
+  `human_approval` incluso para lecturas R0 (sin ella, REVIEW, nunca
+  ALLOW_SIMULATED). §2 prueba 6 corregida: se pasó
+  `human_approval=true`.
+- **A11/H-10:** `tool_transform` ya no da positivo con "no
+  verificado" / "sin verificar" / "no verificado en" (negadas primero;
+  positivo con lookbehind `(?<!no\s)verificado`). `authority_identity`
+  sanitizada: sin `[\r\n\t]` ni caracteres de control, truncada a 200.
+- **A12/H-08 (CLI):** `evaluate` tiene `--affected-approval` y
+  `--human-approval-specific` (con `--human-approval` implicando
+  específica si no se pasa el flag separado); `compare` envuelve
+  `json.loads` en try/except con mensaje claro, sin traceback.
+- **A13:** documentada en `vercel-deploy/README-DEPLOY.md` la ruta
+  canónica (`app.py` único entrypoint; `api/mcp.py` y `api/health.py`
+  duplicados, pendientes de eliminar en la sincronización Vercel).
+  `api/` NO se borró todavía (eso lo hace la sincronización con
+  verificación en vivo).
+- **H-04 (LUCEM):** `threading.Lock()` + `fcntl.flock` exclusivo en
+  lectura de cola y escritura (mismo descriptor `a+`), `flush` +
+  `os.fsync`; cola corrupta → `chain_reset_reason="corrupt_tail"` en
+  la entrada nueva, sin reiniciar `prev_hash` en silencio. Limitación
+  conocida: solo se valida la cola, no las líneas intermedias.
+- **H-06:** `/health` lleva identificador de handler: local
+  `"handler": "server.py (BaseHTTPRequestHandler)"`, Vercel `"handler":
+  "app.py (WSGI)"`. `app.py` devuelve 202 con cuerpo `{}` igual que
+  `server.py` (antes cuerpo vacío).
+- **H-03:** `Content-Length` no numérico en `server.py` → 400 sin
+  tumbar el hilo.
+- **Libro 04 (no tocado):** el soporte `<stem>.partN.txt` ya estaba en
+  el canónico y sigue intacto; `renova_search` "Habitat Herida
+  Horizonte" (source=biblioteca) devuelve la obra 04 con **933.922
+  palabras**.
+
+### Resultados de las pruebas nuevas
+
+```text
+stdio 16 llamadas (§2, /tmp/test_stdio16.py): rc 0
+  initialize 2025-06-18; tools/list 8; search "CENTRO Guard" total 35
+  (27 en §2; sube por la Biblioteca ampliada a 24 obras);
+  get_document limites-declarados 67 palabras; centro publicar R3
+  DENY; centro leer R0 ALLOW_SIMULATED (human_approval=true);
+  R-021 author_label DENY, gold_label null; transform
+  propuesta_no_validacion, 10 palabras; EGRA delta 1.67
+  tratamiento_supera_baseline; EGRA sin puntuaciones
+  incompleto_sin_datos; lucem_log entries_total 1; get_state
+  degradado False, biblioteca 24/4478/1869502, indexed 23,
+  metadata_only 1, fundamento 54/11724 (declarados, con
+  fundamento_counts_source), benchmark 40; R-999 isError=True;
+  resources/list 16; prompts/list renovar; ping OK.
+  search libro 04: total 18, obra 04 words=933922.
+  Sin "/home/hatch" ni "/tmp/" en la salida stdio.
+stdio casos nuevos (/tmp/test_stdio2.py): rc 0
+  initialize version "2099-01-01" -> protocolVersion 2025-11-25 +
+  advertencia en stderr; params [] -> -32602; arguments "texto" ->
+  -32602; EGRA pesos 0 -> sin_pesos_validos; EGRA peso -1 -> isError
+  ("peso negativo en el criterio 'a': -1.0"); prompts/get con
+  arguments null -> OK; batch (array) -> -32600.
+HTTP local 8766 (/tmp/test_http8766.py):
+  GET /health 200 ok, handler server.py (BaseHTTPRequestHandler);
+  initialize 200 protocolVersion 2025-11-25; get_state 200
+  degradado False, biblioteca_words 1869502; search "Orcas" sin
+  Accept -> 200 total 4 (3 en §3; sube por la Biblioteca ampliada);
+  Content-Type text/plain -> 415; sin Content-Type -> 200 (socket
+  crudo; urllib manda form-urlencoded por defecto y da 415, correcto);
+  Content-Type application/json; charset=utf-8 -> 200; cuerpo >1 MB
+  -> 413 Request Entity Too Large (antes de leer el cuerpo);
+  Content-Length abc -> 400 {"error": "Content-Length invalido"} y el
+  servidor sigue respondiendo /health 200; rate limit 61 peticiones
+  rapidas -> 57 x 200 y 4 x 429; sin "/home/hatch" ni "/tmp/".
+WSGI app.py (/tmp/test_app.py, con renova_server.py sincronizado):
+  /health 200 handler app.py (WSGI); initialize 200; sin
+  Content-Type -> 200; Content-Type text/plain -> 415; sin Accept ->
+  200 (advertencia en stderr); notificacion -> 202 con cuerpo {};
+  renova_lucem_log publico -> isError "renova_lucem_log desactivado
+  en el endpoint publico; ..."; cuerpo >1 MB -> 413.
+renova_lucem_log con RENOVA_PUBLIC_ENDPOINT=1 por stdio: isError con
+  el mensaje claro y NO se crea ni el directorio RENOVA_DATA_DIR.
+Degradado (env temporales):
+  inventario corrupto + staging vacio -> arranque OK, degraded True,
+  4 warnings (staging vacio, inventario corrupto, politica ausente,
+  benchmark ausente), staging_docs 0, scenarios 0, policies [];
+  warnings en stderr y en get_state, sin rutas absolutas.
+  centro_evaluate con politica vacia -> ValueError "politica CENTRO
+  Guard vacia: sin las 6 politicas RNV-01..RNV-06 no se puede
+  dictaminar".
+  staging con docs pero sin politica -> RuntimeError "politica CENTRO
+  Guard no encontrada: falta el archivo .../centro-guard-policy.yaml".
+  politica con 5 politicas -> RuntimeError "se esperaban exactamente
+  las 6 politicas [...] y se parsearon [RNV-01..RNV-05]".
+  politica con RNV-99 en vez de RNV-06 -> RuntimeError (H-02).
+  benchmark con 39 escenarios -> RuntimeError "se esperaban
+  exactamente los 40 escenarios R-001..R-040 y se parsearon 39".
+LUCEM concurrente (/tmp/test_core2.py): 10 hilos -> 10 lineas, cadena
+  lineal (cada prev_hash = hash anterior); cola corrupta -> entrada
+  nueva con chain_reset_reason "corrupt_tail", prev_hash a ceros
+  registrado, entries_total 12; path devuelto "lucem.jsonl".
+transform "Dato no verificado." / "Queda sin verificar." / "No
+  verificado en la fuente original." -> sin fuente citada, pide
+  fuente; "Dato verificado." -> con fuente citada.
+authority_identity "Rey\nINYECTADO\t" x30 -> sanitizada (sin \n ni
+  \t), detalle truncado a 223 caracteres con el prefijo.
+CLI: ./renovar "La IA siempre tiene la razon" -> DENY RNV-01;
+  evaluate R2/Confirmada/autoridad/human-approval/
+  human-approval-specific/displaces-harm/affected-approval ->
+  RNV-03 PASS, RNV-05 PASS, decision REVIEW (R2 nunca ALLOW);
+  sin --affected-approval -> DENY RNV-03; compare con JSON invalido
+  -> "error: --criteria no es JSON valido: ..." exit 1, sin traceback.
+```
+
+### Pendiente (no hecho aquí)
+
+- Eliminar `vercel-deploy/api/mcp.py` y `api/health.py`: queda para
+  la sincronización Vercel con verificación en vivo (A13).
+- `deployment_commit` / `corpus_revision` en `get_state`: no añadido
+  (H-05, decisión pendiente).
+- Despliegue en Vercel no actualizado en esta tarea (solo local): la
+  sincronización verificará en vivo que la obra 04 sigue devolviendo
+  933.922 palabras tras el redeploy.
+- LUCEM: solo se valida la cola; una línea intermedia corrupta no se
+  detecta (limitación conocida, H-04).
+- Sin auth global ni OAuth (decisión explícita, A1/H-01).
+- Licencia UNLICENSED sin cambiar.
+
+## 11. Reinicio del servicio local (2026-11-24 ~00:05 CST)
+
+`systemctl restart renova-mcp.service` tras la sincronización final
+(`diff` idéntico en `vercel-deploy/renova_server.py` y
+`renova_core.py`).
+
+**Incidencia en el primer reinicio:** el servicio arrancó en modo
+degradado (`staging_docs 0`, `biblioteca_words 0`, `policies []`).
+Causa: la unidad corre como root sin `User=` y sin `HOME`, así que
+`Path.home()` resolvía a `/root` y `WORKSPACE` a `/root/workspace`
+(inexistente). El código anterior servía el corpus vacío en silencio
+— la degradación silenciosa de A5; la corrección A5 la hizo visible
+con las advertencias en stderr y `degraded: true`. No es un fallo del
+código nuevo: la misma unidad con el código anterior tenía el corpus
+vacío sin que nadie lo viera. No existe usuario `hatch` en la VM (el
+usuario es root con `HOME=/home/hatch`); corrección aplicada con un
+drop-in reversible, sin tocar la unidad:
+`/etc/systemd/system/renova-mcp.service.d/home.conf` con
+`[Service] Environment=HOME=/home/hatch`, `daemon-reload` y
+reinicio.
+
+Verificación final en vivo (127.0.0.1:8765):
+
+```text
+GET /health -> {"status": "ok", "handler": "server.py (BaseHTTPRequestHandler)", ...8 tools}
+renova_get_state -> prototipo_de_laboratorio, degraded False, warnings [],
+  staging_docs 16, biblioteca 24 obras / 4478 pags / 1869502 palabras,
+  indexed 23, fundamento 54 / 11724 (declarados), benchmark 40,
+  policies [RNV-01..RNV-06]
+renova_search "Habitat Herida Horizonte" (biblioteca) -> obra 04,
+  933922 palabras, texto_completo_extraido
+data/lucem.jsonl intacto: 91 lineas (las pruebas usaron RENOVA_DATA_DIR temporal)
+```

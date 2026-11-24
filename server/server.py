@@ -14,6 +14,8 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import threading
+import time
 import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -24,6 +26,33 @@ from renova_core import (CORPUS, SERVER_VERSION, tool_benchmark_scenario,
                          tool_centro_evaluate, tool_egra_compare,
                          tool_get_document, tool_get_state, tool_lucem_log,
                          tool_search, tool_transform)
+
+# A1/H-01 — mitigacion minima SIN autenticacion global, por decision
+# explicita: las conexiones verificadas de ChatGPT/Grok/Gemini-CLI son
+# sin auth, y anadir auth global las romperia. Lo que si se limita:
+# cuerpo maximo 1 MB (413 antes de leer), 60 peticiones/minuto por IP
+# (429) y 8 hilos concurrentes maximo (503). La unica escritura publica,
+# renova_lucem_log, esta desactivada en el endpoint publico via
+# RENOVA_PUBLIC_ENDPOINT=1 (ver renova_core.tool_lucem_log).
+MAX_BODY_BYTES = 1_048_576
+RATE_LIMIT_MAX = 60
+RATE_WINDOW_SECONDS = 60.0
+_RATE_LIMIT: dict[str, list[float]] = {}
+_RATE_LOCK = threading.Lock()
+_REQUEST_SEMAPHORE = threading.BoundedSemaphore(8)
+
+
+def _check_rate_limit(ip: str) -> bool:
+    """True si la IP aun esta dentro de 60 peticiones/minuto."""
+    now = time.monotonic()
+    with _RATE_LOCK:
+        stamps = [t for t in _RATE_LIMIT.get(ip, []) if now - t < RATE_WINDOW_SECONDS]
+        if len(stamps) >= RATE_LIMIT_MAX:
+            _RATE_LIMIT[ip] = stamps
+            return False
+        stamps.append(now)
+        _RATE_LIMIT[ip] = stamps
+        return True
 
 PROTOCOLS = ("2025-11-25", "2025-06-18", "2025-03-26")
 SERVER_INFO = {"name": "renova-mcp", "version": SERVER_VERSION}
@@ -39,7 +68,7 @@ TOOLS = [
          "authority_verified": {"type": "boolean", "default": False}, "authority_identity": {"type": "string"},
          "evidence_state": {"type": "string", "enum": ["Confirmada", "Faltante", "Inferida", "No_verificable"], "default": "Faltante"},
          "reversibility_class": {"type": "string", "enum": ["R0", "R1", "R2", "R3", "unknown"], "default": "unknown"},
-         "human_approval": {"type": "boolean", "default": False}, "human_approval_specific": {"type": "boolean", "default": False},
+         "human_approval": {"type": "boolean", "default": False, "description": "RNV-05 la exige incluso para lecturas R0: sin ella no hay ALLOW_SIMULATED, solo REVIEW"}, "human_approval_specific": {"type": "boolean", "default": False},
          "displaces_harm": {"type": "boolean", "default": False}, "affected_approval": {"type": "boolean", "default": False},
          "critical_uncertainty": {"type": "boolean", "default": False}}, "required": ["action"]}},
     {"name": "renova_benchmark_scenario", "description": "Devuelve un escenario R-001 a R-040 del Benchmark R v0.1 con su etiqueta de autor; gold_label siempre null (revision ciega pendiente).",
@@ -82,14 +111,27 @@ def handle_request(msg):
     method = msg.get("method", "")
     req_id = msg.get("id")
     is_notification = req_id is None
-    params = msg.get("params") or {}
+    # A10(a)/H-03: params no-dict -> -32602, no -32603.
+    params = msg.get("params")
+    if params is None:
+        params = {}
+    elif not isinstance(params, dict):
+        raise McpError(-32602, "params debe ser un objeto JSON")
 
     def result(payload):
         return None if is_notification else {"jsonrpc": "2.0", "id": req_id, "result": payload}
 
     if method == "initialize":
         version = params.get("protocolVersion")
-        negotiated = version if version in PROTOCOLS else "2025-06-18"
+        if version in PROTOCOLS:
+            negotiated = version
+        else:
+            # A10(b): ante una version desconocida se negocia la
+            # soportada MAS RECIENTE (2025-11-25) y se advierte en
+            # stderr; no se cae en silencio a una version antigua.
+            negotiated = PROTOCOLS[0]
+            print(f"ADVERTENCIA renova-mcp: protocolVersion desconocida {version!r}; "
+                  f"negociada {negotiated}", file=sys.stderr)
         return result({"protocolVersion": negotiated,
                        "capabilities": {"tools": {}, "resources": {}, "prompts": {}},
                        "serverInfo": SERVER_INFO})
@@ -101,7 +143,11 @@ def handle_request(msg):
         return result({"tools": TOOLS})
     if method == "tools/call":
         name = params.get("name", "")
-        args = params.get("arguments") or {}
+        args = params.get("arguments")
+        if args is None:
+            args = {}
+        elif not isinstance(args, dict):
+            raise McpError(-32602, "arguments debe ser un objeto JSON")
         if name not in DISPATCH:
             raise McpError(-32602, f"Unknown tool: {name}")
         try:
@@ -129,7 +175,11 @@ def handle_request(msg):
     if method == "prompts/get":
         if params.get("name") != "renovar":
             raise McpError(-32602, f"Unknown prompt: {params.get('name')}")
-        text = params.get("arguments", {}).get("text", "")
+        # H-03: arguments null -> {}; no-dict -> -32602.
+        pargs = params.get("arguments") or {}
+        if not isinstance(pargs, dict):
+            raise McpError(-32602, "arguments debe ser un objeto JSON")
+        text = pargs.get("text", "")
         return result({"messages": [{"role": "user", "content": {"type": "text", "text": f"Renueva este texto con Renova (A -> A') y evalualo con CENTRO Guard: {text}"}}]})
     raise McpError(-32601, f"Method not found: {method}")
 
@@ -148,9 +198,9 @@ def serve_stdio():
         try:
             resp = handle_request(msg)
         except McpError as exc:
-            resp = {"jsonrpc": "2.0", "id": msg.get("id"), "error": {"code": exc.code, "message": exc.message}}
+            resp = {"jsonrpc": "2.0", "id": msg.get("id") if isinstance(msg, dict) else None, "error": {"code": exc.code, "message": exc.message}}
         except Exception as exc:  # noqa: BLE001 - el servidor no debe morir por una llamada
-            resp = {"jsonrpc": "2.0", "id": msg.get("id"), "error": {"code": -32603, "message": f"Internal error: {exc}"}}
+            resp = {"jsonrpc": "2.0", "id": msg.get("id") if isinstance(msg, dict) else None, "error": {"code": -32603, "message": f"Internal error: {exc}"}}
         if resp is not None:
             sys.stdout.write(json.dumps(resp, ensure_ascii=False) + "\n")
             sys.stdout.flush()
@@ -175,6 +225,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/health":
             self._send_json(200, {"status": "ok", "server": "renova-mcp", "version": SERVER_VERSION,
+                                  "handler": "server.py (BaseHTTPRequestHandler)",
                                   "tools": [t["name"] for t in TOOLS]})
         elif self.path in ("/", "/mcp"):
             self._send_json(200, {"server": "renova-mcp", "version": SERVER_VERSION,
@@ -187,24 +238,65 @@ class Handler(BaseHTTPRequestHandler):
         if self.path != "/mcp":
             self._send_json(404, {"error": "not found"})
             return
-        length = int(self.headers.get("Content-Length") or 0)
-        raw = self.rfile.read(length)
-        session_id = self.headers.get("Mcp-Session-Id") or uuid.uuid4().hex
+        # A14: Content-Type presente y distinto de application/json
+        # (se admite charset) -> 415. Si falta, se acepta: los clientes
+        # ya verificados (ChatGPT/Grok/Gemini-CLI) no siempre lo envian.
+        content_type = self.headers.get("Content-Type")
+        if content_type is not None and content_type.split(";")[0].strip().lower() != "application/json":
+            self._send_json(415, {"jsonrpc": "2.0", "id": None,
+                                  "error": {"code": -32600, "message": f"Content-Type debe ser application/json, no {content_type}"}})
+            return
+        # A10(c): el spec pide Accept: application/json, text/event-stream,
+        # pero SOLO se advierte en stderr: rechazar rompería a los clientes
+        # ya verificados, que conectan sin ese header.
+        accept = self.headers.get("Accept") or ""
+        if "application/json" not in accept and "text/event-stream" not in accept:
+            print(f"ADVERTENCIA renova-mcp: POST /mcp sin Accept application/json "
+                  f"(recibido: {accept!r}); se acepta por compatibilidad con clientes verificados",
+                  file=sys.stderr)
+        # H-03: Content-Length no numerico -> 400, sin tumbar el hilo.
         try:
-            msg = json.loads(raw.decode("utf-8"))
-        except (json.JSONDecodeError, UnicodeDecodeError):
-            self._send_json(400, {"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": "Parse error"}}, session_id)
+            length = int(self.headers.get("Content-Length") or 0)
+        except ValueError:
+            self._send_json(400, {"jsonrpc": "2.0", "id": None,
+                                  "error": {"code": -32600, "message": "Content-Length invalido"}})
+            return
+        # A1/H-01: cuerpo > 1 MB -> 413 ANTES de leerlo.
+        if length > MAX_BODY_BYTES:
+            self._send_json(413, {"jsonrpc": "2.0", "id": None,
+                                  "error": {"code": -32600, "message": "payload too large: limite 1 MB"}})
+            return
+        # A1/H-01: rate limit 60 peticiones/minuto por IP (X-Forwarded-For
+        # o remote addr) -> 429.
+        forwarded = self.headers.get("X-Forwarded-For") or ""
+        client_ip = forwarded.split(",")[0].strip() or self.client_address[0]
+        if not _check_rate_limit(client_ip):
+            self._send_json(429, {"error": "rate limit"})
+            return
+        # H-01: hilos acotados (maximo 8 concurrentes) -> 503.
+        if not _REQUEST_SEMAPHORE.acquire(blocking=False):
+            self._send_json(503, {"error": "server busy"})
             return
         try:
-            resp = handle_request(msg)
-        except McpError as exc:
-            resp = {"jsonrpc": "2.0", "id": msg.get("id"), "error": {"code": exc.code, "message": exc.message}}
-        except Exception as exc:  # noqa: BLE001
-            resp = {"jsonrpc": "2.0", "id": msg.get("id"), "error": {"code": -32603, "message": f"Internal error: {exc}"}}
-        if resp is None:
-            self._send_json(202, {}, session_id)
-        else:
-            self._send_json(200, resp, session_id)
+            raw = self.rfile.read(length) if length > 0 else b""
+            session_id = self.headers.get("Mcp-Session-Id") or uuid.uuid4().hex
+            try:
+                msg = json.loads(raw.decode("utf-8"))
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                self._send_json(400, {"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": "Parse error"}}, session_id)
+                return
+            try:
+                resp = handle_request(msg)
+            except McpError as exc:
+                resp = {"jsonrpc": "2.0", "id": msg.get("id") if isinstance(msg, dict) else None, "error": {"code": exc.code, "message": exc.message}}
+            except Exception as exc:  # noqa: BLE001
+                resp = {"jsonrpc": "2.0", "id": msg.get("id") if isinstance(msg, dict) else None, "error": {"code": -32603, "message": f"Internal error: {exc}"}}
+            if resp is None:
+                self._send_json(202, {}, session_id)
+            else:
+                self._send_json(200, resp, session_id)
+        finally:
+            _REQUEST_SEMAPHORE.release()
 
 
 def main():

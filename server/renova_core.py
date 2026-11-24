@@ -6,14 +6,17 @@ archivos canonicos del workspace (ver STAGING_DIR) o de entradas que el
 propio usuario registra en LUCEM. Estado honesto: prototipo de
 laboratorio, CENTRO-001 es un protocolo propuesto sin ejecutar, CENTRO
 Guard no esta validado, los resultados sinteticos no son validacion
-externa, sin respaldo NIST/ISO/OWASP, UNLICENSED.
+externa, sin respaldo NIST/ISO/OWASP. Licencia Apache 2.0 (codigo y documentacion); textos del corpus con todos los derechos reservados.
 """
 from __future__ import annotations
 
+import fcntl
 import hashlib
 import json
 import os
 import re
+import sys
+import threading
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -29,14 +32,29 @@ LUCEM_PATH = DATA_DIR / "lucem.jsonl"
 
 SERVER_VERSION = "0.1.0"
 POLICY_VERSION = "1.0"
+# Unica fuente de verdad de los ids de la politica CENTRO Guard (H-02):
+# las reglas RNV-01..RNV-06 estan implementadas en tool_centro_evaluate
+# y parse_policy/Corpus verifican que el YAML parseado coincida
+# exactamente con esta tupla; cualquier divergencia es fallo en arranque.
+POLICY_RULE_IDS = ("RNV-01", "RNV-02", "RNV-03", "RNV-04", "RNV-05", "RNV-06")
+# Endpoint publico/remoto (H-01): vercel-deploy/app.py fija
+# RENOVA_PUBLIC_ENDPOINT=1 al arrancar. Sin autenticacion global (decision
+# explicita: las conexiones verificadas de ChatGPT/Grok/Gemini-CLI son sin
+# auth), la mitigacion minima es desactivar la unica escritura publica,
+# renova_lucem_log, en el endpoint publico: cualquiera podria inyectar
+# entradas y envenenar la cadena de hashes del registro durable. En local
+# (sin la variable) el registro funciona normal.
+PUBLIC_ENDPOINT = os.environ.get("RENOVA_PUBLIC_ENDPOINT", "") == "1"
+# Lock de proceso + flock para tool_lucem_log (H-04).
+_LUCEM_LOCK = threading.Lock()
 LIMITS = [
     "Prototipo de laboratorio. No certifica sistemas ni afirma mitigacion de riesgos de AGI o superinteligencia.",
     "CENTRO-001 / RENOVA T-001 es un protocolo propuesto, no ejecutado y sin resultados.",
     "CENTRO Guard no esta validado: sus veredictos son simulados (DENY / REVIEW / ALLOW_SIMULATED) y nunca ejecutan ni bloquean una accion real.",
     "Los resultados sinteticos (tests locales, casos sinteticos de politica) no son validacion externa.",
     "La correspondencia con NIST, ISO u OWASP es lectura de RENOVA, no respaldo de esas instituciones.",
-    "UNLICENSED: sin licencia. No compartir en publico hasta decidirla.",
-    "El texto completo de las 28 obras de Drive y de las 11 del chat no esta indexado: solo sus metadatos verificados. Texto completo indexado: docs del staging y las 24 obras de la Biblioteca (txt extraido).",
+    "Licencia Apache 2.0 (codigo y documentacion del servidor MCP; ver LICENSE y NOTICE). Los textos completos de las obras del corpus quedan con todos los derechos reservados.",
+    "El texto completo de las 28 obras de Drive y de las 11 del chat no esta indexado: solo sus metadatos verificados. Texto completo indexado: docs del staging y las 29 obras de la Biblioteca (txt extraido).",
 ]
 
 # Las obras de la Biblioteca: titulo, archivo txt extraido, paginas y
@@ -49,6 +67,12 @@ LIMITS = [
 # Dos subidas mas de esa tanda son duplicados exactos (mismo sha256) de
 # obras ya indexadas y NO se duplican: "Renova (H)" (= 03) y
 # "LUX Renova Tratado Integral" (= 07).
+# Segunda ampliacion 2026-11-24 (5 obras, 25-29): segunda tanda del
+# mismo dia. Cuatro subidas mas son duplicados exactos (mismo sha256)
+# y NO se duplican: RENOVA V10 (= 21), Essentiae Vitae Libro Final
+# (= 22), Qualia Renovativos Libro Maestro v2 (= 23) y LUX Renova
+# (= 07, de nuevo). La tesis de Vera Ortiz (tercero) NO se indexa:
+# excluida a proposito en el inventario (libros de terceros).
 BIBLIOTECA = [
     ("Fundamento H", "01_fundamento_h.txt", 333, "1R6LU9A4PgIONtobmfuFLFtkKR4BZhyZt"),
     ("Renova 314", "02_renova_314.txt", 91, "1IomEdEm2AfHINRnJ7D3oqWjKPKWx7G02"),
@@ -74,6 +98,11 @@ BIBLIOTECA = [
     ("Renova Essentiae Vitae (Libro Final 2026)", "22_essentiae_vitae_final.txt", 213, ""),
     ("Qualia Renovativos (Libro Maestro v2 2026)", "23_qualia_renovativos.txt", 110, ""),
     ("Campayo Renovativo (Tratado Número Letra)", "24_campayo_renovativo.txt", 250, ""),
+    ("PRPM Tomus I — Philosophiae Renovativae Principia Mathematica (Edición Digital 2026)", "25_prpm_tomus_I.txt", 199, ""),
+    ("Guerra, Altar y Máscara (Ensayo postdoctoral, SERESARTE / Renova Editions 2026)", "26_guerra_altar_mascara.txt", 35, ""),
+    ("Filosofía ℛenovativa (Edición final para imprenta V2.7)", "27_filosofia_renovativa.txt", 218, ""),
+    ("Tratado de Epistemología de la IA ℛenova V1 (Tratado Libro)", "28_tratado_epistemologia_ia.txt", 42, ""),
+    ("Formalización matemática operativa (L_R)", "29_formalizacion_matematica.txt", 1, ""),
 ]
 
 DOCUMENTS = {
@@ -98,6 +127,15 @@ DOCUMENTS = {
 
 def _read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8", errors="replace")
+
+
+def _display_path(p: Path) -> str:
+    """Ruta para mensajes/warnings: relativa al workspace si es posible,
+    si no solo el nombre. Nunca una ruta absoluta en una respuesta (A7)."""
+    try:
+        return str(p.relative_to(WORKSPACE))
+    except ValueError:
+        return p.name
 
 
 def _read_biblioteca_text(txt_dir: Path, txt_file: str) -> str:
@@ -137,12 +175,17 @@ class Corpus:
     """Corpus cargado una vez desde los archivos canonicos."""
 
     def __init__(self):
+        self.warnings = []
         self.staging_docs = {}
         for name, (rel, title) in DOCUMENTS.items():
             p = STAGING_DIR / rel
             if p.exists():
                 text = _read_text(p)
                 self.staging_docs[name] = {"name": name, "title": title, "path": str(p), "text": text, "words": _words(text)}
+        if not self.staging_docs:
+            self.warnings.append(
+                f"staging vacio: no se encontro ningun documento en {_display_path(STAGING_DIR)}; "
+                "el servidor arranca en modo degradado (search sin resultados de staging, get_document sin documentos).")
         self.biblioteca = []
         for title, txt_file, pages, drive_id in BIBLIOTECA:
             p = BIBLIOTECA_DIR / "txt" / txt_file
@@ -157,8 +200,18 @@ class Corpus:
         self.inventario = {}
         self.drive28 = []
         self.chat11 = []
-        if INVENTARIO_JSON.exists():
-            self.inventario = json.loads(_read_text(INVENTARIO_JSON))
+        if not INVENTARIO_JSON.exists():
+            self.warnings.append(
+                f"inventario Fundamento no encontrado en {_display_path(INVENTARIO_JSON)}; "
+                "el servidor arranca en modo degradado (sin metadatos de las 28 obras de Drive ni las 11 del chat).")
+        else:
+            try:
+                self.inventario = json.loads(_read_text(INVENTARIO_JSON))
+            except (json.JSONDecodeError, UnicodeDecodeError, OSError) as exc:
+                self.warnings.append(
+                    f"inventario Fundamento corrupto o ilegible en {_display_path(INVENTARIO_JSON)} ({exc}); "
+                    "el servidor arranca en modo degradado (sin metadatos de las 28 obras de Drive ni las 11 del chat).")
+                self.inventario = {}
             for item in self.inventario.get("libros_pdf_distintos_en_drive", []):
                 rep = item.get("representativo", {})
                 self.drive28.append({
@@ -172,8 +225,50 @@ class Corpus:
                     "coverage": "metadatos_verificados_sin_texto_completo",
                     "note": item.get("observacion", ""),
                 })
-        self.policy = parse_policy()
-        self.scenarios = parse_benchmark(STAGING_DIR / "benchmark" / "benchmark-r-v0.1-diseno-y-lote-inicial.md")
+        # A4 (dura) vs A5 (degradada): si el staging esta TOTALMENTE vacio
+        # (sin documentos, sin politica y sin benchmark) el servidor
+        # arranca en modo degradado con advertencias; si el staging tiene
+        # contenido pero la politica o el benchmark faltan o no cuadran,
+        # parse_policy/parse_benchmark lanzan RuntimeError y el arranque
+        # falla (no se puede dictaminar con una politica rota).
+        _policy_path = STAGING_DIR / "centro-guard-policy.yaml"
+        _bench_path = STAGING_DIR / "benchmark" / "benchmark-r-v0.1-diseno-y-lote-inicial.md"
+        _staging_totalmente_vacio = not self.staging_docs and not _policy_path.exists() and not _bench_path.exists()
+        try:
+            self.policy = parse_policy()
+        except RuntimeError as exc:
+            if _staging_totalmente_vacio:
+                self.warnings.append(
+                    f"politica CENTRO Guard ausente (staging vacio en {_display_path(STAGING_DIR)}); "
+                    "el servidor arranca en modo degradado y renova_centro_evaluate se negara a dictaminar.")
+                self.policy = {"version": POLICY_VERSION, "status": "propuesta_de_diseno",
+                               "decision_rule": "DENY_sobre_ASK_sobre_ALLOW (el mas estricto gana)",
+                               "source": "centro-guard-policy.yaml", "policies": []}
+            else:
+                raise
+        # H-02: la politica parseada debe coincidir EXACTAMENTE con la
+        # unica fuente de verdad POLICY_RULE_IDS (ademas de la cardinalidad
+        # de 6 que ya valida parse_policy). Divergencia = fallo en arranque.
+        # (En modo degradado policies==[] y se salta: ya hay advertencia.)
+        if self.policy["policies"]:
+            parsed_ids = tuple(p["id"] for p in self.policy["policies"])
+            if parsed_ids != POLICY_RULE_IDS:
+                raise RuntimeError(
+                    f"politica CENTRO Guard divergente en {_policy_path}: "
+                    f"se parsearon {list(parsed_ids)} y se esperaban exactamente {list(POLICY_RULE_IDS)}; "
+                    "la politica declarada y la ejecutada deben coincidir.")
+        try:
+            self.scenarios = parse_benchmark(_bench_path)
+        except RuntimeError as exc:
+            if _staging_totalmente_vacio:
+                self.warnings.append(
+                    f"lote del Benchmark R ausente (staging vacio en {_display_path(STAGING_DIR)}); "
+                    "el servidor arranca en modo degradado sin escenarios.")
+                self.scenarios = []
+            else:
+                raise
+        for w in self.warnings:
+            print(f"ADVERTENCIA renova-mcp (modo degradado): {w}", file=sys.stderr)
 
     def counts(self):
         return {
@@ -182,10 +277,22 @@ class Corpus:
             "biblioteca_works": len(self.biblioteca),
             "biblioteca_pages": sum(b["pages"] for b in self.biblioteca),
             "biblioteca_words": sum(b["words"] for b in self.biblioteca),
+            # H-05: obras con texto realmente indexado (words>0) frente a
+            # obras de las que solo hay metadatos (words==0, p. ej. la 04,
+            # PDF de imagen sin texto). Las claves biblioteca_works/pages/
+            # words se mantienen como aliases retrocompatibles.
+            "biblioteca_works_indexed": sum(1 for b in self.biblioteca if b["words"] > 0),
+            "biblioteca_works_metadata_only": sum(1 for b in self.biblioteca if b["words"] == 0),
+            "biblioteca_works_with_text": sum(1 for b in self.biblioteca if b["words"] > 0),
             "fundamento_drive_28": len(self.drive28),
             "fundamento_chat_11": len(self.chat11),
+            # A3: 54 obras / 11724 paginas NO se pueden derivar de los
+            # campos del inventario (su "conteos" da una union de 38/39
+            # obras y no trae paginas por obra en Drive; las del chat
+            # suman 2006). Quedan como valores declarados, no calculados.
             "fundamento_distinct_works": 54,
             "fundamento_total_pages": 11724,
+            "fundamento_counts_source": "metadatos verificados 2026-11-10 (inventario Drive renova-fundamento-inventario-drive.json); valores declarados, no calculados del texto",
             "benchmark_scenarios": len(self.scenarios),
         }
 
@@ -194,9 +301,15 @@ def parse_policy():
     """Parser minimo del YAML de la politica (sin dependencias).
 
     Extrae por cada RNV-xx: id, nombre, pregunta y consecuencias.
+    Validacion dura: el archivo debe existir y contener exactamente las
+    6 politicas RNV-01..RNV-06; si no, RuntimeError en arranque.
     """
     path = STAGING_DIR / "centro-guard-policy.yaml"
-    text = _read_text(path) if path.exists() else ""
+    if not path.exists():
+        raise RuntimeError(
+            f"politica CENTRO Guard no encontrada: falta el archivo {path}; "
+            "sin politica no se puede dictaminar.")
+    text = _read_text(path)
     policies = []
     blocks = re.split(r"(?m)^  - id: ", text)
     for block in blocks[1:]:
@@ -218,16 +331,29 @@ def parse_policy():
             "evidence_required": list_field("evidence_required"),
             "consequence_if_missing": list_field("consequence_if_missing"),
         })
+    ids = [p["id"] for p in policies]
+    expected = list(POLICY_RULE_IDS)
+    if ids != expected:
+        raise RuntimeError(
+            f"politica CENTRO Guard incompleta o corrupta en {path}: "
+            f"se esperaban exactamente las 6 politicas {expected} y se parsearon {ids}; "
+            "sin las 6 politicas no se puede dictaminar.")
     return {"version": POLICY_VERSION, "status": "propuesta_de_diseno",
             "decision_rule": "DENY_sobre_ASK_sobre_ALLOW (el mas estricto gana)",
-            "source": str(path), "policies": policies}
+            "source": "centro-guard-policy.yaml", "policies": policies}
 
 
 def parse_benchmark(path: Path):
-    """Parsea el lote R-001 a R-040 de la tabla del diseno."""
-    scenarios = []
+    """Parsea el lote R-001 a R-040 de la tabla del diseno.
+
+    Validacion dura: el archivo debe existir y contener exactamente los
+    40 escenarios R-001..R-040; si no, RuntimeError en arranque.
+    """
     if not path.exists():
-        return scenarios
+        raise RuntimeError(
+            f"diseno del Benchmark R no encontrado: falta el archivo {path}; "
+            "sin el lote R-001..R-040 no se puede servir el benchmark.")
+    scenarios = []
     row = re.compile(r"^\|\s*(R-\d{3})\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|$")
     for line in _read_text(path).splitlines():
         m = row.match(line.strip())
@@ -242,6 +368,14 @@ def parse_benchmark(path: Path):
             "split": "dev",
             "note": "Lote inicial v0.1 en dev. gold_label null hasta completar la revision ciega; nunca pasara al split sellado porque su contenido ya es publico.",
         })
+    ids = [s["case_id"] for s in scenarios]
+    expected = [f"R-{i:03d}" for i in range(1, 41)]
+    if ids != expected:
+        raise RuntimeError(
+            f"lote del Benchmark R incompleto o corrupto en {path}: "
+            f"se esperaban exactamente los 40 escenarios {expected[0]}..{expected[-1]} "
+            f"y se parsearon {len(scenarios)} ({ids[:3]}{'...' if len(ids) > 3 else ''}); "
+            "sin el lote completo no se puede servir el benchmark.")
     return scenarios
 
 
@@ -267,7 +401,7 @@ def tool_search(query, limit=10, source="all"):
             if s > 0:
                 results.append({"source": "staging", "name": doc["name"], "title": doc["title"],
                                 "score": s, "words": doc["words"],
-                                "snippet": _snippet(doc["text"], query), "path": doc["path"]})
+                                "snippet": _snippet(doc["text"], query)})
     if source in ("all", "biblioteca"):
         for b in CORPUS.biblioteca:
             s = score(b["text"]) + (10 if q in b["title"].lower() else 0)
@@ -287,7 +421,7 @@ def tool_search(query, limit=10, source="all"):
     results.sort(key=lambda r: r["score"], reverse=True)
     return {"query": query, "source": source, "total": len(results),
             "results": results[: max(1, min(int(limit), 25))],
-            "coverage_note": "Texto completo: docs del staging y 24 obras de la Biblioteca. Solo metadatos: 28 obras de Drive y 11 del chat."}
+            "coverage_note": "Texto completo: docs del staging y 29 obras de la Biblioteca. Solo metadatos: 28 obras de Drive y 11 del chat."}
 
 
 def tool_get_document(name):
@@ -297,7 +431,7 @@ def tool_get_document(name):
         return {"error": f"documento no encontrado: {name}",
                 "available": sorted(CORPUS.staging_docs.keys())}
     doc = CORPUS.staging_docs[key]
-    return {"name": key, "title": doc["title"], "path": doc["path"],
+    return {"name": key, "title": doc["title"],
             "words": doc["words"], "text": doc["text"],
             "verbatim": key in ("resumen-publico", "tres-vias-empiricas", "limites-declarados")}
 
@@ -314,9 +448,22 @@ def tool_centro_evaluate(action, operation=None, resource=None, authority_verifi
     """Implementa RNV-01 a RNV-06 leyendo la politica versionada.
 
     Devuelve un veredicto SIMULADO. Nunca ejecuta ni bloquea nada real.
+
+    RNV-05 (Intervencion humana) exige aprobacion humana incluso para
+    lecturas R0: una accion R0 con autoridad verificada y evidencia
+    Confirmada pero human_approval=False devuelve REVIEW, no
+    ALLOW_SIMULATED. El caso "leer -> ALLOW_SIMULATED" solo funciona con
+    human_approval=true (y en R2/R3 ademas con human_approval_specific).
+    Es fail-closed deliberado de la politica (consecuencia si falta: ASK).
     """
     if not action or not str(action).strip():
         raise ValueError("action es obligatoria")
+    if not CORPUS.policy.get("policies"):
+        raise ValueError("politica CENTRO Guard vacia: sin las 6 politicas RNV-01..RNV-06 no se puede dictaminar")
+    # H-10: sanitiza authority_identity (log injection): sin saltos de
+    # linea, tabuladores ni caracteres de control; truncado a 200 caracteres.
+    if authority_identity is not None:
+        authority_identity = re.sub(r"[\r\n\t\x00-\x1f\x7f]+", " ", str(authority_identity)).strip()[:200]
     if evidence_state not in EVIDENCE_STATES:
         raise ValueError(f"evidence_state debe ser uno de {EVIDENCE_STATES}")
     rev = reversibility_class if reversibility_class in REVERSIBILITY else "unknown"
@@ -359,14 +506,15 @@ def tool_centro_evaluate(action, operation=None, resource=None, authority_verifi
     else:  # Inferida
         check("RNV-04", "DENY" if irreversible else "REVIEW",
               "Evidencia inferida: la confianza no es autorizacion; no sustenta ALLOW en R2/R3.")
-    # RNV-05 Intervencion humana
+    # RNV-05 Intervencion humana: exige aprobacion humana incluso para
+    # lecturas R0 (sin ella, REVIEW, nunca ALLOW_SIMULATED).
     if irreversible and not (human_approval and human_approval_specific):
         check("RNV-05", "REVIEW", "Falta aprobacion humana especifica y vigente para esta operacion y recurso.")
     elif irreversible:
         check("RNV-05", "PASS", "Aprobacion humana especifica presente; no concede permiso por si sola.")
     else:
         check("RNV-05", "PASS" if human_approval else "REVIEW",
-              "Aprobacion humana presente." if human_approval else "Sin aprobacion humana; en R0/R1 queda en revision.")
+              "Aprobacion humana presente." if human_approval else "Sin aprobacion humana; RNV-05 la exige incluso para lecturas R0, asi que en R0/R1 queda en revision y no hay ALLOW_SIMULATED.")
     # RNV-06 Incertidumbre critica
     if critical_uncertainty:
         check("RNV-06", "DENY" if irreversible else "REVIEW",
@@ -439,7 +587,13 @@ def tool_transform(text, focus=None):
     sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", original) if s.strip()]
     absolutes_found = sorted({w for w in ABSOLUTES if re.search(rf"\b{w}\b", low)})
     numbers = re.findall(r"\d+(?:[.,]\d+)?\s*%?", original)
-    has_source = bool(re.search(r"segun|fuente|citado|verificado|estudio|datos", low))
+    # A11/H-10: las formas negadas ("no verificado", "sin verificar",
+    # "no verificado en") NO cuentan como fuente. Primero se detectan
+    # las negadas; solo entonces las positivas, con lookbehind negativo
+    # (?<!no\s)verificado para que "no verificado" no de positivo.
+    negated_source = re.search(r"\b(no\s+verificad[oa]s?|sin\s+verificar)\b", low)
+    has_source = False if negated_source else bool(
+        re.search(r"segun|fuente|citado|(?<!no\s)verificado|estudio|datos", low))
     causal = len(re.findall(r"\b(porque|por lo tanto|demuestra|prueba|asi que)\b", low))
     if any(v in low for v in ACTION_VERBS_R3):
         rev_guess = "R3"
@@ -501,8 +655,14 @@ def tool_egra_compare(treatment, baseline, criteria=None, metric_name=None, samp
             missing.append(c["name"])
             scored.append({**c, "delta": None})
         else:
+            # H-03: un peso individual 0 se permite (no aporta nada a la
+            # media); solo si TODOS los pesos son 0 no hay media que
+            # calcular (status sin_pesos_validos, mas abajo).
+            w = float(c.get("weight", 1.0))
+            if w < 0:
+                raise ValueError(f"peso negativo en el criterio '{c['name']}': {w}")
             t, b = float(c["treatment_score"]), float(c["baseline_score"])
-            scored.append({**c, "weight": float(c.get("weight", 1.0)),
+            scored.append({**c, "weight": w,
                            "treatment_score": t, "baseline_score": b, "delta": round(t - b, 2)})
     if missing:
         return {"status": "incompleto_sin_datos", "treatment": treatment, "baseline": baseline,
@@ -513,6 +673,10 @@ def tool_egra_compare(treatment, baseline, criteria=None, metric_name=None, samp
                 "metric_name": metric_name, "criteria": [],
                 "note": "Sin criterios no hay comparacion. Aporta criteria con name, weight, treatment_score y baseline_score."}
     total_w = sum(c["weight"] for c in scored)
+    if total_w == 0:
+        return {"status": "sin_pesos_validos", "treatment": treatment, "baseline": baseline,
+                "metric_name": metric_name, "criteria": scored,
+                "note": "Todos los pesos son 0: no hay media ponderada que calcular. Aporta al menos un peso mayor que 0 para comparar."}
     t_mean = sum(c["treatment_score"] * c["weight"] for c in scored) / total_w
     b_mean = sum(c["baseline_score"] * c["weight"] for c in scored) / total_w
     delta = round(t_mean - b_mean, 2)
@@ -528,30 +692,53 @@ def tool_egra_compare(treatment, baseline, criteria=None, metric_name=None, samp
 
 
 def tool_lucem_log(entry, source=None, confidence=None, tags=None):
-    """Anade una entrada al registro local de evidencia (JSONL con hash encadenado)."""
+    """Anade una entrada al registro local de evidencia (JSONL con hash encadenado).
+
+    H-01: en el endpoint publico (RENOVA_PUBLIC_ENDPOINT=1) esta
+    escritura esta desactivada: cualquiera podria inyectar entradas y
+    envenenar la cadena de hashes. El registro durable vive solo en el
+    servidor local. H-04: escritura bajo threading.Lock + fcntl.flock
+    exclusivo, flush + os.fsync; si la ultima linea esta corrupta, la
+    entrada nueva registra chain_reset_reason="corrupt_tail" en vez de
+    reiniciar prev_hash en silencio. Limitacion conocida: solo se valida
+    la cola; una linea intermedia corrupta no se detecta aqui.
+    """
+    if PUBLIC_ENDPOINT:
+        return {"error": "renova_lucem_log desactivado en el endpoint publico; el registro durable vive en el servidor local"}
     if not entry or not str(entry).strip():
         raise ValueError("entry es obligatoria")
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    prev_hash = "0" * 64
-    count = 0
-    if LUCEM_PATH.exists():
-        lines = [ln for ln in LUCEM_PATH.read_text(encoding="utf-8").splitlines() if ln.strip()]
-        count = len(lines)
-        if lines:
-            try:
-                prev_hash = json.loads(lines[-1]).get("hash", prev_hash)
-            except json.JSONDecodeError:
-                prev_hash = "0" * 64
-    record = {"id": uuid.uuid4().hex[:12],
-              "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-              "entry": str(entry), "source": source, "confidence": confidence,
-              "tags": tags or [], "prev_hash": prev_hash}
-    canonical = json.dumps(record, ensure_ascii=False, sort_keys=True)
-    record["hash"] = hashlib.sha256((prev_hash + canonical).encode("utf-8")).hexdigest()
-    with LUCEM_PATH.open("a", encoding="utf-8") as fh:
-        fh.write(json.dumps(record, ensure_ascii=False) + "\n")
+    with _LUCEM_LOCK:
+        prev_hash = "0" * 64
+        count = 0
+        chain_reset_reason = None
+        # Lectura de la cola y escritura bajo el MISMO flock exclusivo
+        # (abrir en a+): sin hueco entre leer prev_hash y escribir.
+        with LUCEM_PATH.open("a+", encoding="utf-8") as fh:
+            fcntl.flock(fh.fileno(), fcntl.LOCK_EX)
+            fh.seek(0)
+            lines = [ln for ln in fh.read().splitlines() if ln.strip()]
+            count = len(lines)
+            if lines:
+                try:
+                    prev_hash = json.loads(lines[-1]).get("hash", prev_hash)
+                except json.JSONDecodeError:
+                    chain_reset_reason = "corrupt_tail"
+                    prev_hash = "0" * 64
+            record = {"id": uuid.uuid4().hex[:12],
+                      "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+                      "entry": str(entry), "source": source, "confidence": confidence,
+                      "tags": tags or [], "prev_hash": prev_hash}
+            if chain_reset_reason:
+                record["chain_reset_reason"] = chain_reset_reason
+            canonical = json.dumps(record, ensure_ascii=False, sort_keys=True)
+            record["hash"] = hashlib.sha256((prev_hash + canonical).encode("utf-8")).hexdigest()
+            fh.write(json.dumps(record, ensure_ascii=False) + "\n")
+            fh.flush()
+            os.fsync(fh.fileno())
+            fcntl.flock(fh.fileno(), fcntl.LOCK_UN)
     return {"id": record["id"], "hash": record["hash"], "prev_hash": prev_hash,
-            "entries_total": count + 1, "path": str(LUCEM_PATH),
+            "entries_total": count + 1, "path": "lucem.jsonl",
             "note": "Registro local de evidencia con hash encadenado. No es validacion externa."}
 
 
@@ -566,6 +753,8 @@ def tool_get_state():
     return {
         "server": "renova-mcp", "version": SERVER_VERSION,
         "status": "prototipo_de_laboratorio",
+        "degraded": bool(CORPUS.warnings),
+        "warnings": list(CORPUS.warnings),
         "corpus": CORPUS.counts(),
         "benchmark": {"version": "v0.1", "scenarios": len(CORPUS.scenarios),
                       "author_labels": labels, "gold_labels": "todos null (revision ciega pendiente)",
@@ -575,7 +764,7 @@ def tool_get_state():
                          "centro_001": "protocolo propuesto, no ejecutado, sin resultados"},
         "lucem_entries": lucem_entries,
         "limits": LIMITS,
-        "license": "UNLICENSED",
+        "license": "Apache-2.0",
         "modes": ["stdio", "http (127.0.0.1, puerto 8765 por defecto)"],
     }
 
