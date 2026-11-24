@@ -1,0 +1,60 @@
+name: MCP endpoint smoke test
+
+# Solo lectura contra el endpoint público. Sin secretos.
+# Falla si /health no es 200 o si tools/list no devuelve las 8 herramientas.
+on:
+  schedule:
+    # 13:30 UTC = 07:30 CST, antes del digest de las 07:45
+    - cron: '30 13 * * *'
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check /health returns 200
+        run: |
+          code=$(curl -sS -o /tmp/health.json -w '%{http_code}' --max-time 30 https://renova-mcp.vercel.app/health)
+          echo "health HTTP $code"
+          cat /tmp/health.json
+          echo
+          test "$code" = "200"
+
+      - name: MCP initialize + tools/list returns 8 tools
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request
+
+          BASE = "https://renova-mcp.vercel.app/mcp"
+          HEADERS = {"Content-Type": "application/json", "Accept": "application/json, text/event-stream"}
+          EXPECTED = {
+              "renova_search", "renova_get_document", "renova_centro_evaluate",
+              "renova_benchmark_scenario", "renova_transform", "renova_egra_compare",
+              "renova_lucem_log", "renova_get_state",
+          }
+
+          def post(payload, extra=None):
+              req = urllib.request.Request(BASE, data=json.dumps(payload).encode(),
+                                           headers={**HEADERS, **(extra or {})}, method="POST")
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  return r.headers, r.read().decode()
+
+          init = {"jsonrpc": "2.0", "id": 1, "method": "initialize",
+                  "params": {"protocolVersion": "2025-03-26", "capabilities": {},
+                             "clientInfo": {"name": "gh-smoke", "version": "1"}}}
+          headers, body = post(init)
+          sid = headers.get("Mcp-Session-Id")
+          assert sid, f"initialize sin Mcp-Session-Id: {body[:300]}"
+          print("initialize ok, session", sid)
+
+          post({"jsonrpc": "2.0", "method": "notifications/initialized"}, {"Mcp-Session-Id": sid})
+
+          _, body = post({"jsonrpc": "2.0", "id": 2, "method": "tools/list", "params": {}},
+                         {"Mcp-Session-Id": sid})
+          data = json.loads(body)
+          tools = [t["name"] for t in data["result"]["tools"]]
+          print("tools:", tools)
+          assert len(tools) == 8, f"se esperaban 8 herramientas, llegaron {len(tools)}: {tools}"
+          assert set(tools) == EXPECTED, f"herramientas inesperadas: {set(tools) ^ EXPECTED}"
+          print("smoke ok: /health 200 y 8 herramientas")
+          PY
