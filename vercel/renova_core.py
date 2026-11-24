@@ -6,7 +6,7 @@ archivos canonicos del workspace (ver STAGING_DIR) o de entradas que el
 propio usuario registra en LUCEM. Estado honesto: prototipo de
 laboratorio, CENTRO-001 es un protocolo propuesto sin ejecutar, CENTRO
 Guard no esta validado, los resultados sinteticos no son validacion
-externa, sin respaldo NIST/ISO/OWASP, UNLICENSED.
+externa, sin respaldo NIST/ISO/OWASP. Licencia Apache 2.0 (codigo y documentacion); textos del corpus con todos los derechos reservados.
 """
 from __future__ import annotations
 
@@ -53,8 +53,8 @@ LIMITS = [
     "CENTRO Guard no esta validado: sus veredictos son simulados (DENY / REVIEW / ALLOW_SIMULATED) y nunca ejecutan ni bloquean una accion real.",
     "Los resultados sinteticos (tests locales, casos sinteticos de politica) no son validacion externa.",
     "La correspondencia con NIST, ISO u OWASP es lectura de RENOVA, no respaldo de esas instituciones.",
-    "UNLICENSED: sin licencia. No compartir en publico hasta decidirla.",
-    "El texto completo de las 28 obras de Drive y de las 11 del chat no esta indexado: solo sus metadatos verificados. Texto completo indexado: docs del staging y las 24 obras de la Biblioteca (txt extraido).",
+    "Licencia Apache 2.0 (codigo y documentacion del servidor MCP; ver LICENSE y NOTICE). Los textos completos de las obras del corpus quedan con todos los derechos reservados.",
+    "El texto completo de las 28 obras de Drive y de las 11 del chat no esta indexado: solo sus metadatos verificados. Texto completo indexado: docs del staging y las 29 obras de la Biblioteca (txt extraido).",
 ]
 
 # Las obras de la Biblioteca: titulo, archivo txt extraido, paginas y
@@ -67,6 +67,12 @@ LIMITS = [
 # Dos subidas mas de esa tanda son duplicados exactos (mismo sha256) de
 # obras ya indexadas y NO se duplican: "Renova (H)" (= 03) y
 # "LUX Renova Tratado Integral" (= 07).
+# Segunda ampliacion 2026-11-24 (5 obras, 25-29): segunda tanda del
+# mismo dia. Cuatro subidas mas son duplicados exactos (mismo sha256)
+# y NO se duplican: RENOVA V10 (= 21), Essentiae Vitae Libro Final
+# (= 22), Qualia Renovativos Libro Maestro v2 (= 23) y LUX Renova
+# (= 07, de nuevo). La tesis de Vera Ortiz (tercero) NO se indexa:
+# excluida a proposito en el inventario (libros de terceros).
 BIBLIOTECA = [
     ("Fundamento H", "01_fundamento_h.txt", 333, "1R6LU9A4PgIONtobmfuFLFtkKR4BZhyZt"),
     ("Renova 314", "02_renova_314.txt", 91, "1IomEdEm2AfHINRnJ7D3oqWjKPKWx7G02"),
@@ -92,6 +98,11 @@ BIBLIOTECA = [
     ("Renova Essentiae Vitae (Libro Final 2026)", "22_essentiae_vitae_final.txt", 213, ""),
     ("Qualia Renovativos (Libro Maestro v2 2026)", "23_qualia_renovativos.txt", 110, ""),
     ("Campayo Renovativo (Tratado Número Letra)", "24_campayo_renovativo.txt", 250, ""),
+    ("PRPM Tomus I — Philosophiae Renovativae Principia Mathematica (Edición Digital 2026)", "25_prpm_tomus_I.txt", 199, ""),
+    ("Guerra, Altar y Máscara (Ensayo postdoctoral, SERESARTE / Renova Editions 2026)", "26_guerra_altar_mascara.txt", 35, ""),
+    ("Filosofía ℛenovativa (Edición final para imprenta V2.7)", "27_filosofia_renovativa.txt", 218, ""),
+    ("Tratado de Epistemología de la IA ℛenova V1 (Tratado Libro)", "28_tratado_epistemologia_ia.txt", 42, ""),
+    ("Formalización matemática operativa (L_R)", "29_formalizacion_matematica.txt", 1, ""),
 ]
 
 DOCUMENTS = {
@@ -410,7 +421,7 @@ def tool_search(query, limit=10, source="all"):
     results.sort(key=lambda r: r["score"], reverse=True)
     return {"query": query, "source": source, "total": len(results),
             "results": results[: max(1, min(int(limit), 25))],
-            "coverage_note": "Texto completo: docs del staging y 24 obras de la Biblioteca. Solo metadatos: 28 obras de Drive y 11 del chat."}
+            "coverage_note": "Texto completo: docs del staging y 29 obras de la Biblioteca. Solo metadatos: 28 obras de Drive y 11 del chat."}
 
 
 def tool_get_document(name):
@@ -753,7 +764,7 @@ def tool_get_state():
                          "centro_001": "protocolo propuesto, no ejecutado, sin resultados"},
         "lucem_entries": lucem_entries,
         "limits": LIMITS,
-        "license": "UNLICENSED",
+        "license": "Apache-2.0",
         "modes": ["stdio", "http (127.0.0.1, puerto 8765 por defecto)"],
     }
 

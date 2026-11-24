@@ -1,0 +1,13 @@
+# Formalización matemática operativa
+
+La forma recomendada es:
+
+```text
+L_R = C - G + nu H + rho R - omega U
+```
+
+Donde C representa capacidad vital creada, G carga destructiva o Gewalt, H apertura de horizonte, R reversibilidad y U incertidumbre. Los pesos nu, rho y omega deben calibrarse por dominio.
+
+La puntuación final se obtiene multiplicando la versión normalizada de L_R por Q, donde Q es el promedio de CLARITAS, RATIO y VITA. Esto impide que un valor aparentemente positivo autorice acciones sin claridad, evidencia o cuidado.
+
+Esta formulación debe entenderse como modelo multicriterio y no como ley física.
