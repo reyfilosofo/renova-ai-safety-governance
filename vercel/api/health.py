@@ -12,7 +12,7 @@ os.environ.setdefault("RENOVA_BIBLIOTECA_DIR", str(ROOT / "corpus" / "biblioteca
 os.environ.setdefault("RENOVA_INVENTARIO_JSON", str(ROOT / "corpus" / "inventario.json"))
 os.environ.setdefault("RENOVA_DATA_DIR", "/tmp/renova-data")
 
-import server as renova_server  # noqa: E402
+import renova_server as renova_server  # noqa: E402
 
 
 class handler(BaseHTTPRequestHandler):

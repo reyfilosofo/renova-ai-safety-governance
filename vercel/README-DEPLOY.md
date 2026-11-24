@@ -45,3 +45,15 @@ curl https://<url-asignada>/health
   ninguna acción real. OAuth queda pendiente de decidir con el hosting.
 - `vercel.json` ya mapea `/mcp` → `/api/mcp` y `/health` → `/api/health`,
   con `maxDuration` 60 s en `/api/mcp`.
+
+## Por qué el módulo se llama `renova_server.py` (2026-11-24)
+
+Vercel detecta un `server.py` en la raíz del proyecto como entrypoint de
+la aplicación y lo monta como función catch-all, por encima de `api/`.
+El despliegue del 23 nov servía así solo `GET /` (el info de
+`server.py`); `/health` y `/mcp` llegaban reescritos como `/api/health`
+y `/api/mcp` al handler de `server.py`, que no los reconoce → 404
+`{"error": "not found"}`. Por eso el servidor canónico se copia aquí
+como `renova_server.py` (no es nombre de entrypoint) y `api/mcp.py` /
+`api/health.py` lo importan así. No volver a poner un `server.py` en
+esta raíz.

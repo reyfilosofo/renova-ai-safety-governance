@@ -2,7 +2,7 @@
 
 Vercel Python runtime: files in api/ are serverless functions; a class
 named `handler` extending BaseHTTPRequestHandler is the entrypoint.
-This wrapper reuses the canonical server.py handle_request() and
+This wrapper reuses the canonical renova_server.py handle_request() and
 renova_core.py from the project root (copied there by build.sh), with the
 corpus under corpus/. No new tools, no new behaviour: the same 8 tools.
 
@@ -28,7 +28,7 @@ os.environ.setdefault("RENOVA_BIBLIOTECA_DIR", str(ROOT / "corpus" / "biblioteca
 os.environ.setdefault("RENOVA_INVENTARIO_JSON", str(ROOT / "corpus" / "inventario.json"))
 os.environ.setdefault("RENOVA_DATA_DIR", "/tmp/renova-data")
 
-import server as renova_server  # noqa: E402
+import renova_server as renova_server  # noqa: E402
 
 
 class handler(BaseHTTPRequestHandler):
