@@ -86,6 +86,20 @@ def _read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8", errors="replace")
 
 
+def _read_biblioteca_text(txt_dir: Path, txt_file: str) -> str:
+    """Lee una obra de la Biblioteca. Si el archivo unico no existe
+    (p. ej. supera el limite de subida del conector GitHub), concatena
+    las partes ordenadas <stem>.part<N>.txt, que juntas son el mismo texto."""
+    p = txt_dir / txt_file
+    if p.exists():
+        return _read_text(p)
+    stem = p.stem
+    parts = sorted(txt_dir.glob(f"{stem}.part*.txt"))
+    if not parts:
+        return ""
+    return "".join(_read_text(part) for part in parts)
+
+
 def _words(text: str) -> int:
     return len(text.split())
 
@@ -118,7 +132,7 @@ class Corpus:
         self.biblioteca = []
         for title, txt_file, pages, drive_id in BIBLIOTECA_16:
             p = BIBLIOTECA_DIR / "txt" / txt_file
-            text = _read_text(p) if p.exists() else ""
+            text = _read_biblioteca_text(BIBLIOTECA_DIR / "txt", txt_file)
             self.biblioteca.append({
                 "title": title, "txt_file": txt_file, "pages": pages,
                 "drive_id": drive_id,
