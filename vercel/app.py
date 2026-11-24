@@ -19,6 +19,14 @@ Stateless: handle_request keeps no session server-side. LUCEM writes to
 /tmp on Vercel (ephemeral); the durable log lives on the local server.
 No auth yet: the public endpoint has no OAuth. CENTRO verdicts remain
 simulated; the server executes no real action.
+
+Sin autenticacion global por decision explicita (las conexiones
+verificadas de ChatGPT/Grok/Gemini-CLI son sin auth y anadir auth las
+romperia). Mitigacion minima: limite de cuerpo 1 MB (413 antes de leer),
+rate limit 60 peticiones/minuto por IP (429) y renova_lucem_log
+DESACTIVADO en este endpoint publico (RENOVA_PUBLIC_ENDPOINT=1: la
+unica escritura publica queda bloqueada para que nadie envenene el
+registro de evidencia; ver renova_core.tool_lucem_log).
 """
 import json
 import os
@@ -31,6 +39,8 @@ os.environ.setdefault("RENOVA_STAGING_DIR", str(ROOT / "corpus" / "staging"))
 os.environ.setdefault("RENOVA_BIBLIOTECA_DIR", str(ROOT / "corpus" / "biblioteca"))
 os.environ.setdefault("RENOVA_INVENTARIO_JSON", str(ROOT / "corpus" / "inventario.json"))
 os.environ.setdefault("RENOVA_DATA_DIR", "/tmp/renova-data")
+# H-01: endpoint publico -> escritura LUCEM desactivada (antes de importar).
+os.environ["RENOVA_PUBLIC_ENDPOINT"] = "1"
 
 import renova_server  # noqa: E402
 
@@ -59,6 +69,7 @@ def app(environ, start_response):
         return _respond(start_response, "200 OK",
                         {"status": "ok", "server": "renova-mcp",
                          "version": renova_server.SERVER_VERSION,
+                         "handler": "app.py (WSGI)",
                          "tools": [t["name"] for t in renova_server.TOOLS]})
     if method == "GET" and path in ("/", "/mcp", "/api/mcp"):
         return _respond(start_response, "200 OK",
@@ -68,10 +79,36 @@ def app(environ, start_response):
                          "endpoint": "POST /mcp",
                          "note": "Prototipo de laboratorio. Veredictos CENTRO simulados."})
     if method == "POST" and path in ("/mcp", "/api/mcp"):
+        # A14: Content-Type presente y distinto de application/json
+        # (se admite charset) -> 415. Si falta, se acepta: los clientes
+        # ya verificados no siempre lo envian.
+        content_type = environ.get("CONTENT_TYPE")
+        if content_type is not None and content_type.split(";")[0].strip().lower() != "application/json":
+            return _respond(start_response, "415 Unsupported Media Type",
+                            {"error": "content-type must be application/json"})
+        # A10(c): Accept solo con advertencia en stderr; rechazar
+        # romperia a los clientes ya verificados.
+        accept = environ.get("HTTP_ACCEPT") or ""
+        if "application/json" not in accept and "text/event-stream" not in accept:
+            print(f"ADVERTENCIA renova-mcp: POST /mcp sin Accept application/json "
+                  f"(recibido: {accept!r}); se acepta por compatibilidad con clientes verificados",
+                  file=sys.stderr)
         try:
             length = int(environ.get("CONTENT_LENGTH") or 0)
         except ValueError:
             length = 0
+        # A1/H-01: cuerpo > 1 MB -> 413 ANTES de leerlo.
+        if length > renova_server.MAX_BODY_BYTES:
+            return _respond(start_response, "413 Payload Too Large",
+                            {"error": "payload too large"})
+        # A1/H-01: rate limit 60 peticiones/minuto por IP -> 429.
+        # (En Vercel no hace falta semaforo de hilos: la plataforma
+        # gestiona la concurrencia.)
+        forwarded = environ.get("HTTP_X_FORWARDED_FOR") or ""
+        client_ip = forwarded.split(",")[0].strip() or environ.get("REMOTE_ADDR") or "unknown"
+        if not renova_server._check_rate_limit(client_ip):
+            return _respond(start_response, "429 Too Many Requests",
+                            {"error": "rate limit"})
         raw = environ["wsgi.input"].read(length) if length > 0 else b""
         session_id = environ.get("HTTP_MCP_SESSION_ID") or uuid.uuid4().hex
         try:
@@ -84,15 +121,13 @@ def app(environ, start_response):
         try:
             resp = renova_server.handle_request(msg)
         except renova_server.McpError as exc:
-            resp = {"jsonrpc": "2.0", "id": msg.get("id"),
+            resp = {"jsonrpc": "2.0", "id": msg.get("id") if isinstance(msg, dict) else None,
                     "error": {"code": exc.code, "message": exc.message}}
         except Exception as exc:  # noqa: BLE001
-            resp = {"jsonrpc": "2.0", "id": msg.get("id"),
+            resp = {"jsonrpc": "2.0", "id": msg.get("id") if isinstance(msg, dict) else None,
                     "error": {"code": -32603, "message": f"Internal error: {exc}"}}
         if resp is None:
-            start_response("202 Accepted",
-                           [("Mcp-Session-Id", session_id),
-                            ("Content-Length", "0")])
-            return [b""]
+            # H-06: 202 con cuerpo {} igual que server.py (antes vacio).
+            return _respond(start_response, "202 Accepted", {}, session_id)
         return _respond(start_response, "200 OK", resp, session_id)
     return _respond(start_response, "404 Not Found", {"error": "not found"})
