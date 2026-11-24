@@ -742,6 +742,23 @@ def tool_lucem_log(entry, source=None, confidence=None, tags=None):
             "note": "Registro local de evidencia con hash encadenado. No es validacion externa."}
 
 
+def _deployment_commit():
+    """Commit del despliegue que sirve este codigo (clave aditiva, H-05).
+
+    Prioridad: variable de entorno VERCEL_GIT_COMMIT_SHA (Vercel la expone
+    en el despliegue); si no existe, archivo DEPLOYMENT_COMMIT junto al
+    codigo; si no hay nada, null. Nunca se escribe un commit a mano.
+    """
+    sha = (os.environ.get("VERCEL_GIT_COMMIT_SHA") or "").strip()
+    if sha:
+        return sha
+    try:
+        text = (SERVER_DIR / "DEPLOYMENT_COMMIT").read_text(encoding="utf-8").strip()
+    except (OSError, UnicodeDecodeError):
+        return None
+    return text or None
+
+
 def tool_get_state():
     """Estado real del servidor y del corpus indexado."""
     lucem_entries = 0
@@ -766,6 +783,7 @@ def tool_get_state():
         "limits": LIMITS,
         "license": "Apache-2.0",
         "modes": ["stdio", "http (127.0.0.1, puerto 8765 por defecto)"],
+        "deployment_commit": _deployment_commit(),
     }
 
 
