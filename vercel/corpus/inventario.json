@@ -1,0 +1,2679 @@
+{
+ "fecha_inventario": "2026-11-10",
+ "cuenta_drive": "cuenta conectada a Google Drive (una sola cuenta)",
+ "conteos": {
+  "archivos_totales_busquedas_nombre_Renova_Renovativ_SERESARTE": 833,
+  "archivos_unicos_union_busquedas": 833,
+  "pdf_totales_en_drive_mimeType_pdf": 2295,
+  "pdf_con_nombre_Renova_Renovativ_SERESARTE": 167,
+  "archivos_pdf_con_palabras_clave_Renova_Orcas_ReyFilosofo_autor_press": 79,
+  "libros_pdf_distintos_en_drive": 28,
+  "archivos_pdf_que_corresponden_a_esos_28_libros": 107,
+  "catalogo_v2_fichas": 139,
+  "catalogo_v2_en_preparacion": 121,
+  "catalogo_v2_lectura_publica": 16,
+  "catalogo_v2_disponibles": 2,
+  "catalogo_v2_kind_libro": 96,
+  "chat_11_distintos": 11,
+  "chat_11_con_pdf_exacta_en_drive": 0,
+  "union_obras_chat_mas_drive_qualia_como_una_familia": 38,
+  "union_obras_si_las_dos_ediciones_qualia_cuentan_por_separado": 39
+ },
+ "libros_pdf_distintos_en_drive": [
+  {
+   "obra": "DAO DE JING by ℛenova",
+   "archivos_pdf_en_drive": 22,
+   "contenidos_distintos_nombre_tamano": 13,
+   "representativo": {
+    "name": "DAO_DE_JING_RENOVA_SERESARTE_Edicion_Final_Limpia_v4_INTERIOR.pdf",
+    "id": "1CysmehlSIqAEDehZNvGOR9e97WbOpuSQ",
+    "size": "10693263",
+    "modifiedTime": "2026-09-17T17:41:04.700Z",
+    "webViewLink": "https://drive.google.com/file/d/1CysmehlSIqAEDehZNvGOR9e97WbOpuSQ/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "2026-05-26_DAO_Dao_De_Jing_SERESARTE_Final_Imprenta_v2.0.pdf",
+     "id": "1a7nIpDGVis5mW_Ml8yF2ypYuL-o7rjrd",
+     "size": "10823899",
+     "modifiedTime": "2026-09-17T17:36:34.888Z",
+     "webViewLink": "https://drive.google.com/file/d/1a7nIpDGVis5mW_Ml8yF2ypYuL-o7rjrd/view?usp=drivesdk"
+    },
+    {
+     "name": "2026-05-26_DAO_Dao_De_Jing_SERESARTE_Final_Imprenta_v2.0.pdf",
+     "id": "1hdv0h5bO-PJdkcKtPA-GtWgW9qxtUgzs",
+     "size": "10823899",
+     "modifiedTime": "2026-09-14T18:38:16.844Z",
+     "webViewLink": "https://drive.google.com/file/d/1hdv0h5bO-PJdkcKtPA-GtWgW9qxtUgzs/view?usp=drivesdk"
+    },
+    {
+     "name": "2026-05-26_DAO_Dao_De_Jing_SERESARTE_Final_Imprenta_v3.0.pdf",
+     "id": "1i1UEdM80v7l2sl0BZtVUtHOc_jgYyx8l",
+     "size": "5166211",
+     "modifiedTime": "2026-09-17T17:36:27.824Z",
+     "webViewLink": "https://drive.google.com/file/d/1i1UEdM80v7l2sl0BZtVUtHOc_jgYyx8l/view?usp=drivesdk"
+    },
+    {
+     "name": "2026-05-26_DAO_Dao_De_Jing_SERESARTE_Final_Imprenta_v3.0.pdf",
+     "id": "11_Y5dGn-77Ondkifle2110Q-PGcmQxDM",
+     "size": "5166211",
+     "modifiedTime": "2026-09-14T18:38:10.207Z",
+     "webViewLink": "https://drive.google.com/file/d/11_Y5dGn-77Ondkifle2110Q-PGcmQxDM/view?usp=drivesdk"
+    },
+    {
+     "name": "2026-07-09_DAO_Dao_De_Jing_SERESARTE_ReyFilosofo_Edicion_Definitiva_v4.0_DIGITAL.pdf",
+     "id": "1O4nMLnCu3ItwRuT_dRFWHFLJB70QPIBT",
+     "size": "10214186",
+     "modifiedTime": "2026-09-14T18:37:57.062Z",
+     "webViewLink": "https://drive.google.com/file/d/1O4nMLnCu3ItwRuT_dRFWHFLJB70QPIBT/view?usp=drivesdk"
+    },
+    {
+     "name": "2026-07-09_DAO_Dao_De_Jing_SERESARTE_ReyFilosofo_Edicion_Definitiva_v4.0_IMPRENTA.pdf",
+     "id": "111ZS9UHACK0T8XQPdgB7dsdPzaHFPNfM",
+     "size": "10268654",
+     "modifiedTime": "2026-09-14T18:34:28.268Z",
+     "webViewLink": "https://drive.google.com/file/d/111ZS9UHACK0T8XQPdgB7dsdPzaHFPNfM/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Cubierta_Con_Solapas_v3.pdf",
+     "id": "1uY8u6FU9-78beeuyYH4ap2EjWXAj7Val",
+     "size": "8678394",
+     "modifiedTime": "2026-09-17T17:40:06.745Z",
+     "webViewLink": "https://drive.google.com/file/d/1uY8u6FU9-78beeuyYH4ap2EjWXAj7Val/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Cubierta_Con_Solapas_v3.pdf",
+     "id": "1f4QWv1hwEnkGoVqKoOPBh0eP_hZimTA0",
+     "size": "8678394",
+     "modifiedTime": "2026-09-15T16:56:30.972Z",
+     "webViewLink": "https://drive.google.com/file/d/1f4QWv1hwEnkGoVqKoOPBh0eP_hZimTA0/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Cubierta_Con_Solapas_v4.pdf",
+     "id": "1ubsgYEv5CU_9dIU9M8bDUPON1db5QFNs",
+     "size": "6785976",
+     "modifiedTime": "2026-09-17T17:41:12.860Z",
+     "webViewLink": "https://drive.google.com/file/d/1ubsgYEv5CU_9dIU9M8bDUPON1db5QFNs/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Cubierta_Con_Solapas_v4.pdf",
+     "id": "1AOnwtpq9W3UNZaujikKXKYyDfSeavzEQ",
+     "size": "6785976",
+     "modifiedTime": "2026-09-15T16:56:38.876Z",
+     "webViewLink": "https://drive.google.com/file/d/1AOnwtpq9W3UNZaujikKXKYyDfSeavzEQ/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Cubierta_KDP_Paperback_v3.pdf",
+     "id": "1SpmNir4W6nlWBz0EwrFSXFA-xIFPfYpJ",
+     "size": "8677633",
+     "modifiedTime": "2026-09-17T17:40:16.235Z",
+     "webViewLink": "https://drive.google.com/file/d/1SpmNir4W6nlWBz0EwrFSXFA-xIFPfYpJ/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Cubierta_KDP_Paperback_v3.pdf",
+     "id": "1IgwW1eecEgUsuFLC9ZzMdiTI6jn6S9Xf",
+     "size": "8677633",
+     "modifiedTime": "2026-09-15T16:56:48.420Z",
+     "webViewLink": "https://drive.google.com/file/d/1IgwW1eecEgUsuFLC9ZzMdiTI6jn6S9Xf/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Cubierta_KDP_Paperback_v4.pdf",
+     "id": "1Msl1XkUyJGh5MdXtxVSmCqqKcCl7cGce",
+     "size": "6785215",
+     "modifiedTime": "2026-09-14T18:38:33.889Z",
+     "webViewLink": "https://drive.google.com/file/d/1Msl1XkUyJGh5MdXtxVSmCqqKcCl7cGce/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Edicion_Final_Limpia_v4_INTERIOR.pdf",
+     "id": "1CysmehlSIqAEDehZNvGOR9e97WbOpuSQ",
+     "size": "10693263",
+     "modifiedTime": "2026-09-17T17:41:04.700Z",
+     "webViewLink": "https://drive.google.com/file/d/1CysmehlSIqAEDehZNvGOR9e97WbOpuSQ/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Edicion_Final_Limpia_v4_INTERIOR.pdf",
+     "id": "1VuPs7boTlZ6QY67yXsCETqCSnJT5ysGI",
+     "size": "10693263",
+     "modifiedTime": "2026-09-15T16:56:21.258Z",
+     "webViewLink": "https://drive.google.com/file/d/1VuPs7boTlZ6QY67yXsCETqCSnJT5ysGI/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Edicion_Magistral_Final_v3_INTERIOR.pdf",
+     "id": "1u7dIjXknDZuhOK-55NXEApxjVvkqSzeF",
+     "size": "13798636",
+     "modifiedTime": "2026-09-17T17:36:49.426Z",
+     "webViewLink": "https://drive.google.com/file/d/1u7dIjXknDZuhOK-55NXEApxjVvkqSzeF/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_RENOVA_SERESARTE_Edicion_Magistral_Final_v3_INTERIOR.pdf",
+     "id": "1DSCOrJefZOTtAZ_QeQiV3xyKep5d-o9s",
+     "size": "13798636",
+     "modifiedTime": "2026-09-14T18:38:41.961Z",
+     "webViewLink": "https://drive.google.com/file/d/1DSCOrJefZOTtAZ_QeQiV3xyKep5d-o9s/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_by_RENOVA_SERESARTE_ReyFilosofo_Edicion_Definitiva_Hibrida_v1.pdf",
+     "id": "1v6SqzCxNnK_Vc3kbr-C0k5Bnj6bfPeS0",
+     "size": "7379523",
+     "modifiedTime": "2026-09-17T17:36:41.868Z",
+     "webViewLink": "https://drive.google.com/file/d/1v6SqzCxNnK_Vc3kbr-C0k5Bnj6bfPeS0/view?usp=drivesdk"
+    },
+    {
+     "name": "DAO_DE_JING_by_RENOVA_SERESARTE_ReyFilosofo_Edicion_Definitiva_Hibrida_v1.pdf",
+     "id": "1XsGMS5BwpDt_U2drh5RIgETFk8jEILQa",
+     "size": "7379523",
+     "modifiedTime": "2026-09-14T18:38:27.721Z",
+     "webViewLink": "https://drive.google.com/file/d/1XsGMS5BwpDt_U2drh5RIgETFk8jEILQa/view?usp=drivesdk"
+    },
+    {
+     "name": "Dao_De_Jing_SERESARTE_ReyFilosofo_Edicion_Troncal_Ampliada.pdf",
+     "id": "1wlfpUXS2rOH8-nQfsB4STF-vWsRG-fPs",
+     "size": "2069598",
+     "modifiedTime": "2026-09-14T18:34:56.300Z",
+     "webViewLink": "https://drive.google.com/file/d/1wlfpUXS2rOH8-nQfsB4STF-vWsRG-fPs/view?usp=drivesdk"
+    },
+    {
+     "name": "Dao_De_Jing_SERESARTE_ReyFilosofo_Edicion_Troncal_Ampliada.pdf",
+     "id": "1SsiYorFjf9EutFKDyvfj7k9ZDcyNIgRt",
+     "size": "2069598",
+     "modifiedTime": "2026-05-22T21:24:38.432Z",
+     "webViewLink": "https://drive.google.com/file/d/1SsiYorFjf9EutFKDyvfj7k9ZDcyNIgRt/view?usp=drivesdk"
+    },
+    {
+     "name": "Programa_Comercial_Dao_De_Jing_Carlos_Jonathan_Gonzalez.pdf",
+     "id": "1NUBMMNyiANTWoTUQl2C6mt9fyNRH87jT",
+     "size": "161674",
+     "modifiedTime": "2026-09-17T17:42:47.650Z",
+     "webViewLink": "https://drive.google.com/file/d/1NUBMMNyiANTWoTUQl2C6mt9fyNRH87jT/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'DAO DE JING by ℛenova' (Libro, en preparación)."
+  },
+  {
+   "obra": "El Dao de la AI",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_AI_RENOVA_PRESS_SERESARTE_Edicion_Final.pdf",
+    "id": "1UZG0fUqitu2oXeQmYm6q3vqA7pV3GWLK",
+    "size": "1292079",
+    "modifiedTime": "2026-09-14T18:35:42.190Z",
+    "webViewLink": "https://drive.google.com/file/d/1UZG0fUqitu2oXeQmYm6q3vqA7pV3GWLK/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_AI_RENOVA_PRESS_SERESARTE_Edicion_Final.pdf",
+     "id": "1UZG0fUqitu2oXeQmYm6q3vqA7pV3GWLK",
+     "size": "1292079",
+     "modifiedTime": "2026-09-14T18:35:42.190Z",
+     "webViewLink": "https://drive.google.com/file/d/1UZG0fUqitu2oXeQmYm6q3vqA7pV3GWLK/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_AI_RENOVA_PRESS_SERESARTE_Edicion_Final.pdf",
+     "id": "1Ixwot5yWUrkhejPDOPmHveoYEe_fXYP0",
+     "size": "1292079",
+     "modifiedTime": "2026-05-22T22:58:33.573Z",
+     "webViewLink": "https://drive.google.com/file/d/1Ixwot5yWUrkhejPDOPmHveoYEe_fXYP0/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'El Dao de la AI' (Ensayo, en preparación)."
+  },
+  {
+   "obra": "El Dao de la Economía",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Economia_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+    "id": "1ut6BR5XRfQj1o71WJfrdzgMxwgCK3yfR",
+    "size": "1381489",
+    "modifiedTime": "2026-09-14T18:35:48.722Z",
+    "webViewLink": "https://drive.google.com/file/d/1ut6BR5XRfQj1o71WJfrdzgMxwgCK3yfR/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Economia_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1ut6BR5XRfQj1o71WJfrdzgMxwgCK3yfR",
+     "size": "1381489",
+     "modifiedTime": "2026-09-14T18:35:48.722Z",
+     "webViewLink": "https://drive.google.com/file/d/1ut6BR5XRfQj1o71WJfrdzgMxwgCK3yfR/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Economia_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1VBBaemdjV8dPOi5gsoyLAIjniRKbYQL1",
+     "size": "1381489",
+     "modifiedTime": "2026-05-22T22:07:25.868Z",
+     "webViewLink": "https://drive.google.com/file/d/1VBBaemdjV8dPOi5gsoyLAIjniRKbYQL1/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Sin ficha con ese título en el catálogo v2."
+  },
+  {
+   "obra": "El Dao de la Educación",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Educacion_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+    "id": "1fd9JBhK4wu12sLy6aExGdLNUoKXDA30m",
+    "size": "4658759",
+    "modifiedTime": "2026-09-14T18:36:24.746Z",
+    "webViewLink": "https://drive.google.com/file/d/1fd9JBhK4wu12sLy6aExGdLNUoKXDA30m/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Educacion_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1fd9JBhK4wu12sLy6aExGdLNUoKXDA30m",
+     "size": "4658759",
+     "modifiedTime": "2026-09-14T18:36:24.746Z",
+     "webViewLink": "https://drive.google.com/file/d/1fd9JBhK4wu12sLy6aExGdLNUoKXDA30m/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Educacion_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1mPWrKC7buM1ZSDL8WIPpvxD21yioelxO",
+     "size": "4658759",
+     "modifiedTime": "2026-05-22T21:47:32.896Z",
+     "webViewLink": "https://drive.google.com/file/d/1mPWrKC7buM1ZSDL8WIPpvxD21yioelxO/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Sin ficha con ese título en el catálogo v2."
+  },
+  {
+   "obra": "El Dao de la Infancia",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Infancia_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+    "id": "19Wt8qTNYUqvOeZxcqO7nmyYRg2eAaUaY",
+    "size": "2897595",
+    "modifiedTime": "2026-09-14T18:36:18.734Z",
+    "webViewLink": "https://drive.google.com/file/d/19Wt8qTNYUqvOeZxcqO7nmyYRg2eAaUaY/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Infancia_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "19Wt8qTNYUqvOeZxcqO7nmyYRg2eAaUaY",
+     "size": "2897595",
+     "modifiedTime": "2026-09-14T18:36:18.734Z",
+     "webViewLink": "https://drive.google.com/file/d/19Wt8qTNYUqvOeZxcqO7nmyYRg2eAaUaY/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Infancia_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "10DQ_zPgkKDyGGPO202GUx63xrIOMzVyN",
+     "size": "2897595",
+     "modifiedTime": "2026-05-22T21:47:24.053Z",
+     "webViewLink": "https://drive.google.com/file/d/10DQ_zPgkKDyGGPO202GUx63xrIOMzVyN/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Sin ficha con ese título en el catálogo v2."
+  },
+  {
+   "obra": "El Dao de la Justicia y el Derecho",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Justicia_y_el_Derecho_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+    "id": "1kx-c_0SjYedea5E--7BDXtV7MxoE1Fim",
+    "size": "4378507",
+    "modifiedTime": "2026-09-14T18:36:37.495Z",
+    "webViewLink": "https://drive.google.com/file/d/1kx-c_0SjYedea5E--7BDXtV7MxoE1Fim/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Justicia_y_el_Derecho_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1kx-c_0SjYedea5E--7BDXtV7MxoE1Fim",
+     "size": "4378507",
+     "modifiedTime": "2026-09-14T18:36:37.495Z",
+     "webViewLink": "https://drive.google.com/file/d/1kx-c_0SjYedea5E--7BDXtV7MxoE1Fim/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Justicia_y_el_Derecho_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1IG1oOwxywE2-zgULCTkHXAXHpJsSay4Z",
+     "size": "4378507",
+     "modifiedTime": "2026-05-22T21:47:32.975Z",
+     "webViewLink": "https://drive.google.com/file/d/1IG1oOwxywE2-zgULCTkHXAXHpJsSay4Z/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Sin ficha con ese título en el catálogo v2."
+  },
+  {
+   "obra": "El Dao de la Mente",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Mente_RENOVA_PRESS_SERESARTE_Edicion_Final.pdf",
+    "id": "1mvCut6YRpkSbmjvDaE_rgM4K05R-0-S3",
+    "size": "944477",
+    "modifiedTime": "2026-09-14T18:35:37.252Z",
+    "webViewLink": "https://drive.google.com/file/d/1mvCut6YRpkSbmjvDaE_rgM4K05R-0-S3/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Mente_RENOVA_PRESS_SERESARTE_Edicion_Final.pdf",
+     "id": "1mvCut6YRpkSbmjvDaE_rgM4K05R-0-S3",
+     "size": "944477",
+     "modifiedTime": "2026-09-14T18:35:37.252Z",
+     "webViewLink": "https://drive.google.com/file/d/1mvCut6YRpkSbmjvDaE_rgM4K05R-0-S3/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Mente_RENOVA_PRESS_SERESARTE_Edicion_Final.pdf",
+     "id": "1XZecXp0CaCqwlGfVUZagnLMteTUyJMZS",
+     "size": "944477",
+     "modifiedTime": "2026-05-22T23:09:00.517Z",
+     "webViewLink": "https://drive.google.com/file/d/1XZecXp0CaCqwlGfVUZagnLMteTUyJMZS/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Sin ficha con ese título en el catálogo v2."
+  },
+  {
+   "obra": "El Dao de la Paz",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Paz_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final_EXTENSA.pdf",
+    "id": "1-WPZqHEISrkJvoZGXd5WUBk0mq8hGKoB",
+    "size": "1296713",
+    "modifiedTime": "2026-09-14T18:36:52.022Z",
+    "webViewLink": "https://drive.google.com/file/d/1-WPZqHEISrkJvoZGXd5WUBk0mq8hGKoB/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Paz_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final_EXTENSA.pdf",
+     "id": "1-WPZqHEISrkJvoZGXd5WUBk0mq8hGKoB",
+     "size": "1296713",
+     "modifiedTime": "2026-09-14T18:36:52.022Z",
+     "webViewLink": "https://drive.google.com/file/d/1-WPZqHEISrkJvoZGXd5WUBk0mq8hGKoB/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Paz_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final_EXTENSA.pdf",
+     "id": "1t5h6rLw9ePjPFz5fQHkOY4SqDz0ADTfl",
+     "size": "1296713",
+     "modifiedTime": "2026-05-22T21:46:52.849Z",
+     "webViewLink": "https://drive.google.com/file/d/1t5h6rLw9ePjPFz5fQHkOY4SqDz0ADTfl/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'Dao de la Paz' (Libro, en preparación)."
+  },
+  {
+   "obra": "El Dao de la Política",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Politica_RENOVA_PRESS_SERESARTE_Edicion_Monumental_V2.pdf",
+    "id": "1IchbMYS0BueTNp5laRnMI2SsLdHM5FDK",
+    "size": "2951737",
+    "modifiedTime": "2026-09-14T18:36:43.850Z",
+    "webViewLink": "https://drive.google.com/file/d/1IchbMYS0BueTNp5laRnMI2SsLdHM5FDK/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Politica_RENOVA_PRESS_SERESARTE_Edicion_Monumental_V2.pdf",
+     "id": "1IchbMYS0BueTNp5laRnMI2SsLdHM5FDK",
+     "size": "2951737",
+     "modifiedTime": "2026-09-14T18:36:43.850Z",
+     "webViewLink": "https://drive.google.com/file/d/1IchbMYS0BueTNp5laRnMI2SsLdHM5FDK/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Politica_RENOVA_PRESS_SERESARTE_Edicion_Monumental_V2.pdf",
+     "id": "1dL5yVNlYFpWKA5PEP6ewuqXT5W_X7d6A",
+     "size": "2951737",
+     "modifiedTime": "2026-05-22T21:56:00.925Z",
+     "webViewLink": "https://drive.google.com/file/d/1dL5yVNlYFpWKA5PEP6ewuqXT5W_X7d6A/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'Dao de la Política' (Libro, en preparación)."
+  },
+  {
+   "obra": "El Dao de la Renova",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Renova_RENOVA_PRESS_SERESARTE_V2_CORREGIDA_AMPLIADA.pdf",
+    "id": "1a_-6fZg4Cww9GrGrEmx8t0L5tnOh-IAo",
+    "size": "4040874",
+    "modifiedTime": "2026-09-14T18:37:25.404Z",
+    "webViewLink": "https://drive.google.com/file/d/1a_-6fZg4Cww9GrGrEmx8t0L5tnOh-IAo/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Renova_RENOVA_PRESS_SERESARTE_V2_CORREGIDA_AMPLIADA.pdf",
+     "id": "1a_-6fZg4Cww9GrGrEmx8t0L5tnOh-IAo",
+     "size": "4040874",
+     "modifiedTime": "2026-09-14T18:37:25.404Z",
+     "webViewLink": "https://drive.google.com/file/d/1a_-6fZg4Cww9GrGrEmx8t0L5tnOh-IAo/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Renova_RENOVA_PRESS_SERESARTE_V2_CORREGIDA_AMPLIADA.pdf",
+     "id": "1dbh7EGRxmehLkZqjmKnNAzmIooIz8ESO",
+     "size": "4040874",
+     "modifiedTime": "2026-05-22T21:47:27.135Z",
+     "webViewLink": "https://drive.google.com/file/d/1dbh7EGRxmehLkZqjmKnNAzmIooIz8ESO/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Sin ficha con ese título en el catálogo v2 (existe la ficha distinta 'El Tao de la Renova', en preparación)."
+  },
+  {
+   "obra": "El Dao de la Tierra",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Tierra_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+    "id": "1hThNzRvqwJaeoPCeL4WPNAUkx5jig-lB",
+    "size": "4590544",
+    "modifiedTime": "2026-09-14T18:36:30.379Z",
+    "webViewLink": "https://drive.google.com/file/d/1hThNzRvqwJaeoPCeL4WPNAUkx5jig-lB/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Tierra_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1hThNzRvqwJaeoPCeL4WPNAUkx5jig-lB",
+     "size": "4590544",
+     "modifiedTime": "2026-09-14T18:36:30.379Z",
+     "webViewLink": "https://drive.google.com/file/d/1hThNzRvqwJaeoPCeL4WPNAUkx5jig-lB/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Tierra_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1AkpZUGLl4uCOfmV5nwSorkXS30GnjvPf",
+     "size": "4590544",
+     "modifiedTime": "2026-05-22T21:47:33.459Z",
+     "webViewLink": "https://drive.google.com/file/d/1AkpZUGLl4uCOfmV5nwSorkXS30GnjvPf/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Sin ficha con ese título en el catálogo v2."
+  },
+  {
+   "obra": "El Dao de la Verdad",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Verdad_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+    "id": "1IL2fmjFb6waMUDHLG8IUxlA1QvHsyjk9",
+    "size": "2897400",
+    "modifiedTime": "2026-09-14T18:37:09.176Z",
+    "webViewLink": "https://drive.google.com/file/d/1IL2fmjFb6waMUDHLG8IUxlA1QvHsyjk9/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Verdad_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1IL2fmjFb6waMUDHLG8IUxlA1QvHsyjk9",
+     "size": "2897400",
+     "modifiedTime": "2026-09-14T18:37:09.176Z",
+     "webViewLink": "https://drive.google.com/file/d/1IL2fmjFb6waMUDHLG8IUxlA1QvHsyjk9/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Verdad_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1WezC-0dN3PYCb1gj6ryL5D8zeF27GB5g",
+     "size": "2897400",
+     "modifiedTime": "2026-05-22T21:47:03.316Z",
+     "webViewLink": "https://drive.google.com/file/d/1WezC-0dN3PYCb1gj6ryL5D8zeF27GB5g/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Sin ficha con ese título en el catálogo v2."
+  },
+  {
+   "obra": "El Dao del Arte",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_del_Arte_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+    "id": "1eKJS84n8TmgdIfIGUnJ017GSrygqYs1F",
+    "size": "1514088",
+    "modifiedTime": "2026-09-14T18:36:59.734Z",
+    "webViewLink": "https://drive.google.com/file/d/1eKJS84n8TmgdIfIGUnJ017GSrygqYs1F/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_del_Arte_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1eKJS84n8TmgdIfIGUnJ017GSrygqYs1F",
+     "size": "1514088",
+     "modifiedTime": "2026-09-14T18:36:59.734Z",
+     "webViewLink": "https://drive.google.com/file/d/1eKJS84n8TmgdIfIGUnJ017GSrygqYs1F/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_del_Arte_RENOVA_PRESS_SERESARTE_Edicion_Monumental_Final.pdf",
+     "id": "1PGFhLqTnHu6CQ6KHNrLFXKZ91qpajZo8",
+     "size": "1514088",
+     "modifiedTime": "2026-05-22T21:47:17.023Z",
+     "webViewLink": "https://drive.google.com/file/d/1PGFhLqTnHu6CQ6KHNrLFXKZ91qpajZo8/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'El Dao del Arte' (Ensayo, en preparación)."
+  },
+  {
+   "obra": "El Dao de la Vida",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Vida_Edicion_Monumental_SERESARTE_V3.pdf",
+    "id": "11TKTj3eFkwzCBdqzVcDFYOBGTsW4geR2",
+    "size": "3467673",
+    "modifiedTime": "2026-09-14T18:35:25.647Z",
+    "webViewLink": "https://drive.google.com/file/d/11TKTj3eFkwzCBdqzVcDFYOBGTsW4geR2/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Vida_Edicion_Monumental_SERESARTE_V3.pdf",
+     "id": "11TKTj3eFkwzCBdqzVcDFYOBGTsW4geR2",
+     "size": "3467673",
+     "modifiedTime": "2026-09-14T18:35:25.647Z",
+     "webViewLink": "https://drive.google.com/file/d/11TKTj3eFkwzCBdqzVcDFYOBGTsW4geR2/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Vida_Edicion_Monumental_SERESARTE_V3.pdf",
+     "id": "1xDN2c2XW6dyK8M4sumdljkr7BkCmWlGd",
+     "size": "3467673",
+     "modifiedTime": "2026-05-22T21:56:02.210Z",
+     "webViewLink": "https://drive.google.com/file/d/1xDN2c2XW6dyK8M4sumdljkr7BkCmWlGd/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'El Dao de la Vida · Edición Monumental SERESARTE' (Libro, en preparación)."
+  },
+  {
+   "obra": "El Dao de los Bebés",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_los_Bebes_edicion_integral_SERESARTE.pdf",
+    "id": "1MA8TDxEnGushfmdFcPSMeYP6TaWiBhzC",
+    "size": "1986886",
+    "modifiedTime": "2026-09-14T18:36:12.123Z",
+    "webViewLink": "https://drive.google.com/file/d/1MA8TDxEnGushfmdFcPSMeYP6TaWiBhzC/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_los_Bebes_edicion_integral_SERESARTE.pdf",
+     "id": "1MA8TDxEnGushfmdFcPSMeYP6TaWiBhzC",
+     "size": "1986886",
+     "modifiedTime": "2026-09-14T18:36:12.123Z",
+     "webViewLink": "https://drive.google.com/file/d/1MA8TDxEnGushfmdFcPSMeYP6TaWiBhzC/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_los_Bebes_edicion_integral_SERESARTE.pdf",
+     "id": "1zzTeVrPx38NwYQ6jic62ZC7NSF2mas3l",
+     "size": "1986886",
+     "modifiedTime": "2026-05-22T21:55:41.724Z",
+     "webViewLink": "https://drive.google.com/file/d/1zzTeVrPx38NwYQ6jic62ZC7NSF2mas3l/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'El Dao de los Bebés' (Libro, en preparación)."
+  },
+  {
+   "obra": "El Dao de la Muerte",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Dao_de_la_Muerte_Edicion_Maestra_Limpia_SERESARTE_v2.pdf",
+    "id": "1iIWkY89xEgXl0a23u8dDJGB_aXSU-ghp",
+    "size": "2163080",
+    "modifiedTime": "2026-09-14T18:35:31.496Z",
+    "webViewLink": "https://drive.google.com/file/d/1iIWkY89xEgXl0a23u8dDJGB_aXSU-ghp/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Muerte_Edicion_Maestra_Limpia_SERESARTE_v2.pdf",
+     "id": "1iIWkY89xEgXl0a23u8dDJGB_aXSU-ghp",
+     "size": "2163080",
+     "modifiedTime": "2026-09-14T18:35:31.496Z",
+     "webViewLink": "https://drive.google.com/file/d/1iIWkY89xEgXl0a23u8dDJGB_aXSU-ghp/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Muerte_Edicion_Maestra_Limpia_SERESARTE_v2.pdf",
+     "id": "1JgisEOywi4jSf33MX5oYA7pLzZNCxtce",
+     "size": "2163080",
+     "modifiedTime": "2026-05-22T21:56:01.599Z",
+     "webViewLink": "https://drive.google.com/file/d/1JgisEOywi4jSf33MX5oYA7pLzZNCxtce/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'Dao de la Muerte' (Libro, en preparación)."
+  },
+  {
+   "obra": "El Dao de la Diplomacia",
+   "archivos_pdf_en_drive": 4,
+   "contenidos_distintos_nombre_tamano": 2,
+   "representativo": {
+    "name": "El_Dao_de_la_Diplomacia_version_final_corregida_SERESARTE.pdf",
+    "id": "1kT_1TWM7IScOIR_uTqbm_wqi4O58etYz",
+    "size": "16972403",
+    "modifiedTime": "2026-09-17T17:47:29.800Z",
+    "webViewLink": "https://drive.google.com/file/d/1kT_1TWM7IScOIR_uTqbm_wqi4O58etYz/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_la_Diplomacia_version_final_corregida_SERESARTE.pdf",
+     "id": "1kT_1TWM7IScOIR_uTqbm_wqi4O58etYz",
+     "size": "16972403",
+     "modifiedTime": "2026-09-17T17:47:29.800Z",
+     "webViewLink": "https://drive.google.com/file/d/1kT_1TWM7IScOIR_uTqbm_wqi4O58etYz/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Diplomacia_version_final_corregida_SERESARTE.pdf",
+     "id": "1mAwKY2YqGUZXt2b7kGNhFoj8BND0KHCM",
+     "size": "16972403",
+     "modifiedTime": "2026-09-15T16:57:12.161Z",
+     "webViewLink": "https://drive.google.com/file/d/1mAwKY2YqGUZXt2b7kGNhFoj8BND0KHCM/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Diplomacia_version_maestra_extensa_SERESARTE.pdf",
+     "id": "1emxqxI_3JChjRO_VtNKzn_jcqsa9Rclt",
+     "size": "16917361",
+     "modifiedTime": "2026-09-14T18:35:53.924Z",
+     "webViewLink": "https://drive.google.com/file/d/1emxqxI_3JChjRO_VtNKzn_jcqsa9Rclt/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_la_Diplomacia_version_maestra_extensa_SERESARTE.pdf",
+     "id": "1doZ5x90h4Vpl2_6Yx4yKKtEy_DPtplBu",
+     "size": "16917361",
+     "modifiedTime": "2026-05-22T21:59:02.723Z",
+     "webViewLink": "https://drive.google.com/file/d/1doZ5x90h4Vpl2_6Yx4yKKtEy_DPtplBu/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'El Dao de la Diplomacia' (Libro, en preparación)."
+  },
+  {
+   "obra": "El Dao de Abraham",
+   "archivos_pdf_en_drive": 3,
+   "contenidos_distintos_nombre_tamano": 2,
+   "representativo": {
+    "name": "El_Dao_de_Abraham_SERESARTE_Edicion_Final_Extensa.pdf",
+    "id": "19jr9lxySQJaSAjqH4I78TQeYe3loUt-d",
+    "size": "2648620",
+    "modifiedTime": "2026-09-14T18:42:49.279Z",
+    "webViewLink": "https://drive.google.com/file/d/19jr9lxySQJaSAjqH4I78TQeYe3loUt-d/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Dao_de_Abraham_Camino_Nombre_Ley_y_Silencio_Edicion_Unitaria_Final_2026_INTERIORES.pdf",
+     "id": "11kjKtsTWjNwExWcwU6N1HlIMUmshMFtf",
+     "size": "6069226",
+     "modifiedTime": "2026-09-14T18:37:46.345Z",
+     "webViewLink": "https://drive.google.com/file/d/11kjKtsTWjNwExWcwU6N1HlIMUmshMFtf/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_Abraham_Camino_Nombre_Ley_y_Silencio_Edicion_Unitaria_Final_2026_INTERIORES.pdf",
+     "id": "1kIi8Az8Rhy1XPJoXJaPRgHppG34SU95s",
+     "size": "6069226",
+     "modifiedTime": "2026-05-22T21:47:35.718Z",
+     "webViewLink": "https://drive.google.com/file/d/1kIi8Az8Rhy1XPJoXJaPRgHppG34SU95s/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Dao_de_Abraham_SERESARTE_Edicion_Final_Extensa.pdf",
+     "id": "19jr9lxySQJaSAjqH4I78TQeYe3loUt-d",
+     "size": "2648620",
+     "modifiedTime": "2026-09-14T18:42:49.279Z",
+     "webViewLink": "https://drive.google.com/file/d/19jr9lxySQJaSAjqH4I78TQeYe3loUt-d/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Sin ficha con ese título en el catálogo v2."
+  },
+  {
+   "obra": "El Tao de los animales",
+   "archivos_pdf_en_drive": 9,
+   "contenidos_distintos_nombre_tamano": 8,
+   "representativo": {
+    "name": "El_Tao_de_los_animales_edicion_final.pdf",
+    "id": "1EzPng2lhUBpk9EuFeiCUIVkKDdmsOCRH",
+    "size": "1031440",
+    "modifiedTime": "2026-09-14T18:36:03.410Z",
+    "webViewLink": "https://drive.google.com/file/d/1EzPng2lhUBpk9EuFeiCUIVkKDdmsOCRH/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Tao_de_los_animales_CUBIERTA_COMPLETA_KDP_7x10_CREMA_80pag_v1_0.pdf",
+     "id": "1gqMl1bKvLWx4UEGCdjgTl40NgNW9gOGw",
+     "size": "11032765",
+     "modifiedTime": "2026-09-14T18:49:05.371Z",
+     "webViewLink": "https://drive.google.com/file/d/1gqMl1bKvLWx4UEGCdjgTl40NgNW9gOGw/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Tao_de_los_animales_CUBIERTA_EXTENDIDA_6x9_280pp_SERESARTE_PRESS.pdf",
+     "id": "1xsBRj11-r1o92pJsr5nP9nOydtApIubd",
+     "size": "5021531",
+     "modifiedTime": "2026-09-15T16:57:54.070Z",
+     "webViewLink": "https://drive.google.com/file/d/1xsBRj11-r1o92pJsr5nP9nOydtApIubd/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Tao_de_los_animales_EDICION_111_COMPLETA_LECTURA_SERESARTE_PRESS.pdf",
+     "id": "1HElh16dkFOBuX8vEqjfmC-Wn3TjdxFFF",
+     "size": "2656858",
+     "modifiedTime": "2026-09-14T18:50:19.435Z",
+     "webViewLink": "https://drive.google.com/file/d/1HElh16dkFOBuX8vEqjfmC-Wn3TjdxFFF/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Tao_de_los_animales_INTERIORES_7x10_SERESARTE_PRESS_v1_0.pdf",
+     "id": "1P6hHyBQ0BBnOshr6FzA7oa3qrF1in5QT",
+     "size": "1616300",
+     "modifiedTime": "2026-09-14T18:48:55.856Z",
+     "webViewLink": "https://drive.google.com/file/d/1P6hHyBQ0BBnOshr6FzA7oa3qrF1in5QT/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Tao_de_los_animales_INTERIORES_POD_6x9_280pp_SERESARTE_PRESS.pdf",
+     "id": "13K0rwiJH__6wbRWbPdbLhHz8wXlkDfei",
+     "size": "1651198",
+     "modifiedTime": "2026-09-14T18:50:30.140Z",
+     "webViewLink": "https://drive.google.com/file/d/13K0rwiJH__6wbRWbPdbLhHz8wXlkDfei/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Tao_de_los_animales_LIBRO_COMPLETO_FINAL_SERESARTE_PRESS_v1_0.pdf",
+     "id": "1woBMkPLMB0rqgNbzU-MSCa684NC8kkXz",
+     "size": "1821363",
+     "modifiedTime": "2026-09-14T18:48:45.865Z",
+     "webViewLink": "https://drive.google.com/file/d/1woBMkPLMB0rqgNbzU-MSCa684NC8kkXz/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Tao_de_los_animales_edicion_final.pdf",
+     "id": "1EzPng2lhUBpk9EuFeiCUIVkKDdmsOCRH",
+     "size": "1031440",
+     "modifiedTime": "2026-09-14T18:36:03.410Z",
+     "webViewLink": "https://drive.google.com/file/d/1EzPng2lhUBpk9EuFeiCUIVkKDdmsOCRH/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Tao_de_los_animales_edicion_final.pdf",
+     "id": "1GrFZRaQcv4hNcEZ80cvIAWZxrDtBYiQE",
+     "size": "1031440",
+     "modifiedTime": "2026-05-22T21:57:27.374Z",
+     "webViewLink": "https://drive.google.com/file/d/1GrFZRaQcv4hNcEZ80cvIAWZxrDtBYiQE/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Tao_de_los_animales_manuscrito_editorial.pdf",
+     "id": "1PiogSOMIKQsVHgINNzHy1H7kc1beKgh3",
+     "size": "781018",
+     "modifiedTime": "2026-09-15T16:57:30.651Z",
+     "webViewLink": "https://drive.google.com/file/d/1PiogSOMIKQsVHgINNzHy1H7kc1beKgh3/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'El Tao de los animales' (Libro, en preparación)."
+  },
+  {
+   "obra": "El Tao de los Negocios",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "El_Tao_de_los_Negocios_Edicion_Final_SERESARTE.pdf",
+    "id": "1V-s6vSBQLKsYzoXuTF9SuxDT7pZkkB4O",
+    "size": "1361720",
+    "modifiedTime": "2026-09-14T18:37:17.277Z",
+    "webViewLink": "https://drive.google.com/file/d/1V-s6vSBQLKsYzoXuTF9SuxDT7pZkkB4O/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "El_Tao_de_los_Negocios_Edicion_Final_SERESARTE.pdf",
+     "id": "1V-s6vSBQLKsYzoXuTF9SuxDT7pZkkB4O",
+     "size": "1361720",
+     "modifiedTime": "2026-09-14T18:37:17.277Z",
+     "webViewLink": "https://drive.google.com/file/d/1V-s6vSBQLKsYzoXuTF9SuxDT7pZkkB4O/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Tao_de_los_Negocios_Edicion_Final_SERESARTE.pdf",
+     "id": "11IGTQzXzFT7f8ixNtqIOgugSXZj6QOI4",
+     "size": "1361720",
+     "modifiedTime": "2026-05-22T21:55:37.519Z",
+     "webViewLink": "https://drive.google.com/file/d/11IGTQzXzFT7f8ixNtqIOgugSXZj6QOI4/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'Dao de los Negocios / Dao del Emprendimiento' (en preparación)."
+  },
+  {
+   "obra": "Tao / Torah / Talmud / Zohar (Mi edición propia del Tao)",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "Tao_Torah_Talmud_Zohar_Edicion_Final_SERESARTE.pdf",
+    "id": "1jOYvagAt-XcftN0o3gxAijxxwmgyuxn-",
+    "size": "793291",
+    "modifiedTime": "2026-09-14T18:37:35.383Z",
+    "webViewLink": "https://drive.google.com/file/d/1jOYvagAt-XcftN0o3gxAijxxwmgyuxn-/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "Tao_Torah_Talmud_Zohar_Edicion_Final_SERESARTE.pdf",
+     "id": "1jOYvagAt-XcftN0o3gxAijxxwmgyuxn-",
+     "size": "793291",
+     "modifiedTime": "2026-09-14T18:37:35.383Z",
+     "webViewLink": "https://drive.google.com/file/d/1jOYvagAt-XcftN0o3gxAijxxwmgyuxn-/view?usp=drivesdk"
+    },
+    {
+     "name": "Tao_Torah_Talmud_Zohar_Edicion_Final_SERESARTE.pdf",
+     "id": "1A5vudXHwfn5Je6bLRaFh1IPSWZ3GBa6k",
+     "size": "793291",
+     "modifiedTime": "2026-05-22T21:55:20.688Z",
+     "webViewLink": "https://drive.google.com/file/d/1A5vudXHwfn5Je6bLRaFh1IPSWZ3GBa6k/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'Mi edición propia del Tao / Tao dialogado con Talmud, Zohar y Torah' (Libro, en preparación)."
+  },
+  {
+   "obra": "El Secreto de las Orcas",
+   "archivos_pdf_en_drive": 15,
+   "contenidos_distintos_nombre_tamano": 15,
+   "representativo": {
+    "name": "Secreto_de_Orcas_REGINA_TONA_EDICION_FINAL_PERSONALIZADA_4K.pdf",
+    "id": "1fBpRWdZ7YMQwEKp3q2bNTe9mHKDimoQd",
+    "size": "66853838",
+    "modifiedTime": "2026-10-21T21:23:35.376Z",
+    "webViewLink": "https://drive.google.com/file/d/1fBpRWdZ7YMQwEKp3q2bNTe9mHKDimoQd/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "BACKUP pre-2026-10-19 — Secreto de Orcas.RF.pdf",
+     "id": "1B1QnIn0XLdaxqVcD8p7YBEbhGLvfw0x8",
+     "size": "78296562",
+     "modifiedTime": "2026-10-20T01:48:01.442Z",
+     "webViewLink": "https://drive.google.com/file/d/1B1QnIn0XLdaxqVcD8p7YBEbhGLvfw0x8/view?usp=drivesdk"
+    },
+    {
+     "name": "EL_SECRETO_DE_LAS_ORCAS_GENERAL_ES_v1.0_REVISADO_2026-10-29.pdf",
+     "id": "16RJRJtUR1_e_m7sDtTz5tolf8E5H4wN6",
+     "size": "28859574",
+     "modifiedTime": "2026-10-29T18:13:04.558Z",
+     "webViewLink": "https://drive.google.com/file/d/16RJRJtUR1_e_m7sDtTz5tolf8E5H4wN6/view?usp=drivesdk"
+    },
+    {
+     "name": "El Secreto de las Orcas — Edición Solidaria — Rey Filósofo × SERESARTE.pdf",
+     "id": "1Jr7RzR7s49DaD38SeavaRKb80hkwyPfc",
+     "size": "51167663",
+     "modifiedTime": "2026-08-30T19:38:54.452Z",
+     "webViewLink": "https://drive.google.com/file/d/1Jr7RzR7s49DaD38SeavaRKb80hkwyPfc/view?usp=drivesdk"
+    },
+    {
+     "name": "El Secreto de las Orcas — Edición Solidaria — Rey Filósofo × SERESARTE.pdf",
+     "id": "1PQDMPl2Wjk8q2xO_rdxlm4yz9EaLU8jC",
+     "size": "21984218",
+     "modifiedTime": "2026-08-29T00:21:01.719Z",
+     "webViewLink": "https://drive.google.com/file/d/1PQDMPl2Wjk8q2xO_rdxlm4yz9EaLU8jC/view?usp=drivesdk"
+    },
+    {
+     "name": "El Secreto de las Orcas — Edición Solidaria — Ricardo Navarro Benitez.pdf",
+     "id": "1pV5mpK4-gHmkPxPofq0AfnFzdTz0t-J4",
+     "size": "51167663",
+     "modifiedTime": "2026-08-29T22:38:53.703Z",
+     "webViewLink": "https://drive.google.com/file/d/1pV5mpK4-gHmkPxPofq0AfnFzdTz0t-J4/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Secreto_de_las_Orcas_MARIA_SOFIA_EDICION_PERSONALIZADA_4K_FINAL.pdf",
+     "id": "1aWWzaJHkxWQeiTb_iYIot6lcvyPbv5T9",
+     "size": "84945347",
+     "modifiedTime": "2026-10-23T20:56:07.959Z",
+     "webViewLink": "https://drive.google.com/file/d/1aWWzaJHkxWQeiTb_iYIot6lcvyPbv5T9/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Secreto_de_las_Orcas_Olguis_y_Maki_PA_1-1_4K.pdf",
+     "id": "1I-shGDEIBi2eS-In0kW_KoFLmzJzyvUr",
+     "size": "55884997",
+     "modifiedTime": "2026-09-14T05:32:33.027Z",
+     "webViewLink": "https://drive.google.com/file/d/1I-shGDEIBi2eS-In0kW_KoFLmzJzyvUr/view?usp=drivesdk"
+    },
+    {
+     "name": "El_Secreto_de_las_Orcas_Olguis_y_Maki_PA_1-1_4K_FINAL.pdf",
+     "id": "1rRGxe7A1OkwPqogi2a-i_0k2fKpIgD16",
+     "size": "58952817",
+     "modifiedTime": "2026-09-14T14:51:04.105Z",
+     "webViewLink": "https://drive.google.com/file/d/1rRGxe7A1OkwPqogi2a-i_0k2fKpIgD16/view?usp=drivesdk"
+    },
+    {
+     "name": "SECRETO_DE_ORCAS_GENERAL_ES_2026_DISTRIBUCION_PRIVADA_PDF",
+     "id": "15c3SwH41JZS20tNFp2ZzAWa1ROUQWOm2",
+     "size": "28859574",
+     "modifiedTime": "2026-10-29T20:15:32.859Z",
+     "webViewLink": "https://drive.google.com/file/d/15c3SwH41JZS20tNFp2ZzAWa1ROUQWOm2/view?usp=drivesdk"
+    },
+    {
+     "name": "Secreto de Orcas — Edición Digital Solidaria 4K.pdf",
+     "id": "1_LJ-Cvnnlnxkck5bUGG0wJm5yld59SsO",
+     "size": "52641212",
+     "modifiedTime": "2026-10-22T07:09:33.524Z",
+     "webViewLink": "https://drive.google.com/file/d/1_LJ-Cvnnlnxkck5bUGG0wJm5yld59SsO/view?usp=drivesdk"
+    },
+    {
+     "name": "Secreto de Orcas — MASTER 4K 2026-10-19.pdf",
+     "id": "198lt7v8ezX2jpiY-RwuaC5S1eB-8ck8t",
+     "size": "52641212",
+     "modifiedTime": "2026-10-20T01:47:05.300Z",
+     "webViewLink": "https://drive.google.com/file/d/198lt7v8ezX2jpiY-RwuaC5S1eB-8ck8t/view?usp=drivesdk"
+    },
+    {
+     "name": "Secreto de Orcas.Diego.pdf",
+     "id": "1PyRFiOgdBrQLgxEYYSsHNq3du8fNbnmQ",
+     "size": "6425631",
+     "modifiedTime": "2026-09-06T22:22:12.667Z",
+     "webViewLink": "https://drive.google.com/file/d/1PyRFiOgdBrQLgxEYYSsHNq3du8fNbnmQ/view?usp=drivesdk"
+    },
+    {
+     "name": "Secreto de Orcas.Ser.pdf",
+     "id": "13QQgd7pHwumigs_p_j_ray5AJTCtYB0u",
+     "size": "39402312",
+     "modifiedTime": "2026-09-06T22:12:22.182Z",
+     "webViewLink": "https://drive.google.com/file/d/13QQgd7pHwumigs_p_j_ray5AJTCtYB0u/view?usp=drivesdk"
+    },
+    {
+     "name": "Secreto_de_Orcas_REGINA_TONA_EDICION_FINAL_PERSONALIZADA_4K.pdf",
+     "id": "1fBpRWdZ7YMQwEKp3q2bNTe9mHKDimoQd",
+     "size": "66853838",
+     "modifiedTime": "2026-10-21T21:23:35.376Z",
+     "webViewLink": "https://drive.google.com/file/d/1fBpRWdZ7YMQwEKp3q2bNTe9mHKDimoQd/view?usp=drivesdk"
+    },
+    {
+     "name": "Secretos de Orcas.1x1.pdf",
+     "id": "1_M36dAohyYDdl9c3bnOaB45ddSmbEmTc",
+     "size": "5993735",
+     "modifiedTime": "2026-09-06T22:12:03.777Z",
+     "webViewLink": "https://drive.google.com/file/d/1_M36dAohyYDdl9c3bnOaB45ddSmbEmTc/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'El Secreto de las Orcas' (Libro ilustrado, DISPONIBLE, 16 págs. según ficha)."
+  },
+  {
+   "obra": "𝒬ualia ℛenovae — El mundo antes del nombre",
+   "archivos_pdf_en_drive": 13,
+   "contenidos_distintos_nombre_tamano": 12,
+   "representativo": {
+    "name": "QUALIA_RENOVAE_EN_MASTER_HQ_2026.pdf",
+    "id": "1F2QoCtuHeFTMtLgXuMLEFGoPPRK0-j-L",
+    "size": "32517966",
+    "modifiedTime": "2026-09-11T15:38:11.003Z",
+    "webViewLink": "https://drive.google.com/file/d/1F2QoCtuHeFTMtLgXuMLEFGoPPRK0-j-L/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "QUALIA_RENOVAE_EL_MUNDO_ANTES_DEL_NOMBRE_ES_FINAL_8K_2026.pdf",
+     "id": "1LFvG5iyRi-e4Di0YxuMIc_cC23uukABF",
+     "size": "140353090",
+     "modifiedTime": "2026-09-14T21:08:45.944Z",
+     "webViewLink": "https://drive.google.com/file/d/1LFvG5iyRi-e4Di0YxuMIc_cC23uukABF/view?usp=drivesdk"
+    },
+    {
+     "name": "QUALIA_RENOVAE_EL_MUNDO_ANTES_DEL_NOMBRE_ES_FINAL_8K_2026.pdf",
+     "id": "1jAR6jebv1HkDtn29EKZF84zbTMkjrW6E",
+     "size": "140353090",
+     "modifiedTime": "2026-09-14T21:08:36.446Z",
+     "webViewLink": "https://drive.google.com/file/d/1jAR6jebv1HkDtn29EKZF84zbTMkjrW6E/view?usp=drivesdk"
+    },
+    {
+     "name": "QUALIA_RENOVAE_EN_000-314_PERSONALIZED.pdf",
+     "id": "1u0klyr0dnNmNq6Z5JWFr6JzXreM59apb",
+     "size": "7120471",
+     "modifiedTime": "2026-09-12T03:18:37.455Z",
+     "webViewLink": "https://drive.google.com/file/d/1u0klyr0dnNmNq6Z5JWFr6JzXreM59apb/view?usp=drivesdk"
+    },
+    {
+     "name": "QUALIA_RENOVAE_EN_000-314_PERSONALIZED_V4.pdf",
+     "id": "1dh0d8k7Uy1XXN4oOTJy9yssqe0EQKswB",
+     "size": "7232762",
+     "modifiedTime": "2026-09-12T08:49:56.729Z",
+     "webViewLink": "https://drive.google.com/file/d/1dh0d8k7Uy1XXN4oOTJy9yssqe0EQKswB/view?usp=drivesdk"
+    },
+    {
+     "name": "QUALIA_RENOVAE_EN_FINAL_WEB_2026.pdf",
+     "id": "1v_DyghwPgBMBEmUxjhcJVYLUo2Nh7Obd",
+     "size": "7004128",
+     "modifiedTime": "2026-09-11T15:32:49.184Z",
+     "webViewLink": "https://drive.google.com/file/d/1v_DyghwPgBMBEmUxjhcJVYLUo2Nh7Obd/view?usp=drivesdk"
+    },
+    {
+     "name": "QUALIA_RENOVAE_EN_MASTER_HQ_2026.pdf",
+     "id": "1F2QoCtuHeFTMtLgXuMLEFGoPPRK0-j-L",
+     "size": "32517966",
+     "modifiedTime": "2026-09-11T15:38:11.003Z",
+     "webViewLink": "https://drive.google.com/file/d/1F2QoCtuHeFTMtLgXuMLEFGoPPRK0-j-L/view?usp=drivesdk"
+    },
+    {
+     "name": "QUALIA_RENOVAE_ES_000-314_PERSONALIZADO.pdf",
+     "id": "17KAZnNZunNX-v4Ued0mWqESxWhDgL66R",
+     "size": "2642215",
+     "modifiedTime": "2026-09-12T03:18:33.488Z",
+     "webViewLink": "https://drive.google.com/file/d/17KAZnNZunNX-v4Ued0mWqESxWhDgL66R/view?usp=drivesdk"
+    },
+    {
+     "name": "QUALIA_RENOVAE_ES_000-314_PERSONALIZADO_V4.pdf",
+     "id": "12QvVlEkC44k_hhEDx0qTe7R4ZM9Rix1u",
+     "size": "2752522",
+     "modifiedTime": "2026-09-12T08:49:50.060Z",
+     "webViewLink": "https://drive.google.com/file/d/12QvVlEkC44k_hhEDx0qTe7R4ZM9Rix1u/view?usp=drivesdk"
+    },
+    {
+     "name": "QUALIA_RENOVAE_ES_FINAL_WEB_2026.pdf",
+     "id": "1GrCp2ag05a7CNJzXC3lpzq2Fl_qqisYo",
+     "size": "3112674",
+     "modifiedTime": "2026-09-11T15:32:42.225Z",
+     "webViewLink": "https://drive.google.com/file/d/1GrCp2ag05a7CNJzXC3lpzq2Fl_qqisYo/view?usp=drivesdk"
+    },
+    {
+     "name": "QUALIA_RENOVAE_ES_MASTER_4K_2026.pdf",
+     "id": "1SU3txrkF-6DIsJt7qYDJQJF0Mpov9r0q",
+     "size": "22886493",
+     "modifiedTime": "2026-09-11T15:42:15.426Z",
+     "webViewLink": "https://drive.google.com/file/d/1SU3txrkF-6DIsJt7qYDJQJF0Mpov9r0q/view?usp=drivesdk"
+    },
+    {
+     "name": "𝒬ualia-ℛenovae.Alejandro.1-314.8K.pdf",
+     "id": "1qJ_65-iEMKFKxVFe17MpYyu5wsOWrCC_",
+     "size": "140353090",
+     "modifiedTime": "2026-09-14T23:49:31.760Z",
+     "webViewLink": "https://drive.google.com/file/d/1qJ_65-iEMKFKxVFe17MpYyu5wsOWrCC_/view?usp=drivesdk"
+    },
+    {
+     "name": "𝒬ualia-ℛenovae.E.pdf",
+     "id": "15Ylh4sqNTFtc3rbupybH2wNd8-yiIdbv",
+     "size": "7004128",
+     "modifiedTime": "2026-09-14T04:49:11.589Z",
+     "webViewLink": "https://drive.google.com/file/d/15Ylh4sqNTFtc3rbupybH2wNd8-yiIdbv/view?usp=drivesdk"
+    },
+    {
+     "name": "𝒬ualia-ℛenovae.S.pdf",
+     "id": "1rNwmJu08F6DOa2byLcXaoHYDImfE2cYX",
+     "size": "3112674",
+     "modifiedTime": "2026-09-14T04:49:03.525Z",
+     "webViewLink": "https://drive.google.com/file/d/1rNwmJu08F6DOa2byLcXaoHYDImfE2cYX/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha '𝒬ualia ℛenovae' (Artbook, en preparación). Distinto título y paginación que 'Qualia Renovativos LIBRO_MAESTRO_v2' del chat (110 págs.)."
+  },
+  {
+   "obra": "RENOVA (H) — Tratado Maestro V7.5 (1.314 págs.)",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "RENOVA_H_V7_5_TRATADO_MAESTRO_FINAL_IMPRENTA_1314p.pdf",
+    "id": "1_Rm2HKHyY4BMOty1SmFnqFOk6WDfjfoY",
+    "size": "3492553",
+    "modifiedTime": "2026-09-14T18:35:18.628Z",
+    "webViewLink": "https://drive.google.com/file/d/1_Rm2HKHyY4BMOty1SmFnqFOk6WDfjfoY/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "RENOVA_H_V7_5_TRATADO_MAESTRO_FINAL_IMPRENTA_1314p.pdf",
+     "id": "1_Rm2HKHyY4BMOty1SmFnqFOk6WDfjfoY",
+     "size": "3492553",
+     "modifiedTime": "2026-09-14T18:35:18.628Z",
+     "webViewLink": "https://drive.google.com/file/d/1_Rm2HKHyY4BMOty1SmFnqFOk6WDfjfoY/view?usp=drivesdk"
+    },
+    {
+     "name": "RENOVA_H_V7_5_TRATADO_MAESTRO_FINAL_IMPRENTA_1314p.pdf",
+     "id": "1CjGBd0uy9Dl_xn6j2QnLPi4oZ5FwnFN5",
+     "size": "3492553",
+     "modifiedTime": "2026-05-22T21:47:32.285Z",
+     "webViewLink": "https://drive.google.com/file/d/1CjGBd0uy9Dl_xn6j2QnLPi4oZ5FwnFN5/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'ℛenova (H)' (Libro, en preparación). Distinto de 'Tratado Matemático V2.0' del chat (528 págs.)."
+  },
+  {
+   "obra": "BACHE — Salir del Bache",
+   "archivos_pdf_en_drive": 1,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "BACHE_EDICION_DEFINITIVA_SALIR_DEL_BACHE_2026.pdf",
+    "id": "1g0YDwECzxh2MlZDtStGghNK0KhhKXphR",
+    "size": "6178508",
+    "modifiedTime": "2026-09-18T06:43:28.559Z",
+    "webViewLink": "https://drive.google.com/file/d/1g0YDwECzxh2MlZDtStGghNK0KhhKXphR/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "BACHE_EDICION_DEFINITIVA_SALIR_DEL_BACHE_2026.pdf",
+     "id": "1g0YDwECzxh2MlZDtStGghNK0KhhKXphR",
+     "size": "6178508",
+     "modifiedTime": "2026-09-18T06:43:28.559Z",
+     "webViewLink": "https://drive.google.com/file/d/1g0YDwECzxh2MlZDtStGghNK0KhhKXphR/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'BACHE' (Poesía, DISPONIBLE, 166 págs. según ficha)."
+  },
+  {
+   "obra": "Cada Vez Otro",
+   "archivos_pdf_en_drive": 1,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "CADA_VEZ_OTRO_EDICION_FINAL_VENTA_2026.pdf",
+    "id": "1fqL8aZyDdCBfRcdiwfRf_7CwFg6gZuek",
+    "size": "5588376",
+    "modifiedTime": "2026-08-31T18:45:07.749Z",
+    "webViewLink": "https://drive.google.com/file/d/1fqL8aZyDdCBfRcdiwfRf_7CwFg6gZuek/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "CADA_VEZ_OTRO_EDICION_FINAL_VENTA_2026.pdf",
+     "id": "1fqL8aZyDdCBfRcdiwfRf_7CwFg6gZuek",
+     "size": "5588376",
+     "modifiedTime": "2026-08-31T18:45:07.749Z",
+     "webViewLink": "https://drive.google.com/file/d/1fqL8aZyDdCBfRcdiwfRf_7CwFg6gZuek/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'Cada Vez Otro' (Libro, en preparación)."
+  },
+  {
+   "obra": "La Mujer Dormida Muda de Piel",
+   "archivos_pdf_en_drive": 2,
+   "contenidos_distintos_nombre_tamano": 2,
+   "representativo": {
+    "name": "LA_MUJER_DORMIDA_MUDA_DE_PIEL_EJERCICIO_03_FONDO_NEGRO_120P_2026.pdf",
+    "id": "1t7DdV_sYdAjk3O2H0ye39Uagqbs1P6ew",
+    "size": "58371841",
+    "modifiedTime": "2026-08-31T05:36:44.277Z",
+    "webViewLink": "https://drive.google.com/file/d/1t7DdV_sYdAjk3O2H0ye39Uagqbs1P6ew/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "LA_MUJER_DORMIDA_MUDA_DE_PIEL_EJERCICIO_03_DIGITAL_SCROLL_SERPIENTE_ESPECTRO_GRABADO_120P_2026.pdf",
+     "id": "1fEc6WHicsTnEYKLUIIFhkDXY3R2dYbOm",
+     "size": "57586719",
+     "modifiedTime": "2026-08-31T05:36:30.864Z",
+     "webViewLink": "https://drive.google.com/file/d/1fEc6WHicsTnEYKLUIIFhkDXY3R2dYbOm/view?usp=drivesdk"
+    },
+    {
+     "name": "LA_MUJER_DORMIDA_MUDA_DE_PIEL_EJERCICIO_03_FONDO_NEGRO_120P_2026.pdf",
+     "id": "1t7DdV_sYdAjk3O2H0ye39Uagqbs1P6ew",
+     "size": "58371841",
+     "modifiedTime": "2026-08-31T05:36:44.277Z",
+     "webViewLink": "https://drive.google.com/file/d/1t7DdV_sYdAjk3O2H0ye39Uagqbs1P6ew/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'La Mujer Dormida Muda de Piel' (Libro, en preparación)."
+  },
+  {
+   "obra": "La Paradoja del Tráfico Infinito",
+   "archivos_pdf_en_drive": 1,
+   "contenidos_distintos_nombre_tamano": 1,
+   "representativo": {
+    "name": "La_Paradoja_del_Trafico_Infinito_ReyFilosofo_2026.pdf",
+    "id": "1ypYsk60u80LKnWL8YrwJNErAAxOIWgSw",
+    "size": "472856",
+    "modifiedTime": "2026-09-12T08:32:07.434Z",
+    "webViewLink": "https://drive.google.com/file/d/1ypYsk60u80LKnWL8YrwJNErAAxOIWgSw/view?usp=drivesdk"
+   },
+   "todos_los_archivos": [
+    {
+     "name": "La_Paradoja_del_Trafico_Infinito_ReyFilosofo_2026.pdf",
+     "id": "1ypYsk60u80LKnWL8YrwJNErAAxOIWgSw",
+     "size": "472856",
+     "modifiedTime": "2026-09-12T08:32:07.434Z",
+     "webViewLink": "https://drive.google.com/file/d/1ypYsk60u80LKnWL8YrwJNErAAxOIWgSw/view?usp=drivesdk"
+    }
+   ],
+   "nota_catalogo": "Catálogo v2: ficha 'La Paradoja del Tráfico Infinito' (Experimento digital, lectura pública)."
+  }
+ ],
+ "libros_del_chat_11_y_su_estado_en_drive": [
+  {
+   "titulo": "RENOVA V10",
+   "paginas_chat": 135,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "Sin PDF con ese título en Drive (búsqueda por nombre en los 2.295 PDF + fullText)."
+  },
+  {
+   "titulo": "Filosofía Renovativa V2.7",
+   "paginas_chat": 218,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "Sin PDF con ese título en Drive (búsqueda por nombre en los 2.295 PDF + fullText)."
+  },
+  {
+   "titulo": "Tratado Matemático de la Renova V2.0",
+   "paginas_chat": 528,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "Sin PDF con ese título en Drive (búsqueda por nombre en los 2.295 PDF + fullText)."
+  },
+  {
+   "titulo": "Tratado de Epistemología de la IA V1",
+   "paginas_chat": 42,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "Sin PDF con ese título en Drive (búsqueda por nombre en los 2.295 PDF + fullText)."
+  },
+  {
+   "titulo": "SC Renovativa",
+   "paginas_chat": 50,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "Sin PDF con ese título en Drive (búsqueda por nombre en los 2.295 PDF + fullText)."
+  },
+  {
+   "titulo": "PRPM Tomus I",
+   "paginas_chat": 199,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "Sin PDF con ese título en Drive (búsqueda por nombre en los 2.295 PDF + fullText)."
+  },
+  {
+   "titulo": "La Gentil Singularidad Renovativa",
+   "paginas_chat": 102,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "Sin PDF con ese título en Drive (búsqueda por nombre en los 2.295 PDF + fullText)."
+  },
+  {
+   "titulo": "Qualia Renovativos",
+   "paginas_chat": 110,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "En Drive solo existe '𝒬ualia ℛenovae — El mundo antes del nombre' (314 págs., ES/EN), título y paginación distintos; no es el mismo archivo."
+  },
+  {
+   "titulo": "Renova Essentiae Vitae",
+   "paginas_chat": 213,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "Sin PDF con ese título en Drive (búsqueda por nombre en los 2.295 PDF + fullText)."
+  },
+  {
+   "titulo": "Campayo Renovativo Tratado Número Letra",
+   "paginas_chat": 250,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "Sin PDF con ese título en Drive (búsqueda por nombre en los 2.295 PDF + fullText)."
+  },
+  {
+   "titulo": "Vera Ortiz — Tesis Ciencias de la Complejidad",
+   "paginas_chat": 159,
+   "pdf_en_drive_mismo_titulo": 0,
+   "observacion": "Sin PDF con ese título en Drive (búsqueda por nombre en los 2.295 PDF + fullText)."
+  }
+ ],
+ "catalogo_v2_resumen": {
+  "counts": {
+   "archive_entries": 16,
+   "available": 2,
+   "entries": 139,
+   "imprints": 3,
+   "in_preparation": 121,
+   "public_reading": 16
+  },
+  "kinds": {
+   "Libro ilustrado": 1,
+   "Poesía": 14,
+   "Artbook": 5,
+   "Monografía": 1,
+   "Libro": 96,
+   "Ensayo": 9,
+   "Experimento digital": 1,
+   "Obra visual": 3,
+   "Poema": 2,
+   "Texto": 1,
+   "Oración": 2,
+   "Aforismo": 4
+  },
+  "status": {
+   "available": 2,
+   "preparation": 121,
+   "public_reading": 16
+  },
+  "no_en_preparacion": [
+   {
+    "title": "El Secreto de las Orcas",
+    "kind": "Libro ilustrado",
+    "status": "available",
+    "pages": 16,
+    "slug": "el-secreto-de-las-orcas-5cf91c"
+   },
+   {
+    "title": "BACHE",
+    "kind": "Poesía",
+    "status": "available",
+    "pages": 166,
+    "slug": "bache"
+   },
+   {
+    "title": "La Paradoja del Tráfico Infinito",
+    "kind": "Experimento digital",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "la-paradoja-del-trafico-infinito"
+   },
+   {
+    "title": "La vida no es un fondo",
+    "kind": "Ensayo",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "la-vida-no-es-un-fondo"
+   },
+   {
+    "title": "Umbral de Hábitat I",
+    "kind": "Obra visual",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "umbral-de-habitat-i"
+   },
+   {
+    "title": "El ser humano entre la nada y el todo",
+    "kind": "Ensayo",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "el-ser-humano-entre-la-nada-y-el-todo"
+   },
+   {
+    "title": "Herida de luz",
+    "kind": "Obra visual",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "herida-de-luz"
+   },
+   {
+    "title": "Arte como órgano de verdad",
+    "kind": "Ensayo",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "arte-como-organo-de-verdad"
+   },
+   {
+    "title": "Horizonte que regresa",
+    "kind": "Obra visual",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "horizonte-que-regresa"
+   },
+   {
+    "title": "La casa que respira",
+    "kind": "Poema",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "la-casa-que-respira"
+   },
+   {
+    "title": "Nada con nombre",
+    "kind": "Poema",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "nada-con-nombre"
+   },
+   {
+    "title": "Instrucciones para volver",
+    "kind": "Texto",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "instrucciones-para-volver"
+   },
+   {
+    "title": "Oración de la atención",
+    "kind": "Oración",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "oracion-de-la-atencion"
+   },
+   {
+    "title": "Oración para no convertir la vida en recurso",
+    "kind": "Oración",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "oracion-para-no-convertir-la-vida-en-recurso"
+   },
+   {
+    "title": "La verdad sin trofeo",
+    "kind": "Aforismo",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "la-verdad-sin-trofeo"
+   },
+   {
+    "title": "Archivo vivo",
+    "kind": "Aforismo",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "archivo-vivo"
+   },
+   {
+    "title": "El arte y la costumbre",
+    "kind": "Aforismo",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "el-arte-y-la-costumbre"
+   },
+   {
+    "title": "Umbral de la nada",
+    "kind": "Aforismo",
+    "status": "public_reading",
+    "pages": null,
+    "slug": "umbral-de-la-nada"
+   }
+  ],
+  "fichas": [
+   {
+    "title": "El Secreto de las Orcas",
+    "kind": "Libro ilustrado",
+    "status": "available",
+    "collection": "infancia",
+    "pages": 16,
+    "slug": "el-secreto-de-las-orcas-5cf91c",
+    "id": "RNP-WORK-0011"
+   },
+   {
+    "title": "BACHE",
+    "kind": "Poesía",
+    "status": "available",
+    "collection": "literatura",
+    "pages": 166,
+    "slug": "bache",
+    "id": "RNP-PUBLIC-BACHE-2026"
+   },
+   {
+    "title": "𝒬ualia ℛenovae",
+    "kind": "Artbook",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": 80,
+    "slug": "qualia-renovae-520f81",
+    "id": "RNP-WORK-0001"
+   },
+   {
+    "title": "ℛenova Biosemiotics: Orcas",
+    "kind": "Monografía",
+    "status": "preparation",
+    "collection": "investigacion",
+    "pages": 178,
+    "slug": "renova-biosemiotics-orcas-a46114",
+    "id": "RNP-WORK-0002"
+   },
+   {
+    "title": "34 aforismos de la ℛenova",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "34-aforismos-de-la-renova-293241",
+    "id": "RNP-WORK-fe4d07cf85c161c15adc"
+   },
+   {
+    "title": "34 preguntas inéditas sobre la realidad",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "34-preguntas-ineditas-sobre-la-realidad-14113b",
+    "id": "RNP-WORK-f3e6bde123eac392d47c"
+   },
+   {
+    "title": "43 VOCES: Poema caligráfico para México",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "43-voces-poema-caligrafico-para-mexico-074ff7",
+    "id": "RNP-WORK-136a5ecfb6fb0e7ce9f6"
+   },
+   {
+    "title": "Amor Fati / Educación Renovativa y Amor Consciente",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "amor-fati--educacion-renovativa-y-amor-consciente-b6d776",
+    "id": "RNP-WORK-509d1b2726f6afcc6f94"
+   },
+   {
+    "title": "Análisis documental científico y geopolítico",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "politica",
+    "pages": null,
+    "slug": "analisis-documental-cientifico-y-geopolitico-5e5f78",
+    "id": "RNP-WORK-bdedcf2069b9e8160aff"
+   },
+   {
+    "title": "Animales del mar: historia, texto y nombres de los animales",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "animales-del-mar-historia-texto-y-nombres-de-los-animales-f88079",
+    "id": "RNP-WORK-1730803dcbc3cc45583c"
+   },
+   {
+    "title": "Artbooks fotográficos blanco y negro estilo cámara vieja",
+    "kind": "Artbook",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "artbooks-fotograficos-blanco-y-negro-estilo-camara-vieja-8a5d80",
+    "id": "RNP-WORK-9f836d7eef97e2ea15bb"
+   },
+   {
+    "title": "Baelo Claudia: La ciudad del atún",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "baelo-claudia-la-ciudad-del-atun-37b27f",
+    "id": "RNP-WORK-200a6be40c66d33cde6e"
+   },
+   {
+    "title": "BRÚJULA CON PAZ",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "brujula-con-paz-e493be",
+    "id": "RNP-WORK-0014"
+   },
+   {
+    "title": "Cada Vez Otro",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "cada-vez-otro-d985af",
+    "id": "RNP-WORK-0012"
+   },
+   {
+    "title": "Caligramas y poemas visuales al modo Apollinaire / SERESARTE",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "caligramas-y-poemas-visuales-al-modo-apollinaire--seresarte-d7dbcd",
+    "id": "RNP-WORK-d8312c854515a7179f2f"
+   },
+   {
+    "title": "Ciudades Renovativas",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "ciudades-renovativas-4fbfd2",
+    "id": "RNP-WORK-14e4087c3b878de56483"
+   },
+   {
+    "title": "Códex Universalis Renovativo",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "codex-universalis-renovativo-4f7367",
+    "id": "RNP-WORK-8f320a3012f4410ea423"
+   },
+   {
+    "title": "Cognición Poética y Ciencia del Aprender Total",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "investigacion",
+    "pages": null,
+    "slug": "cognicion-poetica-y-ciencia-del-aprender-total-6b4134",
+    "id": "RNP-WORK-b60dec0e88b50396e95b"
+   },
+   {
+    "title": "Conciencia biosimbiótica / conciencia simbiótica",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "investigacion",
+    "pages": null,
+    "slug": "conciencia-biosimbiotica--conciencia-simbiotica-77c586",
+    "id": "RNP-WORK-ec719eb1058a81beb926"
+   },
+   {
+    "title": "Contra la sacralización geopolítica",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "politica",
+    "pages": null,
+    "slug": "contra-la-sacralizacion-geopolitica-36ed64",
+    "id": "RNP-WORK-4244d564c63ae94a48e7"
+   },
+   {
+    "title": "Contra-Tucídides",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "contra-tucidides-c0c252",
+    "id": "RNP-WORK-bfcc3b4a98b5134755ab"
+   },
+   {
+    "title": "Cooperación interespecie y memoria oceánica / Biosimbiótica Renova",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "investigacion",
+    "pages": null,
+    "slug": "cooperacion-interespecie-y-memoria-oceanica--biosimbiotica-renova-274c3c",
+    "id": "RNP-WORK-e05f1991aafaa218c889"
+   },
+   {
+    "title": "DAO DE JING by ℛenova",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": 345,
+    "slug": "dao-de-jing-by-renova-832859",
+    "id": "RNP-WORK-0003"
+   },
+   {
+    "title": "Dao de la Muerte",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": null,
+    "slug": "dao-de-la-muerte-2bb0d0",
+    "id": "RNP-WORK-78ee573fc639f6ea5abf"
+   },
+   {
+    "title": "Dao de la Paz",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": null,
+    "slug": "dao-de-la-paz-22fb9c",
+    "id": "RNP-WORK-6b31e7c18424845127c4"
+   },
+   {
+    "title": "Dao de la Política",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "politica",
+    "pages": null,
+    "slug": "dao-de-la-politica-fe4b36",
+    "id": "RNP-WORK-e7ddf1df7d9574c9b1f0"
+   },
+   {
+    "title": "Dao de los Animales — edición comercial adulta corregida",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": null,
+    "slug": "dao-de-los-animales--edicion-comercial-adulta-corregida-50ec4a",
+    "id": "RNP-WORK-1e07e55221637b345425"
+   },
+   {
+    "title": "Dao de los Negocios / Dao del Emprendimiento",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": null,
+    "slug": "dao-de-los-negocios--dao-del-emprendimiento-c2fdf7",
+    "id": "RNP-WORK-d2eb39e360f7e3d86b26"
+   },
+   {
+    "title": "Dao de los Niños",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "dao-de-los-ninos-5ddde3",
+    "id": "RNP-WORK-b7f6c80f6a4ebd764527"
+   },
+   {
+    "title": "Dao del Cuidado y del Acompañamiento",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": null,
+    "slug": "dao-del-cuidado-y-del-acompanamiento-5c9a6f",
+    "id": "RNP-WORK-a0b2779483474608a68e"
+   },
+   {
+    "title": "Derecho Renovativo",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "derecho-renovativo-b19053",
+    "id": "RNP-WORK-6ae797f74e03da7da410"
+   },
+   {
+    "title": "Divina Tragicomedia Mexicana",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "divina-tragicomedia-mexicana-c02a8f",
+    "id": "RNP-WORK-689554c2a628c5b83ac3"
+   },
+   {
+    "title": "Dobermann Satz: Poemario Total",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "dobermann-satz-poemario-total-48b016",
+    "id": "RNP-WORK-94838381a2b0aa649308"
+   },
+   {
+    "title": "El Coctel del Desengaño: 34 Bebidas que Reflejan tu Amargura",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "el-coctel-del-desengano-34-bebidas-que-reflejan-tu-amargura-ac336d",
+    "id": "RNP-WORK-2f1a99bb861c1a0afbcf"
+   },
+   {
+    "title": "El Dao de la AI",
+    "kind": "Ensayo",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": null,
+    "slug": "el-dao-de-la-ai-681391",
+    "id": "RNP-WORK-0005"
+   },
+   {
+    "title": "El Dao de la Diplomacia",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "politica",
+    "pages": null,
+    "slug": "el-dao-de-la-diplomacia-685c08",
+    "id": "RNP-WORK-cea1dc977e186352529f"
+   },
+   {
+    "title": "El Dao de la Vida · Edición Monumental SERESARTE",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": null,
+    "slug": "el-dao-de-la-vida--edicion-monumental-seresarte-660740",
+    "id": "RNP-WORK-87c3358355d75bb97ddb"
+   },
+   {
+    "title": "El Dao de los Bebés",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "el-dao-de-los-bebes-c050e7",
+    "id": "RNP-WORK-726ef7dee525583a7f75"
+   },
+   {
+    "title": "El Dao del Arte",
+    "kind": "Ensayo",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": null,
+    "slug": "el-dao-del-arte-02b5ac",
+    "id": "RNP-WORK-0008"
+   },
+   {
+    "title": "El Evangelio del Arco Partido",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "el-evangelio-del-arco-partido-121b87",
+    "id": "RNP-WORK-37ff25cac4c6533c5391"
+   },
+   {
+    "title": "El Evangelio Prohibido",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "el-evangelio-prohibido-595fba",
+    "id": "RNP-WORK-a49385fd021605b7deda"
+   },
+   {
+    "title": "El gran libro de los gigantes animales marinos",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "el-gran-libro-de-los-gigantes-animales-marinos-39d82f",
+    "id": "RNP-WORK-9aded84515dbca9759ec"
+   },
+   {
+    "title": "El Gran Libro del Desempleo",
+    "kind": "Artbook",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "el-gran-libro-del-desempleo-b3a69f",
+    "id": "RNP-WORK-72b745fb270e1bba29da"
+   },
+   {
+    "title": "El halcón del viento / El secreto del halcón",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "el-halcon-del-viento--el-secreto-del-halcon-32f187",
+    "id": "RNP-WORK-542ff8690bfbd7d1a542"
+   },
+   {
+    "title": "El Lenguaje Sagrado: 34 Palabras de Poder, Divinas y Secretas",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "espiritualidad",
+    "pages": null,
+    "slug": "el-lenguaje-sagrado-34-palabras-de-poder-divinas-y-secretas-6b9682",
+    "id": "RNP-WORK-7c9900314fd1bff183f1"
+   },
+   {
+    "title": "El Mundo al Revés: Poemas de Inversión",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "el-mundo-al-reves-poemas-de-inversion-0fe8ea",
+    "id": "RNP-WORK-9c6358b7fa490f0cc5a5"
+   },
+   {
+    "title": "El pequeño libro de los animales marinos más pequeños",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "el-pequeno-libro-de-los-animales-marinos-mas-pequenos-f913f5",
+    "id": "RNP-WORK-57ecd15be26f9a15d6d1"
+   },
+   {
+    "title": "El secreto de las nubes",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "el-secreto-de-las-nubes-71500c",
+    "id": "RNP-WORK-0004"
+   },
+   {
+    "title": "El Ser y el No Ser desde la Renova",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "el-ser-y-el-no-ser-desde-la-renova-5b080c",
+    "id": "RNP-WORK-5fe89170bbe982276111"
+   },
+   {
+    "title": "El Tao de la Renova",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": null,
+    "slug": "el-tao-de-la-renova-2607b1",
+    "id": "RNP-WORK-02f4530f00c941bcdf39"
+   },
+   {
+    "title": "El Tao de los animales",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "el-tao-de-los-animales-f962cb",
+    "id": "RNP-WORK-e674adf6787f5431b4a0"
+   },
+   {
+    "title": "El Tao de los animales para niñas y niños",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "el-tao-de-los-animales-para-ninas-y-ninos-55fff8",
+    "id": "RNP-WORK-00ca6b7f9439a58b56e3"
+   },
+   {
+    "title": "El tiempo de la filosofía ha pasado ya",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "el-tiempo-de-la-filosofia-ha-pasado-ya-6429d0",
+    "id": "RNP-WORK-1662ab95f7a5778236dc"
+   },
+   {
+    "title": "El tiempo de la filosofía ha pasado ya; el dinero ahora también trae la felic...",
+    "kind": "Ensayo",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "el-tiempo-de-la-filosofia-ha-pasado-ya-el-dinero-ahora-tambien-trae-la-felic-f1c037",
+    "id": "RNP-WORK-dd9773b49626c08be98f"
+   },
+   {
+    "title": "El velo de Beethoven",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "el-velo-de-beethoven-e5fba8",
+    "id": "RNP-WORK-0006"
+   },
+   {
+    "title": "Ensayo Netanyahu y Agenda 2035",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "ensayo-netanyahu-y-agenda-2035-34334f",
+    "id": "RNP-WORK-68756464810eaa3edac6"
+   },
+   {
+    "title": "Enteógenos como medio de conocimiento",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "espiritualidad",
+    "pages": null,
+    "slug": "enteogenos-como-medio-de-conocimiento-879598",
+    "id": "RNP-WORK-b82179b1a2214655c3ee"
+   },
+   {
+    "title": "Escala Vibracional de la Conciencia ℛenova",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "escala-vibracional-de-la-conciencia-renova-ca13ff",
+    "id": "RNP-WORK-757d20e53ca7cd0b98a3"
+   },
+   {
+    "title": "Estética Renovativa / Arte Renovativo",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "estetica-renovativa--arte-renovativo-88b355",
+    "id": "RNP-WORK-acb6914f1f821d2a5ced"
+   },
+   {
+    "title": "Estilo de Goya: tratado descriptivo",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "estilo-de-goya-tratado-descriptivo-2f2f57",
+    "id": "RNP-WORK-c1e5ec744cafd173709e"
+   },
+   {
+    "title": "Filosofía de una Burbuja Financiera: Heaven Was a Place on Earth",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "filosofia-de-una-burbuja-financiera-heaven-was-a-place-on-earth-c6839d",
+    "id": "RNP-WORK-a2ee2a55163e6645643e"
+   },
+   {
+    "title": "Filosofía Renovativa · Tratado de la vida que se abre",
+    "kind": "Ensayo",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "filosofia-renovativa--tratado-de-la-vida-que-se-abre-db906e",
+    "id": "RNP-WORK-0f4df2eee1500e443f2a"
+   },
+   {
+    "title": "Física de la Inacción",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "fisica-de-la-inaccion-c3cb87",
+    "id": "RNP-WORK-b07dc0638d02fe4cafbe"
+   },
+   {
+    "title": "Fragmentos del Laberinto de H",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "fragmentos-del-laberinto-de-h-571f48",
+    "id": "RNP-WORK-9fe9ea9076bf87df2194"
+   },
+   {
+    "title": "Geopolítica Renovativa",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "politica",
+    "pages": null,
+    "slug": "geopolitica-renovativa-832037",
+    "id": "RNP-WORK-cb088375d3d4186a07a9"
+   },
+   {
+    "title": "Gewalt y ℛenova",
+    "kind": "Ensayo",
+    "status": "preparation",
+    "collection": "politica",
+    "pages": null,
+    "slug": "gewalt-y-renova-0e9d86",
+    "id": "RNP-WORK-0010"
+   },
+   {
+    "title": "Gigantes del planeta",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "gigantes-del-planeta-7fed9b",
+    "id": "RNP-WORK-6f0083307abbe6b420f4"
+   },
+   {
+    "title": "IAO en los Papyri Graecae Magicae",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "espiritualidad",
+    "pages": null,
+    "slug": "iao-en-los-papyri-graecae-magicae-2de06f",
+    "id": "RNP-WORK-fe4c750d7528da02adc0"
+   },
+   {
+    "title": "IAO-IUE: genealogía vocal del Nombre de Dios",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "espiritualidad",
+    "pages": null,
+    "slug": "iao-iue-genealogia-vocal-del-nombre-de-dios-623451",
+    "id": "RNP-WORK-5cc3df1a35f0a3944271"
+   },
+   {
+    "title": "Informe OSINT Visas MX-USA 2025",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "informe-osint-visas-mx-usa-2025-566fc7",
+    "id": "RNP-WORK-e768cd10f3c7b86bbb58"
+   },
+   {
+    "title": "Isis velada",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "isis-velada-e9a40d",
+    "id": "RNP-WORK-0007"
+   },
+   {
+    "title": "La Casa de los Famosos México: Índice de Capacidad Renovativa",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "la-casa-de-los-famosos-mexico-indice-de-capacidad-renovativa-a64156",
+    "id": "RNP-WORK-c6e05a8c20a2a2daef22"
+   },
+   {
+    "title": "La Diosa, la Dualidad y la Unidad",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "la-diosa-la-dualidad-y-la-unidad-e02a48",
+    "id": "RNP-WORK-77c37d28bf604ba33d0c"
+   },
+   {
+    "title": "La Escuela de los Amigos del Mar",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "la-escuela-de-los-amigos-del-mar-f2be73",
+    "id": "RNP-WORK-35d9154522f27a56bb0c"
+   },
+   {
+    "title": "La IA encontró la caverna",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "la-ia-encontro-la-caverna-c86544",
+    "id": "RNP-WORK-9bfc62ab7aec84f2f7f7"
+   },
+   {
+    "title": "La Mujer Dormida Muda de Piel",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "la-mujer-dormida-muda-de-piel-41f7f9",
+    "id": "RNP-WORK-0013"
+   },
+   {
+    "title": "La ℛenova para niñas y niños",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "la-renova-para-ninas-y-ninos-57e234",
+    "id": "RNP-WORK-08d9e910878f3c8398cc"
+   },
+   {
+    "title": "La trampa de Tucídides y la Renova",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "la-trampa-de-tucidides-y-la-renova-d45abe",
+    "id": "RNP-WORK-c31e27959bde54445e74"
+   },
+   {
+    "title": "Las formas futuras de la conciencia",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "investigacion",
+    "pages": null,
+    "slug": "las-formas-futuras-de-la-conciencia-a3d389",
+    "id": "RNP-WORK-d5e5f8b1ecb512e7528d"
+   },
+   {
+    "title": "Libro de King",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "libro-de-king-f1cc6b",
+    "id": "RNP-WORK-583cc94f40c74221bcf0"
+   },
+   {
+    "title": "Libro de las Orcas para artículo Nature/Science style",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "investigacion",
+    "pages": null,
+    "slug": "libro-de-las-orcas-para-articulo-naturescience-style-f700f2",
+    "id": "RNP-WORK-017e68382c9e353e8d13"
+   },
+   {
+    "title": "Libro del Toteking",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "libro-del-toteking-2c7d57",
+    "id": "RNP-WORK-848ae3bf66bb9cd081d2"
+   },
+   {
+    "title": "Libro para colorear infantil de animales",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "libro-para-colorear-infantil-de-animales-22ff91",
+    "id": "RNP-WORK-641eee2e49aa5e0c0744"
+   },
+   {
+    "title": "Libro/Artbook de la serie Baelo Claudia completa",
+    "kind": "Artbook",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "libroartbook-de-la-serie-baelo-claudia-completa-e377d5",
+    "id": "RNP-WORK-7dbbfda0bd5c15b39289"
+   },
+   {
+    "title": "Los secretos de los animales veloces",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "los-secretos-de-los-animales-veloces-120a23",
+    "id": "RNP-WORK-2828a9ee886c6e58dd55"
+   },
+   {
+    "title": "Lucem: El Despertar de la Conciencia Digital",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "lucem-el-despertar-de-la-conciencia-digital-8a565a",
+    "id": "RNP-WORK-72064ab4a77defcc55cc"
+   },
+   {
+    "title": "Manifiesto de la ℛenova",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "manifiesto-de-la-renova-a311bf",
+    "id": "RNP-WORK-0ae561c57f35baf93d92"
+   },
+   {
+    "title": "Manual del Anticristo / El Anticristo Suave",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "manual-del-anticristo--el-anticristo-suave-446424",
+    "id": "RNP-WORK-d7687565da0a4c50db0d"
+   },
+   {
+    "title": "Méxikho, qué lindo y qué herido: Sociedad de la Impotencia",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "mexikho-que-lindo-y-que-herido-sociedad-de-la-impotencia-4660ad",
+    "id": "RNP-WORK-11b60ccf8b3f4dd97480"
+   },
+   {
+    "title": "Mi edición propia del Tao / Tao dialogado con Talmud, Zohar y Torah",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "dao",
+    "pages": null,
+    "slug": "mi-edicion-propia-del-tao--tao-dialogado-con-talmud-zohar-y-torah-685727",
+    "id": "RNP-WORK-4946de63e49f439ff966"
+   },
+   {
+    "title": "Mi religión",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "espiritualidad",
+    "pages": null,
+    "slug": "mi-religion-92e57f",
+    "id": "RNP-WORK-10790af4270cba487af2"
+   },
+   {
+    "title": "Moneycentrismo / El dinero como energía",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "moneycentrismo--el-dinero-como-energia-fedc47",
+    "id": "RNP-WORK-64c1af36be44b011b350"
+   },
+   {
+    "title": "Orcas y el secreto del mar",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "orcas-y-el-secreto-del-mar-25efd2",
+    "id": "RNP-WORK-0827dd3ab73f9ea75c9d"
+   },
+   {
+    "title": "Pedagogía Renovativa",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "pedagogia-renovativa-fb7070",
+    "id": "RNP-WORK-9d4849cc3aca1edb88af"
+   },
+   {
+    "title": "Pedagogía Renovativa para niñas y niños: naturaleza, animales, arte y cuidado",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "pedagogia-renovativa-para-ninas-y-ninos-naturaleza-animales-arte-y-cuidado-b0c353",
+    "id": "RNP-WORK-aabfa344231d184c471e"
+   },
+   {
+    "title": "Poema largo sobre México / El Alma Multiverso",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "poema-largo-sobre-mexico--el-alma-multiverso-7ad49e",
+    "id": "RNP-WORK-345b7222984ae0527f17"
+   },
+   {
+    "title": "Poemario caótico",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "poemario-caotico-b96030",
+    "id": "RNP-WORK-76b23ad43a21e073b6a6"
+   },
+   {
+    "title": "Poemario con juegos fonéticos y sintácticos",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "poemario-con-juegos-foneticos-y-sintacticos-c35660",
+    "id": "RNP-WORK-ed8ff490138c592791ba"
+   },
+   {
+    "title": "Poemas de Huerta",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "poemas-de-huerta-613bec",
+    "id": "RNP-WORK-763fbc36f9efdefa620f"
+   },
+   {
+    "title": "Poemas de los 100 países",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "poemas-de-los-100-paises-161933",
+    "id": "RNP-WORK-6dba3108fe037c946257"
+   },
+   {
+    "title": "Positions of the Hands",
+    "kind": "Ensayo",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "positions-of-the-hands-be7449",
+    "id": "RNP-WORK-3ea8fb602d28b2051b61"
+   },
+   {
+    "title": "Psicología ℛenova",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "investigacion",
+    "pages": null,
+    "slug": "psicologia-renova-74e0b6",
+    "id": "RNP-WORK-89d24508ec2992291e03"
+   },
+   {
+    "title": "ℛenova (H)",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "renova-h-5b90be",
+    "id": "RNP-WORK-e86c95b4c32b323476bb"
+   },
+   {
+    "title": "ℛENOVA HERMÉTICA — Tratado de la Vida Viva y del Logos Renovativo",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "espiritualidad",
+    "pages": null,
+    "slug": "renova-hermetica--tratado-de-la-vida-viva-y-del-logos-renovativo-2c72de",
+    "id": "RNP-WORK-bfce44a25f7758cc5250"
+   },
+   {
+    "title": "RENOVA I / ℛenova: Hacia una Filosofía Total de la Vida",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "renova-i--renova-hacia-una-filosofia-total-de-la-vida-cd4ef6",
+    "id": "RNP-WORK-aa907da8afced350ee02"
+   },
+   {
+    "title": "ℛenova ℛeflexogenesis: ℛeflexitus & ℛenovogenesis — UNO a UNO",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "renova-reflexogenesis-reflexitus--renovogenesis--uno-a-uno-db9495",
+    "id": "RNP-WORK-4a5b603d6d6cbe1d9263"
+   },
+   {
+    "title": "ℛenova: Bowlby, Cuidado & Afecto",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "renova-bowlby-cuidado--afecto-8aab98",
+    "id": "RNP-WORK-e09c462d83657c394217"
+   },
+   {
+    "title": "ℛenova: Emergencia Formal de una Filosofía Científica Crítica de Impacto",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "renova-emergencia-formal-de-una-filosofia-cientifica-critica-de-impacto-b34d66",
+    "id": "RNP-WORK-fd8ed9aa2bd4e88a8a7f"
+   },
+   {
+    "title": "Renova: Estabilidad Estratégica & MAD",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "renova-estabilidad-estrategica--mad-df6a7e",
+    "id": "RNP-WORK-004baf3e67c50d55628d"
+   },
+   {
+    "title": "ℛENOVA: Heraclitus",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "renova-heraclitus-01e8c5",
+    "id": "RNP-WORK-7b8e372e333c9c0a992e"
+   },
+   {
+    "title": "Renova: Human Design",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "renova-human-design-2c089b",
+    "id": "RNP-WORK-cf48ee3d9672c60f5e10"
+   },
+   {
+    "title": "Revista Orcas",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "infancia",
+    "pages": null,
+    "slug": "revista-orcas-78b358",
+    "id": "RNP-WORK-06b1a6b35fff27337398"
+   },
+   {
+    "title": "REX-314-16 / La Sinfonía de REX-314-16",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "rex-314-16--la-sinfonia-de-rex-314-16-a3dd6b",
+    "id": "RNP-WORK-fc55adf3f060239ce041"
+   },
+   {
+    "title": "SECUENCIA IRREVERSIBLE",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "secuencia-irreversible-fa55a6",
+    "id": "RNP-WORK-0015"
+   },
+   {
+    "title": "Sensibilidad Fundante",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "sensibilidad-fundante-c1e2c2",
+    "id": "RNP-WORK-7cb4d68ccbab30dff6a7"
+   },
+   {
+    "title": "Serie Goya / Baelo Claudia",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "serie-goya--baelo-claudia-dc5d25",
+    "id": "RNP-WORK-4935fc98aeaff3cd38b7"
+   },
+   {
+    "title": "Simbiosis Evolutiva",
+    "kind": "Artbook",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "simbiosis-evolutiva-3afa9b",
+    "id": "RNP-WORK-a502ead995dbf0b8f0fb"
+   },
+   {
+    "title": "Tratado / Ensayo sobre Federico Faggin",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "investigacion",
+    "pages": null,
+    "slug": "tratado--ensayo-sobre-federico-faggin-61cd88",
+    "id": "RNP-WORK-ae93e0532c1e7731b26d"
+   },
+   {
+    "title": "Tratado de Arte Renovativo: Reloj/Contador de Renovación",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "arte",
+    "pages": null,
+    "slug": "tratado-de-arte-renovativo-relojcontador-de-renovacion-e97a64",
+    "id": "RNP-WORK-913a9385cc707b3c2103"
+   },
+   {
+    "title": "Tratado de la ℛenova",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "tratado-de-la-renova-ecf564",
+    "id": "RNP-WORK-d9c6a376717bbdd9f6ec"
+   },
+   {
+    "title": "Tratado Matemático y Lógico de la ℛenova / 32 ecuaciones",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "tratado-matematico-y-logico-de-la-renova--32-ecuaciones-870d8d",
+    "id": "RNP-WORK-bf97f127a55e9c956beb"
+   },
+   {
+    "title": "Urna de cristal",
+    "kind": "Libro",
+    "status": "preparation",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "urna-de-cristal-a8359e",
+    "id": "RNP-WORK-0009"
+   },
+   {
+    "title": "La Paradoja del Tráfico Infinito",
+    "kind": "Experimento digital",
+    "status": "public_reading",
+    "collection": "investigacion",
+    "pages": null,
+    "slug": "la-paradoja-del-trafico-infinito",
+    "id": "RNP-PUBLIC-TRAFICO-INFINITO"
+   },
+   {
+    "title": "La vida no es un fondo",
+    "kind": "Ensayo",
+    "status": "public_reading",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "la-vida-no-es-un-fondo",
+    "id": "RNP-PUBLIC-ARCHIVE-LA-VIDA-NO-ES-UN-FONDO"
+   },
+   {
+    "title": "Umbral de Hábitat I",
+    "kind": "Obra visual",
+    "status": "public_reading",
+    "collection": "arte",
+    "pages": null,
+    "slug": "umbral-de-habitat-i",
+    "id": "RNP-PUBLIC-ARCHIVE-UMBRAL-DE-HABITAT-I"
+   },
+   {
+    "title": "El ser humano entre la nada y el todo",
+    "kind": "Ensayo",
+    "status": "public_reading",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "el-ser-humano-entre-la-nada-y-el-todo",
+    "id": "RNP-PUBLIC-ARCHIVE-EL-SER-HUMANO-ENTRE-LA-NADA-Y-EL-TODO"
+   },
+   {
+    "title": "Herida de luz",
+    "kind": "Obra visual",
+    "status": "public_reading",
+    "collection": "arte",
+    "pages": null,
+    "slug": "herida-de-luz",
+    "id": "RNP-PUBLIC-ARCHIVE-HERIDA-DE-LUZ"
+   },
+   {
+    "title": "Arte como órgano de verdad",
+    "kind": "Ensayo",
+    "status": "public_reading",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "arte-como-organo-de-verdad",
+    "id": "RNP-PUBLIC-ARCHIVE-ARTE-COMO-ORGANO-DE-VERDAD"
+   },
+   {
+    "title": "Horizonte que regresa",
+    "kind": "Obra visual",
+    "status": "public_reading",
+    "collection": "arte",
+    "pages": null,
+    "slug": "horizonte-que-regresa",
+    "id": "RNP-PUBLIC-ARCHIVE-HORIZONTE-QUE-REGRESA"
+   },
+   {
+    "title": "La casa que respira",
+    "kind": "Poema",
+    "status": "public_reading",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "la-casa-que-respira",
+    "id": "RNP-PUBLIC-ARCHIVE-LA-CASA-QUE-RESPIRA"
+   },
+   {
+    "title": "Nada con nombre",
+    "kind": "Poema",
+    "status": "public_reading",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "nada-con-nombre",
+    "id": "RNP-PUBLIC-ARCHIVE-NADA-CON-NOMBRE"
+   },
+   {
+    "title": "Instrucciones para volver",
+    "kind": "Texto",
+    "status": "public_reading",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "instrucciones-para-volver",
+    "id": "RNP-PUBLIC-ARCHIVE-INSTRUCCIONES-PARA-VOLVER"
+   },
+   {
+    "title": "Oración de la atención",
+    "kind": "Oración",
+    "status": "public_reading",
+    "collection": "espiritualidad",
+    "pages": null,
+    "slug": "oracion-de-la-atencion",
+    "id": "RNP-PUBLIC-ARCHIVE-ORACION-DE-LA-ATENCION"
+   },
+   {
+    "title": "Oración para no convertir la vida en recurso",
+    "kind": "Oración",
+    "status": "public_reading",
+    "collection": "espiritualidad",
+    "pages": null,
+    "slug": "oracion-para-no-convertir-la-vida-en-recurso",
+    "id": "RNP-PUBLIC-ARCHIVE-ORACION-PARA-NO-CONVERTIR-LA-VIDA-EN-RECURSO"
+   },
+   {
+    "title": "La verdad sin trofeo",
+    "kind": "Aforismo",
+    "status": "public_reading",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "la-verdad-sin-trofeo",
+    "id": "RNP-PUBLIC-ARCHIVE-LA-VERDAD-SIN-TROFEO"
+   },
+   {
+    "title": "Archivo vivo",
+    "kind": "Aforismo",
+    "status": "public_reading",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "archivo-vivo",
+    "id": "RNP-PUBLIC-ARCHIVE-ARCHIVO-VIVO"
+   },
+   {
+    "title": "El arte y la costumbre",
+    "kind": "Aforismo",
+    "status": "public_reading",
+    "collection": "arte",
+    "pages": null,
+    "slug": "el-arte-y-la-costumbre",
+    "id": "RNP-PUBLIC-ARCHIVE-EL-ARTE-Y-LA-COSTUMBRE"
+   },
+   {
+    "title": "Umbral de la nada",
+    "kind": "Aforismo",
+    "status": "public_reading",
+    "collection": "pensamiento",
+    "pages": null,
+    "slug": "umbral-de-la-nada",
+    "id": "RNP-PUBLIC-ARCHIVE-UMBRAL-DE-LA-NADA"
+   },
+   {
+    "title": "UNO sólo",
+    "kind": "Poesía",
+    "status": "preparation",
+    "collection": "literatura",
+    "pages": null,
+    "slug": "uno-solo",
+    "id": "RNP-PUBLIC-UNO-SOLO"
+   }
+  ]
+ },
+ "catalogo_privado": {
+  "id": "1RJiS7T8gqHeJXG9_xHVOaD1J_84WD2U-",
+  "name": "renova-press-private-catalog-state-2026-11-09.json",
+  "historical": 139,
+  "assets": 1,
+  "publications": 1,
+  "nota": "Las 139 fichas históricas son las mismas 139 del catálogo público v2 (mismos títulos y estados). Solo hay 1 asset y 1 publicación registrada."
+ }
+}
