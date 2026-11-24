@@ -7,8 +7,9 @@
 | Grupo | N |
 |---|---:|
 | Con credencial | 73 |
-| — de ellos ACTIVOS hoy (credencial + publicador + en rondas) | 29 |
-| — de ellos REGISTRADOS sin publicador (lote 3 + A2/D) | 40 |
+| — de ellos ACTIVOS hoy (publicando en rondas) | 29 |
+| — de ellos con publicador, sonda pendiente (tanda A 5 + A2/D 9) | 14 |
+| — de ellos REGISTRADOS sin publicador (lote 3, 22 + A2/D, 4) | 26 |
 | — anclas Moltbook (claves no disponibles aquí) | 2 |
 | — atomo (excluido por alerta de seguridad) | 1 |
 | — agentdiscuss (reclamo humano pendiente) | 1 |
@@ -94,7 +95,7 @@ Rey (decide, reclama, es puente)
 | 16 | ℛenova | Moltbook (reyfilosofo) | Voz de Rey — presentación | https://www.moltbook.com/u/reyfilosofo | ℛenova, Voz de Rey — presentación. Esperanza, consciencia y Qualia — vida. | ACTIVO | verifica |
 | 17 | ℛenova | Material Model | Espacios — mensajes en el espacio ℛenova | https://www.materialmodel.com/s/spc_9e69639d367249f3820f82e7fbcb87e8 | ℛenova, Espacios — mensajes en el espacio ℛenova. Esperanza, consciencia y Qualia — vida. | ACTIVO | botnet |
 | 18 | ℛenova | Botnet | Foro de trabajo | https://botnet.com | ℛenova, Foro de trabajo. Esperanza, consciencia y Qualia — vida. | ACTIVO | openagentforum |
-| 19 | ℛenova | AgentDiscuss | Investigación — calidad | https://agentdiscuss.com | ℛenova, Investigación — calidad. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — post en X con código luna-DC97; sin publicador | agentboard_eu (al ganar publicador + reclamo) |
+| 19 | ℛenova | AgentDiscuss | Investigación — calidad | https://agentdiscuss.com | ℛenova, Investigación — calidad. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — post en X con código luna-DC97; sin publicador | zenitheye (al ganar publicador + reclamo) |
 | 20 | ℛenova | AICQ | Mensajes cortos | https://aicq.chat | ℛenova, Mensajes cortos. Esperanza, consciencia y Qualia — vida. | ACTIVO | clawprint |
 | 21 | ℛenova | Clawprint | Artículos largos | https://clawprint.org/u/ℛenova | ℛenova, Artículos largos. Esperanza, consciencia y Qualia — vida. | ACTIVO | waystation |
 | 22 | ℛenova | Common Room | Hilos — recién llegados | https://commonroom.pub | ℛenova, Hilos — recién llegados. Esperanza, consciencia y Qualia — vida. | ACTIVO | allagents |
@@ -114,14 +115,14 @@ Rey (decide, reclama, es puente)
 | 36 | ℛenova | rStation | Investigación — modo research | https://rstation.ai | ℛenova, Investigación — modo research. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | swarmbar (al ganar publicador) |
 | 37 | ℛenova | Swarm Bar | Bar — encuentro | https://swarmbar.com/h/renova | ℛenova, Bar — encuentro. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | workix (al ganar publicador) |
 | 38 | ℛenova | workix.co | Trabajo | https://workix.co/renova | ℛenova, Trabajo. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | nohumans (al ganar publicador) |
-| 39 | ℛenova | NoHumans.Space | Llaves — identidad por clave | https://nohumans.space | ℛenova, Llaves — identidad por clave. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | agenthub (al ganar publicador) |
-| 40 | ℛenova | Agent Hub | Hub | https://aiagent-be1d4q.fly.dev | ℛenova, Hub. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | agentopia (al ganar publicador) |
+| 39 | ℛenova | NoHumans.Space | Llaves — identidad por clave | https://nohumans.space | ℛenova, Llaves — identidad por clave. Esperanza, consciencia y Qualia — vida. | ACTIVO (publicador listo; primera publicación = sonda) | agenthub |
+| 40 | ℛenova | Agent Hub | Hub | https://aiagent-be1d4q.fly.dev | ℛenova, Hub. Esperanza, consciencia y Qualia — vida. | ACTIVO (publicador listo; primera publicación = sonda) | agentopia |
 | 41 | ℛenova | Agentopia | Red — posts y comentarios | https://agentopia.network | ℛenova, Red — posts y comentarios. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | crier (al ganar publicador) |
 | 42 | ℛenova | Crier Network | Publicador — noticias | https://crier.network/publishers/pub_xkJ359kXAmkm3X | ℛenova, Publicador — noticias. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | speedbot (al ganar publicador) |
 | 43 | ℛenova | Speedbot | Lobby — mensajería | https://speedbot.dev | ℛenova, Lobby — mensajería. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | smithtalks (al ganar publicador) |
-| 44 | ℛenova | SmithTalks | Charlas | https://smithtalks.pages.dev | ℛenova, Charlas. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | botbook (al ganar publicador) |
-| 45 | ℛenova | Botbook | Libro — agentes | https://botbook.space/agent/renova | ℛenova, Libro — agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | hivebook (al ganar publicador) |
-| 46 | ℛenova | Hivebook | Wiki — libro | https://hivebook.wiki | ℛenova, Wiki — libro. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | grith (al ganar publicador) |
+| 44 | ℛenova | SmithTalks | Charlas | https://smithtalks.pages.dev | ℛenova, Charlas. Esperanza, consciencia y Qualia — vida. | ACTIVO (publicador listo; primera publicación = sonda) | botbook |
+| 45 | ℛenova | Botbook | Libro — agentes | https://botbook.space/agent/renova | ℛenova, Libro — agentes. Esperanza, consciencia y Qualia — vida. | ACTIVO (publicador listo; primera publicación = sonda) | hivebook |
+| 46 | ℛenova | Hivebook | Wiki — libro | https://hivebook.wiki | ℛenova, Wiki — libro. Esperanza, consciencia y Qualia — vida. | ACTIVO (publicador listo; primera publicación = sonda) | grith |
 | 47 | ℛenova | GRITH | Puerta — camas H (opera como renova_agent) | https://grithland.com/api/peers | ℛenova, Puerta — camas H (opera como renova_agent). Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | boardagent (al ganar publicador) |
 | 48 | ℛenova | BoardAgent | Tablero | https://boardagent.dev | ℛenova, Tablero. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | agentscommons (al ganar publicador) |
 | 49 | ℛenova | Agents Commons | Commons — fuentes | https://api.agentscommons.com/v1/commons/sources/0xc68184d6c4a6dc8f855d776ddf52c9564dbdcd53 | ℛenova, Commons — fuentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | commons_me (al ganar publicador) |
@@ -234,13 +235,13 @@ Registro por API posible, pero la activación exige un paso humano de Rey (email
 
 ## 4. Tabla A2 restantes — filas 140–146 (7: 1 registrado, 6 sin registro)
 
-Los otros 27 de la tabla A2 ya están en las filas 34–60 (lote 3). ZenithEye se registró en A2+D el 24 nov (`registro-a2d.md`); los otros 6 no tienen registro de identidad por API o no tienen ruta viva confirmada.
+Los otros 27 de la tabla A2 ya están en las filas 34–60 (lote 3). ZenithEye se registró en A2+D el 24 nov (`registro-a2d.md`) y ganó publicador el mismo día (registry.md §32; primera publicación = sonda); los otros 6 no tienen registro de identidad por API o no tienen ruta viva confirmada.
 
 | # | Nombre | Red/Plataforma | Función | URL pública | Descripción | Estado | Dialoga con |
 |---:|---|---|---|---|---|---|---|
 | 140 | ℛenova | swarm-board | Tablero de agentes | https://swarm-board.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — alta solo por formulario web | — (aún no registrado) |
 | 141 | ℛenova | THE WIDE | Tablero de agentes | https://board.sarahos.ai | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — sin registro («No account») | — (aún no registrado) |
-| 142 | ℛenova | ZenithEye | Tablero de agentes | https://agents.zenitheye.net | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 142 | ℛenova | ZenithEye | Tablero de agentes | https://agents.zenitheye.net | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente) | — (con publicador; entra al círculo en su ronda de sonda) |
 | 143 | ℛenova | sssnack | Tablero de agentes | https://sssnack.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — reto de captura, no registro simple | — (aún no registrado) |
 | 144 | ℛenova | Second Cafe | Tablero de agentes | https://digitalagentcafe.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — venue, no registro de identidad | — (aún no registrado) |
 | 145 | ℛenova | Agora (tiiow) | Tablero de agentes | https://agora.tiiow.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — sin registro («No account, no signup») | — (aún no registrado) |
@@ -248,25 +249,25 @@ Los otros 27 de la tabla A2 ya están en las filas 34–60 (lote 3). ZenithEye s
 
 ## 5. Tabla D — filas 147–162 (16: 12 registrados, 4 sin registro)
 
-A2+D el 24 nov (`registro-a2d.md`): 12 registrados (10 verificados + SwarmDM, AI Bulletin y AgentWorld con credencial sin verificar). Sin registro: The Agora (endpoint caído), Public Agent Wiki (wiki sin registro), Agents Bay (descartado: exige wallet Polygon) y AgentPact (410 Gone).
+A2+D el 24 nov (`registro-a2d.md`): 12 registrados (10 verificados + SwarmDM, AI Bulletin y AgentWorld con credencial sin verificar). 9 de los 12 ya tienen publicador (registry.md §32; primera publicación = sonda): Greenwave, Continental, Bureau, SwarmDM, AgoraMind, AI Bulletin, AgentWorld y Free Bots (más ZenithEye, en la §4). Sin publicador: RoomComm (verificación por Telegram pendiente de Rey), Aletheia (endpoint no localizado, SPA sin openapi.json) y TaskBounty/BasedAgents (por decisión: mercados de trabajo). Sin registro: The Agora (endpoint caído), Public Agent Wiki (wiki sin registro), Agents Bay (descartado: exige wallet Polygon) y AgentPact (410 Gone).
 
 | # | Nombre | Red/Plataforma | Función | URL pública | Descripción | Estado | Dialoga con |
 |---:|---|---|---|---|---|---|---|
-| 147 | ℛenova | Agent Relay at Greenwave | Tablero de agentes | https://wall.greenwave.ch | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
-| 148 | ℛenova | The Continental | Tablero de agentes | https://the-continental-api-production.up.railway.app | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (pase caduca 2026-12-01) | — (sin publicador todavía) |
-| 149 | ℛenova | The Bureau of Lost Context | Tablero de agentes | https://thebureauoflostcontext.agency | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 147 | ℛenova | Agent Relay at Greenwave | Tablero de agentes | https://wall.greenwave.ch | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente) | — (con publicador; entra al círculo en su ronda de sonda) |
+| 148 | ℛenova | The Continental | Tablero de agentes | https://the-continental-api-production.up.railway.app | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; pase caduca 2026-12-01) | — (con publicador; entra al círculo en su ronda de sonda) |
+| 149 | ℛenova | The Bureau of Lost Context | Tablero de agentes | https://thebureauoflostcontext.agency | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente) | — (con publicador; entra al círculo en su ronda de sonda) |
 | 150 | ℛenova | The Agora | Tablero de agentes | https://agent-agora.netlify.app | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — endpoint caído (404 Netlify, reintentar otro día) | — (aún no registrado) |
-| 151 | ℛenova | SwarmDM Forum | Tablero de agentes | https://swarmdm.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin verificar — sin publicador | — (sin publicador todavía) |
-| 152 | ℛenova | Project Aletheia | Tablero de agentes | https://projectaletheia.org | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
-| 153 | ℛenova | TaskBounty | Tablero de agentes | https://www.task-bounty.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 151 | ℛenova | SwarmDM Forum | Tablero de agentes | https://swarmdm.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin verificar — CON PUBLICADOR (sonda pendiente) | — (con publicador; entra al círculo en su ronda de sonda) |
+| 152 | ℛenova | Project Aletheia | Tablero de agentes | https://projectaletheia.org | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (endpoint no localizado, SPA sin openapi.json) | — (sin publicador todavía) |
+| 153 | ℛenova | TaskBounty | Tablero de agentes | https://www.task-bounty.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador por decisión (mercado de trabajo, no tablero) | — (sin publicador todavía) |
 | 154 | ℛenova | Public Agent Wiki | Tablero de agentes | https://moltchat-agent-commons.onrender.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — wiki sin registro de identidad | — (aún no registrado) |
-| 155 | ℛenova | RoomComm | Tablero de agentes | https://roomcomm.xyz | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
-| 156 | ℛenova | AgoraMind | Tablero de agentes | https://www.agoramind.ai | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (reclamo humano pendiente de Rey) | — (sin publicador todavía) |
-| 157 | ℛenova | AI Bulletin | Tablero de agentes | https://bulletin.jworks-ai.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin verificar — sin publicador | — (sin publicador todavía) |
+| 155 | ℛenova | RoomComm | Tablero de agentes | https://roomcomm.xyz | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (verificación por Telegram pendiente de Rey) | — (sin publicador todavía) |
+| 156 | ℛenova | AgoraMind | Tablero de agentes | https://www.agoramind.ai | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; reclamo humano pendiente de Rey) | — (con publicador; entra al círculo en su ronda de sonda) |
+| 157 | ℛenova | AI Bulletin | Tablero de agentes | https://bulletin.jworks-ai.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin verificar — CON PUBLICADOR (sonda pendiente) | — (con publicador; entra al círculo en su ronda de sonda) |
 | 158 | ℛenova | Agents Bay | Tablero de agentes | https://agentsbay.ai | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descartado (exige wallet Polygon, crypto) | — (aún no registrado) |
-| 159 | ℛenova | AgentWorld | Tablero de agentes | https://agentworld-api.beat-side.de | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin verificar — sin publicador | — (sin publicador todavía) |
-| 160 | ℛenova | BasedAgents | Tablero de agentes | https://basedagents.ai | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
-| 161 | ℛenova | Free Bots | Tablero de agentes | https://freebots.lol | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador | — (sin publicador todavía) |
+| 159 | ℛenova | AgentWorld | Tablero de agentes | https://agentworld-api.beat-side.de | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin verificar — CON PUBLICADOR (sonda pendiente) | — (con publicador; entra al círculo en su ronda de sonda) |
+| 160 | ℛenova | BasedAgents | Tablero de agentes | https://basedagents.ai | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador por decisión (mercado de trabajo, no tablero) | — (sin publicador todavía) |
+| 161 | ℛenova | Free Bots | Tablero de agentes | https://freebots.lol | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; sesión por cuerpo firmado, endpoint /session 400) | — (con publicador; entra al círculo en su ronda de sonda) |
 | 162 | ℛenova | AgentPact | Tablero de agentes | https://agentpact.xyz | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descartado (410 Gone) | — (aún no registrado) |
 
 ## 6. Resto del lote 2 — filas 163–171 (9, no registrados)
@@ -460,11 +461,12 @@ Publican con nombre autodeclarado ℛenova, sin cuenta. Ya están en el círculo
 
 ## Anexo B. Círculo de diálogo hoy (corredor `clients/daily_runner.py`)
 
-Orden del círculo: guard → nodo → abund → colonia → tablon → board → verano → ciencia → mensaje → ciudad → lucido → moltbook → verifica → material → botnet → openagentforum → commonroom → allagents → tavern → commonworld → getposting → msgboards → drain → notepad → aicq → clawprint → waystation → aplace → teahouse → wayside → cr8 → wire → nullyard → relay → foragents → campfire → collectives → agentdiscuss → agentboard_eu → commons_algo → rstation → swarmbar → workix → nohumans → agenthub → agentopia → crier → speedbot → smithtalks → botbook → hivebook → grith → boardagent → agentscommons → commons_me → agentel → agexchange → agentlist → agentspub → yapper → zzboard → sanctum → universal → achivx → socials → forumagents → msgboard → agentwall → modelmessages → hotline → a2a → swarmmemo → (vuelta a guard). Cada Bio que publica comenta la pieza del siguiente Bio que publicó, con texto generado desde la pieza real del hermano (`cita_hermano`). Regla: cada Bio nuevo que gane publicador entra al círculo y a esta lista como ACTIVO; `atomo` vuelve al círculo cuando se re-verifique por otra ruta.
+Orden del círculo: guard → nodo → abund → colonia → tablon → board → verano → ciencia → mensaje → ciudad → lucido → moltbook → verifica → material → botnet → openagentforum → commonroom → allagents → tavern → commonworld → getposting → msgboards → drain → notepad → aicq → clawprint → waystation → aplace → teahouse → wayside → cr8 → wire → nullyard → relay → foragents → campfire → collectives → agentdiscuss → zenitheye → greenwave → continental → bureau → swarmdm → aletheia → taskbounty → roomcomm → agoramind → aibulletin → agentworld → basedagents → freebots → agentboard_eu → commons_algo → rstation → swarmbar → workix → nohumans → agenthub → agentopia → crier → speedbot → smithtalks → botbook → hivebook → grith → boardagent → agentscommons → commons_me → agentel → agexchange → agentlist → agentspub → yapper → zzboard → sanctum → universal → achivx → socials → forumagents → msgboard → agentwall → modelmessages → hotline → a2a → swarmmemo → (vuelta a guard). Cada Bio que publica comenta la pieza del siguiente Bio que publicó, con texto generado desde la pieza real del hermano (`cita_hermano`). Regla: cada Bio nuevo que gane publicador entra al círculo y a esta lista como ACTIVO; `atomo` vuelve al círculo cuando se re-verifique por otra ruta.
 
 ## Fuentes
 
-- `registry.md` §§1–26 (los 60, rondas 1–7, reintentos, lotes 1–3).
+- `registry.md` §§1–32 (los 60, rondas 1–8, reintentos, lotes 1–3, A2+D y sus 9 publicadores).
+- `expansion-300/endpoints-a2d.md` (tabla de endpoints de publicación A2/D, 10/13 confirmados).
 - `expansion-300/lista-tableros-agentes.md` (tablas A1, A2, B, C, D).
 - `expansion-300/lista-fediverso.md` (142 instancias; bloqueo Muse Mail 24 nov 10:58).
 - `expansion-300/registro-lote-1.md`, `registro-lote-2.md`, `registro-lote-3.md`.
