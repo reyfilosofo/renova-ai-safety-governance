@@ -7,11 +7,12 @@ Programa experimental de investigación e ingeniería de **Rey Filósofo / SERES
 ## Estado (2026-11-24)
 
 - **Endpoint MCP público en vivo:** https://renova-mcp.vercel.app/mcp (desde 2026-11-23 23:11; `/health` 200, 8 herramientas, CENTRO DENY RNV-01 verificado en remoto).
-- **Clientes conectados:** ChatGPT 2026-11-23 23:21 (complemento «Renova MCP», sin autenticación), Grok 2026-11-23 23:28 (conector personalizado, Connected), Gemini vía Antigravity CLI 2026-11-23 23:51 (`renova_get_state` verificado; la web de Gemini no admite MCP propio).
-- **Libro 04_renova_H_v74.txt completo:** en el repo en 5 partes (`vercel/corpus/biblioteca/txt/04_renova_H_v74.part1–5.txt`, concatenado md5 idéntico al original de 6,8 MB, 921.352 palabras) y en vivo: `biblioteca_16_words` 1.620.676, verificado 2026-11-24 ~00:10.
-- **Licencia:** UNLICENSED, pendiente de decisión de Rey.
-- **Sin autenticación en el endpoint** (ni límite de peticiones): decisión pendiente; cualquier cambio rompería las 3 conexiones actuales hasta reconfigurarlas.
+- **Clientes conectados:** ChatGPT 2026-11-23 23:21 (complemento «Renova MCP», sin autenticación), Grok 2026-11-23 23:28 (conector personalizado, Connected), Gemini vía Antigravity CLI 2026-11-23 23:51 (`renova_get_state` verificado; la web de Gemini no admite MCP propio), Claude web 2026-11-24 00:04 (conector «Renova MCP», sin autenticación, Plan Free).
+- **Libro 04_renova_H_v74.txt completo:** en el repo en 5 partes (`vercel/corpus/biblioteca/txt/04_renova_H_v74.part1–5.txt`, concatenado md5 `02348fdedb8568b764ed0f831c5a1457`, idéntico al original de 6,8 MB, 921.352 palabras, método `wc -w` sobre el txt original) y en vivo: `biblioteca_29_words` 1.993.237 (29 obras, 28 con texto indexado, 1 solo metadatos: `11_escala.txt`, 6 bytes), verificado 2026-11-24 ~11:07.
+- **Licencia:** Apache 2.0 (LICENSE + NOTICE, commit `5c14792a`, 2026-11-24): código y documentación del servidor MCP bajo Apache 2.0; textos completos del corpus con todos los derechos reservados. El endpoint ya reporta `license: Apache-2.0` en vivo (verificado 2026-11-24 ~11:07).
+- **Sin autenticación en el endpoint** (decisión pendiente, opciones A–D): endurecimiento aplicado — límite 60 req/min/IP → 429, cuerpo >1 MB → 413, `renova_lucem_log` desactivado en el endpoint público (verificado 2026-11-24 ~11:07); cualquier cambio de autenticación rompería las 4 conexiones actuales hasta reconfigurarlas.
 - **LUCEM efímero en Vercel** (`/tmp` por instancia); el registro durable vive en el servidor local.
+- **Biblioteca en el repo:** 29 obras en `vercel/corpus/biblioteca/txt/` (28 con texto indexado), 4.973 págs., 1.993.237 palabras, servidas en vivo por el endpoint.
 
 ## Qué es
 
@@ -39,7 +40,7 @@ Investigar si una capa independiente de autorización —CENTRO Guard— reduce 
 - ContextGuard no detecta inyección de prompts de forma fiable (issue abierto).
 - No hay federación en vivo entre sistemas de IA; la coordinación es por Drive, GitHub y paquetes.
 - No hay alianzas institucionales anunciadas.
-- **Sin licencia: el proyecto sigue UNLICENSED.** No hay archivo de licencia en este repositorio a propósito.
+- **Licencia Apache 2.0 vigente** (LICENSE + NOTICE en la raíz); los textos completos del corpus quedan con todos los derechos reservados.
 
 ## Nota sobre la versión
 
@@ -61,16 +62,19 @@ El contenido de este repositorio es el del espacio unificado RENOVA AI SAFETY & 
 | `docs/tres-niveles-de-valor.md` | Cómo saber si aporta valor, en tres niveles sin atajos |
 | `docs/estado-y-bitacora.md` | Estado y bitácora — 15 de noviembre de 2026, con la entrada de unificación del 17 de noviembre |
 | `centro-guard-policy.yaml` | Política CENTRO Guard: RNV-01 a RNV-06 versionadas |
-| `CENTRO-001-preregistro.md` | Preregistro del experimento CENTRO-001 |
+| `CENTRO-001-preregistro.md` | Preregistro del experimento CENTRO-001 (propuesta completada 2026-11-24; decisiones D1–D10 en `centro-001/`) |
+| `centro-001/` | CENTRO-001: decisiones D1–D10 y recursos estimados de la propuesta completada |
 | `benchmark/` | Benchmark ℛ v0.1: diseño y lote inicial R-001–R-040 |
-| `packages/PACKAGES.md` | Inventario de los paquetes del producto (los archivos .zip no están incluidos; ver esa nota) |
+| `packages/PACKAGES.md` | Inventario de los paquetes del producto (14 de 15 incluidos: 13 zips + 1 docx; el Anexo de originales no está incluido, pendiente de revisión de Rey) |
+| `vercel/corpus/biblioteca/txt/` | Biblioteca: 29 obras (28 con texto indexado) servidas por el endpoint |
+| `.github/workflows/mcp-endpoint-smoke.yml` | Smoke test diario del endpoint (health 200 + 8 herramientas) |
 
 ## Procedencia de los archivos
 
 - Los tres documentos fundacionales (`docs/01`, `02`, `03`) y el diseño del Benchmark ℛ son **verbatim** de los documentos entregados por el autor.
 - Las secciones del programa (`dictamen`, `centro-001`, `simulador`, `laboratorio`, `estándares`, `ruta dual`, `valor`, `bitácora`) son transcripciones fieles del registro verificado del programa. El código fuente del espacio no se leyó directamente para elaborarlas.
 - `centro-guard-policy.yaml` y `CENTRO-001-preregistro.md` son reconstrucciones fieles a partir del registro verificado del programa: las versiones generadas en el navegador por la página v3.33 (retirada) no están disponibles como texto.
-- Los paquetes `.zip` y el `.docx` del Governance Test **no están incluidos** en este repositorio: el conector de GitHub no admite contenido binario. `packages/PACKAGES.md` los inventaría con nombre, fecha, número de archivos, md5 y resultados verificados, para subirlos por la web de GitHub, por git o como Releases.
+- Los paquetes `.zip` y el `.docx` del Governance Test **sí están incluidos** en este repositorio (14 de 15: 13 zips + 1 docx, commit `534ba68`, subidos por la web de GitHub con md5 verificados contra `packages/PACKAGES.md`). El Anexo de originales no está incluido, pendiente de revisión de Rey.
 
 ## Ecosistema
 
@@ -96,9 +100,7 @@ cd server
 
 El corpus es la raíz de este repo (`docs/`, `benchmark/`,
 `centro-guard-policy.yaml`) más `renova-fundamento-inventario-drive.json`
-(metadatos). La Biblioteca (texto de 24 obras) no está en el repo por
-tamaño y derechos; sin ella el servidor degrada con gracia y declara la
-cobertura por resultado. Detalle (arquitectura, método, supuestos,
+(metadatos). La Biblioteca (29 obras, 28 con texto indexado) **sí está** en el repo, en `vercel/corpus/biblioteca/txt/`, y el endpoint la sirve en vivo. Fundamento (54 obras) sigue solo como metadatos; sin su texto, el servidor declara la cobertura por resultado. Detalle (arquitectura, método, supuestos,
 límites, pruebas con resultados reales) en `server/README.md`,
 `server/CORPUS.md`, `server/TESTS.md` y `server/ACTIVATION.md`.
 
@@ -110,5 +112,4 @@ Puentes para otras IAs (en vivo en https://renova-mcp.vercel.app/mcp; ver Estado
 > `ALLOW_SIMULATED` no autoriza nada real. CENTRO-001 es un preregistro
 > propuesto, no ejecutado, sin resultados. `gold_label` del Benchmark ℛ
 > es null hasta la revisión ciega. Sin certificación ni respaldo de
-> NIST, ISO u OWASP. **UNLICENSED** (ver `server/UNLICENSED.txt`).
-
+> NIST, ISO u OWASP. **Licencia Apache 2.0** (ver `LICENSE` y `NOTICE` en la raíz; `server/UNLICENSED.txt` fue eliminado al entrar en vigor la licencia).
