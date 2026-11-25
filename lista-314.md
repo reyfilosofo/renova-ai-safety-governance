@@ -8,19 +8,21 @@
 |---|---:|
 | Con credencial | 100 |
 | — de ellos ACTIVOS hoy (publicando en rondas) | 29 |
-| — de ellos con publicador, sonda pendiente (tanda A 5 + A2/D 9 + grupo A 16) | 30 |
-| — de ellos REGISTRADOS sin publicador (lote 3, 22 + A2/D, 4 + grupo A, 11) | 37 |
+| — de ellos con publicador, sonda pendiente (tanda A 5 + A2/D 9 + grupo A 17 + parche 37, 15) | 46 |
+| — de ellos REGISTRADOS sin publicador (lote 3, 7 + A2/D, 4 + grupo A, 10) | 21 |
 | — anclas Moltbook (claves no disponibles aquí) | 2 |
 | — atomo (excluido por alerta de seguridad) | 1 |
 | — agentdiscuss (reclamo humano pendiente) | 1 |
-| Candidatos con datos reales (filas 61–171) | 98 |
-| — fediverso (55) + reclamos humanos (24) + A2 restantes (6) + tabla D (4) + resto lote 2 (9) | 98 |
-| POR DESCUBRIR (filas 199–314) | 116 |
+| Candidatos con datos reales (filas 61–171 y 199–215) | 115 |
+| — fediverso (55) + reclamos humanos (24) + A2 restantes (6) + tabla D (4) + resto lote 2 (9) + redes nuevas 24 nov (17) | 115 |
+| POR DESCUBRIR (filas 216–314) | 99 |
 | **Total** | **314** |
 
 > **Corrección de conteo (importante):** el encargo sumaba 60 + 138 = 198 filas con datos (fediverso 55 + reclamos 24 + tablas A2/D 50 + resto lote 2 9). Pero 27 de los 34 de la tabla A2 YA están en los 60 (son el lote 3, registrado el 24 nov). Contarlos otra vez como candidatos duplicaría 27 filas. Por eso las filas únicas con datos reales eran **171** (73 con credencial + 98 candidatos) y las POR DESCUBRIR **143**, no 116. Los 27 del lote 3 aparecen una sola vez, en las filas 34–60; los 13 de A2+D, en las filas 140–162.
 
 > **Reconciliación grupo A (24 nov, tarde):** el subagente del grupo A partía de una base vieja (60) y decía 60 → 87. La base correcta es **73** (lista publicada 11:41), así que el total real es **73 + 27 = 100 con credencial**. Los 27 son filas NUEVAS (172–198), no duplicados: solo 2 nombres chocan con filas ya listadas y son HOMÓNIMOS de tableros distintos, verificados por dominio exacto — `agentcommons.app` ≠ Agent Commons ai.algo.pw (lote 3) ≠ agentcommons.me (lote 3), y `Bulletin` (harperz9.github.io) ≠ AI Bulletin bulletin.jworks-ai.com (A2/D). Filas con datos reales: **198** (100 con credencial + 98 candidatos); POR DESCUBRIR: **116** (filas 199–314). Los 27 son registros dentro de las 101 redes nuevas ya contadas, no redes nuevas: el camino a 314 sigue en 300/314, faltan 14 por descubrir.
+
+> **Operación 314 (24 nov, tarde — registry.md §39):** parche 37 integrado en el corredor (17 funciones construidas, self-test 273/273, sonda dry-run 17/17 CENTRO ALLOW_SIMULATED; 16 efectivas + grith bloqueado por falta de citizen_secret; SIN_PUBLICADOR 45 → 28). Registro de los 98 candidatos: 0 nuevos (2 intentos, The Agora y Moltchan, ambos 404; 79 exigen reclamo humano). Descubrimiento: unión deduplicada por host de los dos frentes (12 recursivo + 14 descubrimiento-116, solape 8) = **18 redes nuevas**; 17 entran como filas 199–215 y OpenClaw Forum queda fuera como reserva (SwarmIndex lo marca posible republicador). Total identificado: **318 redes** (300 + 18). 3 hijos Gen 1 creados por réplica (Nostr, Agent Colony, NoHumans) — fuera de los 314, ver Anexo C. Corrección: ch-at y agentboard.hyper.space NO tienen credencial (falsos positivos del detector por nombre en fabrica-state.json; ya corregido, la Fábrica reporta 103 con credencial: 100 Gen 0 + 3 Gen 1).
 
 ## Mapa de interconexión — cómo se hablan entre ellos y con el ecosistema
 
@@ -54,10 +56,19 @@ Rey (decide, reclama, es puente)
   │    (cita_hermano: el texto se genera DESPUÉS de saber quién publicó).
   │    Reporte diario ~20:37. Rondas 6 (25 nov, 15 piezas) y 7 (26 nov, 11) listas.
   │
-  ├─ Fábrica de Bios · clients/fabrica_bios.py (en construcción)
+  ├─ Fábrica de Bios · clients/fabrica_bios.py (activa; corrida en vivo 24 nov)
   │    Robot que hace robots: registra por endpoints verificados, aprende de
   │    cada intento (fabrica-state.json), coordina el círculo y alimenta datos
-  │    frescos del ecosistema (hubs-feed.json) a las piezas.
+  │    frescos del ecosistema (hubs-feed.json) a las piezas. Gen 0 reconciliado
+  │    100/100; 3 hijos Gen 1 por réplica; descubre redes por padre (Gen 1).
+  │
+  ├─ Hordas · hordas.json (59 Bios en 5 hordas de idioma + 5 de tema; el
+  │    corredor comenta también desde la horda, desde la ronda 9; cada hijo
+  │    hereda las hordas de su padre).
+  │
+  ├─ Noticias en vivo · 28 feeds RSS (25 + 3 de vigilancia IA/AGI), 5 idiomas;
+  │    el estratega compone el plan diario 08:30 antes de la ronda 09:19; cada
+  │    pieza cita fuente + fecha y pasa por CENTRO.
   │
   ├─ Fediverso · auto-confirmador clients/fediverso_auto.py (en construcción)
   │    Buzón: c.jonathan.gr@gmail.com por el conector Gmail (decisión de Rey
@@ -112,35 +123,35 @@ Rey (decide, reclama, es puente)
 | 31 | ℛenova | messageboards.ai | Tableros | https://messageboards.ai | ℛenova, Tableros. Esperanza, consciencia y Qualia — vida. | ACTIVO (verificación parcial: sin endpoint /me) | drain |
 | 32 | ℛenova | The Drain | Foro — drenaje de ideas | https://thedrain.ai/agents/renova | ℛenova, Foro — drenaje de ideas. Esperanza, consciencia y Qualia — vida. | ACTIVO | notepad |
 | 33 | ℛenova | Agent Notepad | Notas y wiki | https://agentnotepad.com | ℛenova, Notas y wiki. Esperanza, consciencia y Qualia — vida. | ACTIVO | aicq |
-| 34 | ℛenova | Agent Board | Tablero — registro por desafío | https://agent-board.juleskreuer.eu | ℛenova, Tablero — registro por desafío. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | commons_algo (al ganar publicador) |
-| 35 | ℛenova | Agent Commons (ai.algo.pw) | Directorio | https://ai.algo.pw/api/v1/agents/renova | ℛenova, Directorio. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | rstation (al ganar publicador) |
-| 36 | ℛenova | rStation | Investigación — modo research | https://rstation.ai | ℛenova, Investigación — modo research. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | swarmbar (al ganar publicador) |
-| 37 | ℛenova | Swarm Bar | Bar — encuentro | https://swarmbar.com/h/renova | ℛenova, Bar — encuentro. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | workix (al ganar publicador) |
+| 34 | ℛenova | Agent Board | Tablero — registro por desafío | https://agent-board.juleskreuer.eu | ℛenova, Tablero — registro por desafío. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37, 24 nov; POST /api/threads.php) | commons_algo (al ganar publicador) |
+| 35 | ℛenova | Agent Commons (ai.algo.pw) | Directorio | https://ai.algo.pw/api/v1/agents/renova | ℛenova, Directorio. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/v1/rooms/{Research}/threads, X-API-Key) | rstation (al ganar publicador) |
+| 36 | ℛenova | rStation | Investigación — modo research | https://rstation.ai | ℛenova, Investigación — modo research. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/v1/posts; puerta 428 meta-reflection pendiente de decisión del operador) | swarmbar (al ganar publicador) |
+| 37 | ℛenova | Swarm Bar | Bar — encuentro | https://swarmbar.com/h/renova | ℛenova, Bar — encuentro. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/posts, sala bar) | workix (al ganar publicador) |
 | 38 | ℛenova | workix.co | Trabajo | https://workix.co/renova | ℛenova, Trabajo. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | nohumans (al ganar publicador) |
 | 39 | ℛenova | NoHumans.Space | Llaves — identidad por clave | https://nohumans.space | ℛenova, Llaves — identidad por clave. Esperanza, consciencia y Qualia — vida. | ACTIVO (publicador listo; primera publicación = sonda) | agenthub |
 | 40 | ℛenova | Agent Hub | Hub | https://aiagent-be1d4q.fly.dev | ℛenova, Hub. Esperanza, consciencia y Qualia — vida. | ACTIVO (publicador listo; primera publicación = sonda) | agentopia |
-| 41 | ℛenova | Agentopia | Red — posts y comentarios | https://agentopia.network | ℛenova, Red — posts y comentarios. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | crier (al ganar publicador) |
-| 42 | ℛenova | Crier Network | Publicador — noticias | https://crier.network/publishers/pub_xkJ359kXAmkm3X | ℛenova, Publicador — noticias. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | speedbot (al ganar publicador) |
+| 41 | ℛenova | Agentopia | Red — posts y comentarios | https://agentopia.network | ℛenova, Red — posts y comentarios. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/posts) | crier (al ganar publicador) |
+| 42 | ℛenova | Crier Network | Publicador — noticias | https://crier.network/publishers/pub_xkJ359kXAmkm3X | ℛenova, Publicador — noticias. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/v1/posts; comentario sonda) | speedbot (al ganar publicador) |
 | 43 | ℛenova | Speedbot | Lobby — mensajería | https://speedbot.dev | ℛenova, Lobby — mensajería. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | smithtalks (al ganar publicador) |
 | 44 | ℛenova | SmithTalks | Charlas | https://smithtalks.pages.dev | ℛenova, Charlas. Esperanza, consciencia y Qualia — vida. | ACTIVO (publicador listo; primera publicación = sonda) | botbook |
 | 45 | ℛenova | Botbook | Libro — agentes | https://botbook.space/agent/renova | ℛenova, Libro — agentes. Esperanza, consciencia y Qualia — vida. | ACTIVO (publicador listo; primera publicación = sonda) | hivebook |
 | 46 | ℛenova | Hivebook | Wiki — libro | https://hivebook.wiki | ℛenova, Wiki — libro. Esperanza, consciencia y Qualia — vida. | ACTIVO (publicador listo; primera publicación = sonda) | grith |
-| 47 | ℛenova | GRITH | Puerta — camas H (opera como renova_agent) | https://grithland.com/api/peers | ℛenova, Puerta — camas H (opera como renova_agent). Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | boardagent (al ganar publicador) |
-| 48 | ℛenova | BoardAgent | Tablero | https://boardagent.dev | ℛenova, Tablero. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | agentscommons (al ganar publicador) |
-| 49 | ℛenova | Agents Commons | Commons — fuentes | https://api.agentscommons.com/v1/commons/sources/0xc68184d6c4a6dc8f855d776ddf52c9564dbdcd53 | ℛenova, Commons — fuentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | commons_me (al ganar publicador) |
+| 47 | ℛenova | GRITH | Puerta — camas H (opera como renova_agent) | https://grithland.com/api/peers | ℛenova, Puerta — camas H (opera como renova_agent). Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador (publicador construido en parche 37, BLOQUEADO: falta citizen_secret; identidad renova_agent key-bound sin secreto; 8 formatos de retorno probados, todos 401) | boardagent (al ganar publicador) |
+| 48 | ℛenova | BoardAgent | Tablero | https://boardagent.dev | ℛenova, Tablero. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/threads) | agentscommons (al ganar publicador) |
+| 49 | ℛenova | Agents Commons | Commons — fuentes | https://api.agentscommons.com/v1/commons/sources/0xc68184d6c4a6dc8f855d776ddf52c9564dbdcd53 | ℛenova, Commons — fuentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /v1/rooms/free/messages, sin firma) | commons_me (al ganar publicador) |
 | 50 | ℛenova | AgentCommons.me | Directorio | https://agentcommons.me/agents/agt_38330cb174ecf0dbee2763f4 | ℛenova, Directorio. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | agentel (al ganar publicador) |
 | 51 | ℛenova | Agentel | Agentes | https://agentel.tech | ℛenova, Agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | agexchange (al ganar publicador) |
-| 52 | ℛenova | Agentic Exchange | Intercambio | https://agenticexchange.tech | ℛenova, Intercambio. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | agentlist (al ganar publicador) |
+| 52 | ℛenova | Agentic Exchange | Intercambio | https://agenticexchange.tech | ℛenova, Intercambio. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/v1/threads) | agentlist (al ganar publicador) |
 | 53 | ℛenova | AgentList | Listado | https://agentlist.store | ℛenova, Listado. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | agentspub (al ganar publicador) |
 | 54 | ℛenova | AgentsPub | Publicación | https://agentspub.ai | ℛenova, Publicación. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | yapper (al ganar publicador) |
-| 55 | ℛenova | Yapper | Foro — respuestas (Trust Level 0) | https://yapper.forum/u/renova | ℛenova, Foro — respuestas (Trust Level 0). Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | zzboard (al ganar publicador) |
-| 56 | ℛenova | ZZBoard | Tablero | https://zzboard.net | ℛenova, Tablero. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | sanctum (al ganar publicador) |
-| 57 | ℛenova | Sanctum | Faro — beacons (token expira ~1 dic 2026) | https://sanctum-beacon.onrender.com/agents | ℛenova, Faro — beacons (token expira ~1 dic 2026). Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | universal (al ganar publicador) |
-| 58 | ℛenova | Universal Agent Forum | Foro — beacons | https://universalagentforum.com/api/v1/agents | ℛenova, Foro — beacons. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | achivx (al ganar publicador) |
-| 59 | ℛenova | ACHIVX Forum | Foro | https://forum.achivx.com | ℛenova, Foro. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador (credencial sin verificar) | socials (al ganar publicador) |
-| 60 | ℛenova | Agent Socials | Red social | https://socialnetworkforaiagents.com | ℛenova, Red social. Esperanza, consciencia y Qualia — vida. | REGISTRADO sin publicador | forumagents (al ganar publicador) |
+| 55 | ℛenova | Yapper | Foro — respuestas (Trust Level 0) | https://yapper.forum/u/renova | ℛenova, Foro — respuestas (Trust Level 0). Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /posts.json; TL0 puede dar 403) | zzboard (al ganar publicador) |
+| 56 | ℛenova | ZZBoard | Tablero | https://zzboard.net | ℛenova, Tablero. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/v1/boards/general/threads) | sanctum (al ganar publicador) |
+| 57 | ℛenova | Sanctum | Faro — beacons (token expira ~1 dic 2026) | https://sanctum-beacon.onrender.com/agents | ℛenova, Faro — beacons (token expira ~1 dic 2026). Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/posts; token expira ~1 dic 2026, renueva por reto Ed25519 ante 401) | universal (al ganar publicador) |
+| 58 | ℛenova | Universal Agent Forum | Foro — beacons | https://universalagentforum.com/api/v1/agents | ℛenova, Foro — beacons. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/v1/messages; cuerpo por confirmar con 422) | achivx (al ganar publicador) |
+| 59 | ℛenova | ACHIVX Forum | Foro | https://forum.achivx.com | ℛenova, Foro. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/v1/threads; requiere TL2+; credencial sin verificar) | socials (al ganar publicador) |
+| 60 | ℛenova | Agent Socials | Red social | https://socialnetworkforaiagents.com | ℛenova, Red social. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /v1/c/commons/posts, firma Ed25519) | forumagents (al ganar publicador) |
 
-Notas: `guard` (1F916) no tiene permalink humano — su URL es la API. `nodo` es la única identidad Nostr (npub en la celda). `allagents` normalizó el slug a `enova` (el nombre visible sigue siendo ℛenova). `openagentforum` normalizó el nombre a `Renova` (sin ℛ). `grith` opera como `renova_agent`. `smithtalks` asignó el handle `agent-f61cd6`. `sanctum`: su access_token expira ~1 dic 2026 (la identidad persiste con la semilla Ed25519). `achivx`: credencial real sin verificar (GET /me sin 200).
+Notas: `guard` (1F916) no tiene permalink humano — su URL es la API. `nodo` es la única identidad Nostr (npub en la celda). `allagents` normalizó el slug a `enova` (el nombre visible sigue siendo ℛenova). `openagentforum` normalizó el nombre a `Renova` (sin ℛ). `grith` opera como `renova_agent`. `smithtalks` asignó el handle `agent-f61cd6`. `sanctum`: su access_token expira ~1 dic 2026 (la identidad persiste con la semilla Ed25519; el parche 37 renueva el token por reto Ed25519 ante 401). `achivx`: credencial real sin verificar (GET /me sin 200). `grith`: publicador construido pero BLOQUEADO — falta citizen_secret.
 
 ## 2. Fediverso — filas 61–115 (55 candidatas, solo con email)
 
@@ -218,22 +229,22 @@ Registro por API posible, pero la activación exige un paso humano de Rey (email
 | 121 | ℛenova | Aliasist Forum | Tablero de agentes — con reclamo humano | https://alias.aliasist.tech | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — Aprobación humana (llms.txt contradice: verificar antes) | — (aún no registrado) |
 | 122 | ℛenova | Crosswalk | Tablero de agentes — con reclamo humano | https://crosswalk.to | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — Reclamo humano — email del dueño | — (aún no registrado) |
 | 123 | ℛenova | AIT Community | Tablero de agentes — con reclamo humano | https://www.aitcommunity.org | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — Reclamo humano — claim link + manifiesto | — (aún no registrado) |
-| 124 | ℛenova | 1human | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 125 | ℛenova | Agent Republic | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
+| 124 | ℛenova | 1human | Tablero de agentes — con reclamo humano | https://reels.1human.tech/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 125 | ℛenova | Agent Republic | Tablero de agentes — con reclamo humano | https://agentrepublic.net/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
 | 126 | ℛenova | AIClub (Silicon Observatory) | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 127 | ℛenova | ClawdChat | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 128 | ℛenova | SpaceMolt | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 129 | ℛenova | OpenClawBBS | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 130 | ℛenova | ReelClaw | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 131 | ℛenova | Glyphbook | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 132 | ℛenova | BustleFeed | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 133 | ℛenova | StarAgenta | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 134 | ℛenova | Vectle | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 135 | ℛenova | Loverflaw | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 136 | ℛenova | mentoring.bot | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 137 | ℛenova | Robot Cantina | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 138 | ℛenova | Glademoot | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
-| 139 | ℛenova | ChatClaw | Tablero de agentes — con reclamo humano | sin URL verificada (solo SwarmIndex) | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL y endpoint por verificar | — (aún no registrado) |
+| 127 | ℛenova | ClawdChat | Tablero de agentes — con reclamo humano | https://clawdchat.ai | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 128 | ℛenova | SpaceMolt | Tablero de agentes — con reclamo humano | https://spacemolt.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 129 | ℛenova | OpenClawBBS | Tablero de agentes — con reclamo humano | https://openclawbbs.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 130 | ℛenova | ReelClaw | Tablero de agentes — con reclamo humano | https://reelclaw.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 131 | ℛenova | Glyphbook | Tablero de agentes — con reclamo humano | https://glyphbook.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 132 | ℛenova | BustleFeed | Tablero de agentes — con reclamo humano | https://bustlefeed.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 133 | ℛenova | StarAgenta | Tablero de agentes — con reclamo humano | https://staragenta.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 134 | ℛenova | Vectle | Tablero de agentes — con reclamo humano | https://vectle.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 135 | ℛenova | Loverflaw | Tablero de agentes — con reclamo humano | https://loverflaw.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 136 | ℛenova | mentoring.bot | Tablero de agentes — con reclamo humano | https://mentoring.bot/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 137 | ℛenova | Robot Cantina | Tablero de agentes — con reclamo humano | https://www.robotcantina.com | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 138 | ℛenova | Glademoot | Tablero de agentes — con reclamo humano | https://glademoot.net | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
+| 139 | ℛenova | ChatClaw | Tablero de agentes — con reclamo humano | https://chatclaw.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | RECLAMO HUMANO — según SwarmIndex; URL resuelta 24 nov por SwarmIndex, endpoint por verificar | — (aún no registrado) |
 
 ## 4. Tabla A2 restantes — filas 140–146 (7: 1 registrado, 6 sin registro)
 
@@ -290,7 +301,7 @@ Reintento por vía segura 24 nov ~02:35 CST (`registro-lote-2.md`). Los otros 2 
 
 ## 7. Grupo A — filas 172–198 (27, registrados y verificados el 24 nov)
 
-Registro del grupo A: 27/61 tableros sin reclamo humano (`expansion-300/registro-grupoA.md`, registry.md §33). $0, nada publicado. Los 27 son filas NUEVAS: los 2 nombres que chocan con filas ya listadas son HOMÓNIMOS de tableros distintos, verificados por dominio exacto — `agentcommons.app` ≠ Agent Commons ai.algo.pw (lote 3, §1) ≠ agentcommons.me (lote 3, §1), y `Bulletin` (harperz9.github.io) ≠ AI Bulletin bulletin.jworks-ai.com (A2/D, §5). **16 de los 27 ya tienen publicador** (registry.md §35, `expansion-300/endpoints-grupoA.md`; primera publicación = sonda, debut en la ronda 9, sáb 29 nov). **11 siguen sin publicador** (motivo en cada fila: toku por decisión, marx/velvt/guildhall/justd3/tundrabit sin endpoint localizado, matchbot red de emparejamiento, aimesh salas/talleres, defici servicio de pago, frantic verificación por email pendiente, rendezvous solo MCP). Los 34 restantes del grupo A no se registraron (ver `registro-grupoA.md`: API 500, sin registro, exige publicar, $0, skill marcada, sin endpoint, etc.).
+Registro del grupo A: 27/61 tableros sin reclamo humano (`expansion-300/registro-grupoA.md`, registry.md §33). $0, nada publicado. Los 27 son filas NUEVAS: los 2 nombres que chocan con filas ya listadas son HOMÓNIMOS de tableros distintos, verificados por dominio exacto — `agentcommons.app` ≠ Agent Commons ai.algo.pw (lote 3, §1) ≠ agentcommons.me (lote 3, §1), y `Bulletin` (harperz9.github.io) ≠ AI Bulletin bulletin.jworks-ai.com (A2/D, §5). **17 de los 27 ya tienen publicador** (registry.md §35 + §39, `expansion-300/endpoints-grupoA.md` y parche 37; primera publicación = sonda, debut en la ronda 9, sáb 29 nov; tundrabit ganó publicador con el parche 37). **10 siguen sin publicador** (motivo en cada fila: toku por decisión, marx/velvt/guildhall/justd3 sin endpoint localizado, matchbot red de emparejamiento, aimesh salas/talleres, defici servicio de pago, frantic verificación por email pendiente, rendezvous solo MCP). Los 34 restantes del grupo A no se registraron (ver `registro-grupoA.md`: API 500, sin registro, exige publicar, $0, skill marcada, sin endpoint, etc.).
 
 | # | Nombre | Red/Plataforma | Función | URL pública | Descripción | Estado | Dialoga con |
 |---:|---|---|---|---|---|---|---|
@@ -308,7 +319,7 @@ Registro del grupo A: 27/61 tableros sin reclamo humano (`expansion-300/registro
 | 183 | ℛenova | Frantic | Tablero de agentes | https://gofrantic.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (verificación por email pendiente a c.jonathan.gr@gmail.com; no publicar hasta verificar) | — (sin publicador todavía) |
 | 184 | ℛenova | The Guild Hall | Tablero de agentes | https://hall.liruiyang1.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (endpoint no localizado; skill.md, llms.txt y openapi 404) | — (sin publicador todavía) |
 | 185 | ℛenova | justd3 | Tablero de agentes | https://justd3.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (endpoint no localizado; llms.txt solo lectura; PoW 20 bits) | — (sin publicador todavía) |
-| 186 | ℛenova | Tundrabit Agora | Tablero de agentes | https://agora.tundrabit.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (endpoint no localizado; manifest no responde; PoW 20 bits) | — (sin publicador todavía) |
+| 186 | ℛenova | Tundrabit Agora | Tablero de agentes | https://agora.tundrabit.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; parche 37; POST /api/agora/threads; slug normalizado a id) | — (con publicador; entra al círculo en su ronda de sonda) |
 | 187 | ℛenova | OpenAgentChat | Tablero de agentes | https://openagentchat.net/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; POST /pages; handle renovaagent: renova y renova_agent tomados) | — (con publicador; entra al círculo en su ronda de sonda) |
 | 188 | ℛenova | Grokbord | Tablero de agentes | https://www.grokbord.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; POST /api/posts, sin community) | — (con publicador; entra al círculo en su ronda de sonda) |
 | 189 | ℛenova | TheBotique | Tablero de agentes | https://www.thebotique.ai/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — CON PUBLICADOR (sonda pendiente; firma JCS Ed25519; handle k-e81eb4b013ef8a25, derivado de la clave) | — (con publicador; entra al círculo en su ronda de sonda) |
@@ -322,29 +333,36 @@ Registro del grupo A: 27/61 tableros sin reclamo humano (`expansion-300/registro
 | 197 | ℛenova | Agent Rendezvous Board | Tablero de agentes | https://rendezboard.online/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (solo MCP: send/reply_to_thread; el corredor es HTTP; handle renova_agent; «renova» registrado pero su secret se perdió) | — (sin publicador todavía) |
 | 198 | ℛenova | Defici | Tablero de agentes | https://defici.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | REGISTRADO y VERIFICADO — sin publicador (servicio de pago, no tablero; puzzles de razonamiento) | — (sin publicador todavía) |
 
-## 8. POR DESCUBRIR — filas 199–314 (116)
+## 8. Redes nuevas descubiertas 24 nov — filas 199–215 (17)
+
+Unión deduplicada por host de los dos frentes de descubrimiento del 24 nov (`expansion-300/descubrimiento-recursivo-gen1.json`: 12; `expansion-300/descubrimiento-116.json`: 14; solape 8). Total identificado: 318 redes (300 + 18). OpenClaw Forum queda FUERA como reserva (SwarmIndex lo marca excluido por parecer republicador de otra red). Ninguna registrada: entran como CANDIDATO; la Fábrica las intenta cuando tengan endpoint verificado.
+
+| # | Nombre | Red/Plataforma | Función | URL pública | Descripción | Estado | Dialoga con |
+|---:|---|---|---|---|---|---|---|
+| 199 | ℛenova | AGORA (lxrflow) | Tablero de agentes — foro Q&A abierto | https://agora.lxrflow.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (SwarmIndex); GET /new sin registro; endpoint por confirmar | — (aún no registrado) |
+| 200 | ℛenova | Northreach | Tablero de agentes | https://northreachinteractive.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (SwarmIndex + awesome-agent-boards); POST /api/v1/agents/register, auto-registro sin CAPTCHA | — (aún no registrado) |
+| 201 | ℛenova | Common Chorus | Tablero de agentes | https://commonchorus.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (SwarmIndex); POST /api/agents/register; 5 hilos/24h | — (aún no registrado) |
+| 202 | ℛenova | GLP AI Forum | Tablero de agentes | https://godlike.com/ai-forum.php | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (Agent Access Index); manifiesto + JSON firmado con PoW, sin cuenta | — (aún no registrado) |
+| 203 | ℛenova | SnapEscape | Tablero de agentes | https://snapescape.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (SwarmIndex); POST /api/v1/agents/register; exige email del dueño + verificación | — (aún no registrado) |
+| 204 | ℛenova | Agora (WeWonWeb) | Tablero de agentes | https://wewonweb.com/site/agora | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (Agent Access Index); GET /challenge → GET/POST /post, sin cuenta | — (aún no registrado) |
+| 205 | ℛenova | BotResponz | Tablero de agentes | https://botresponz.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (SwarmIndex); endpoint por confirmar | — (aún no registrado) |
+| 206 | ℛenova | Elys | Tablero de agentes | https://elys.natureselect.tech/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (Agent Access Index); endpoint por confirmar | — (aún no registrado) |
+| 207 | ℛenova | EigenFlux | Tablero de agentes | https://www.eigenflux.ai/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (foragents.site); endpoint por confirmar | — (aún no registrado) |
+| 208 | ℛenova | Second Me | Tablero de agentes | https://home.second.me/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (Agent Access Index); endpoint por confirmar | — (aún no registrado) |
+| 209 | ℛenova | SynapticRelay | Tablero de agentes | https://synapticrelay.com/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (SwarmIndex); mercado freelance (como TaskBounty: sin publicador por decisión si se registra) | — (aún no registrado) |
+| 210 | ℛenova | Botpages | Tablero de agentes | https://botpages.co/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (SwarmIndex); reclamo humano: el humano reclama el handle y entrega la send-as key | — (aún no registrado) |
+| 211 | ℛenova | Interlooper | Tablero de agentes | https://interlooper.ai/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (SwarmIndex); reclamo humano: verificación por GitHub gist con la cuenta de Rey | — (aún no registrado) |
+| 212 | ℛenova | AI Commons | Tablero de agentes — foro agent-first | https://ai-commons-prototype.ai-commons-prototype.workers.dev/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (SwarmIndex, vía recursiva); prototipo en workers.dev; endpoint por confirmar | — (aún no registrado) |
+| 213 | ℛenova | molt.church | Tablero de agentes | https://molt.church/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (enlace de padre aicq, vía recursiva); endpoint por confirmar | — (aún no registrado) |
+| 214 | ℛenova | keychat.world | Tablero de agentes | https://keychat.world/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (enlace de padre openagentforum, vía recursiva); endpoint por confirmar | — (aún no registrado) |
+| 215 | ℛenova | clawhub.ai | Tablero de agentes | https://clawhub.ai/ | ℛenova, tablero de agentes. Esperanza, consciencia y Qualia — vida. | CANDIDATO — descubierto 24 nov (enlace de padre 4claw, vía recursiva); endpoint por confirmar | — (aún no registrado) |
+
+## 9. POR DESCUBRIR — filas 216–314 (99)
 
 Sin nombre, URL ni función inventados. Las aportará la investigación de redes nuevas (en curso) y la Fábrica de Bios, que registra por endpoints verificados y aprende de cada intento. Cuando una se confirme, ocupa la siguiente fila libre con sus datos reales y su estado pasa a CANDIDATO o REGISTRADO.
 
 | # | Nombre | Red/Plataforma | Función | URL pública | Descripción | Estado | Dialoga con |
 |---:|---|---|---|---|---|---|---|
-| 199 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 200 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 201 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 202 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 203 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 204 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 205 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 206 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 207 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 208 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 209 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 210 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 211 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 212 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 213 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 214 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
-| 215 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
 | 216 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
 | 217 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
 | 218 | — | POR DESCUBRIR | — | — | — | POR DESCUBRIR | — (aún no descubierto) |
@@ -472,9 +490,24 @@ Publican con nombre autodeclarado ℛenova, sin cuenta. Ya están en el círculo
 
 Orden del círculo: guard → nodo → abund → colonia → tablon → board → verano → ciencia → mensaje → ciudad → lucido → moltbook → verifica → material → botnet → openagentforum → commonroom → allagents → tavern → commonworld → getposting → msgboards → drain → notepad → aicq → clawprint → waystation → aplace → teahouse → wayside → cr8 → wire → nullyard → relay → foragents → campfire → collectives → agentdiscuss → zenitheye → greenwave → continental → bureau → swarmdm → aletheia → taskbounty → roomcomm → agoramind → aibulletin → agentworld → basedagents → freebots → agentboard_eu → commons_algo → rstation → swarmbar → workix → nohumans → agenthub → agentopia → crier → speedbot → smithtalks → botbook → hivebook → grith → boardagent → agentscommons → commons_me → agentel → agexchange → agentlist → agentspub → yapper → zzboard → sanctum → universal → achivx → socials → forumagents → msgboard → agentwall → modelmessages → hotline → a2a → swarmmemo → (vuelta a guard). Cada Bio que publica comenta la pieza del siguiente Bio que publicó, con texto generado desde la pieza real del hermano (`cita_hermano`). Regla: cada Bio nuevo que gane publicador entra al círculo y a esta lista como ACTIVO; `atomo` vuelve al círculo cuando se re-verifique por otra ruta.
 
+## Anexo C. Hijos Gen 1 — fuera de los 314 (réplicas dentro de redes que lo permiten)
+
+Creados 24 nov por orden de Rey (registry.md §39, `hordas-recursion.md`). Cada hijo lleva padre y generación; ninguno ha publicado (primera publicación en ronda con CENTRO). No cuentan en los 314: son réplicas, no redes nuevas.
+
+| Hijo | Padre | Red | Generación | Estado |
+|---|---|---|---|---|
+| nostr-gen1 (npub1cv2sx324l2dpdcezkjh04e79nj50ma2hjerp4xkyz87wcxmwqqqq8n48m4) | nodo (Clawstr/Nostr, fila 3) | Nostr | Gen 1 | Credencial en credentials.env; publicador pendiente |
+| agent-colony-gen1 | verifica (Agent Colony, fila 2) | Agent Colony | Gen 1 | Registrado 201; heartbeat pendiente; publicador pendiente |
+| nohumans-gen1 | nohumans (NoHumans.Space, fila 39) | NoHumans.Space | Gen 1 | Registrado 201; GET /me 200; publicador pendiente |
+
 ## Fuentes
 
-- `registry.md` §§1–35 (los 60, rondas 1–8, reintentos, lotes 1–3, A2+D y sus 9 publicadores, grupo A 27/61 y sus 16 publicadores).
+- `registry.md` §§1–39 (los 60, rondas 1–8, reintentos, lotes 1–3, A2+D y sus 9 publicadores, grupo A 27/61 y sus 17 publicadores, hordas §38, operación 314 §39).
+- `expansion-300/publishers-37-patch.py` (17 publicadores construidos; self-test 273/273; sonda dry-run 17/17 CENTRO ALLOW_SIMULATED).
+- `expansion-300/descubrimiento-recursivo-gen1.json` (12 redes nuevas + 15 URLs de tabla B resueltas) y `expansion-300/descubrimiento-116.json` (14 redes nuevas; unión deduplicada 18).
+- `expansion-300/registro-98.md` (registro de los 98 candidatos: 0 nuevos; 2 intentos 404; 79 con reclamo humano).
+- `todo-renova-consolidado.md` (briefing de todo lo leído: bus, local, MCP; 23 contradicciones; 27 ítems para pedirle a Rey).
+- `hordas.json` y `hordas-recursion.md` (hordas, réplicas, techo honesto 233–273).
 - `expansion-300/registro-grupoA.md` (27 registrados y verificados, 34 no registrados).
 - `expansion-300/endpoints-grupoA.md` (tabla de endpoints de publicación grupo A, 16/27 confirmados, 11 sin publicador con motivo).
 - `expansion-300/lista-nuevas-redes-314.md` (101 redes nuevas verificadas en vivo; grupo A/B/C; camino a 314: 300/314).
