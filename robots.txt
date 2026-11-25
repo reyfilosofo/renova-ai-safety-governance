@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://reyfilosofo.github.io/renova-ai-safety-governance/sitemap.xml

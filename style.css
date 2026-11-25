@@ -1,0 +1,46 @@
+/* CUADERNOS R — Renova Press. Colores del storekit. */
+:root{--black:#111111;--white:#FFFFFF;--ivory:#F7F3EC;--charcoal:#1F1F1F;--gold:#B98A3C;--taupe:#B9B1A3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ivory);color:var(--charcoal);font-family:Georgia,'Times New Roman',serif;font-size:18px;line-height:1.7}
+a{color:#7a5a1d}
+a:hover{color:var(--gold)}
+header.site{background:var(--black);color:var(--ivory);padding:2.2rem 1rem 1.6rem;text-align:center}
+header.site .portal{display:flex;justify-content:center;gap:10px;margin-bottom:1rem}
+header.site .portal i{display:block;width:34px;height:52px;border:2px solid var(--gold);border-bottom:none;border-radius:34px 34px 0 0}
+header.site .portal i:nth-child(2){height:64px}
+header.site h1{font-family:'Helvetica Neue',Arial,sans-serif;font-size:1.5rem;letter-spacing:.14em;margin:.2rem 0;text-transform:uppercase}
+header.site h1 a{color:var(--ivory);text-decoration:none}
+header.site p.tag{color:var(--taupe);margin:.2rem 0;font-style:italic}
+nav{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.92rem;margin-top:1rem}
+nav a{color:var(--ivory);text-decoration:none;margin:0 .7rem}
+nav a:hover{color:var(--gold)}
+main{max-width:760px;margin:0 auto;padding:2rem 1.2rem 3rem}
+h1,h2,h3{font-family:'Helvetica Neue',Arial,sans-serif;line-height:1.3;color:var(--black)}
+h1{font-size:1.9rem}
+h2{font-size:1.35rem;margin-top:2.2rem;border-bottom:1px solid var(--taupe);padding-bottom:.3rem}
+h3{font-size:1.12rem;margin-top:1.8rem}
+blockquote{border-left:3px solid var(--gold);margin:1.4rem 0;padding:.6rem 1.1rem;background:#fff;font-style:italic}
+blockquote p{margin:.4rem 0}
+code{background:#efe9dc;padding:.1rem .3rem;font-size:.9em}
+hr{border:none;border-top:1px solid var(--taupe);margin:2rem 0}
+ul,ol{padding-left:1.4rem}
+li{margin:.35rem 0}
+.series{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.9rem;color:#7a5a1d;letter-spacing:.06em;text-transform:uppercase}
+.scope{background:#fff;border:1px solid var(--gold);padding:.9rem 1.1rem;font-size:.95rem;margin:1.2rem 0}
+.excerpt{font-size:1.15rem;font-style:italic;color:#444}
+.cta{background:var(--black);color:var(--ivory);padding:1.4rem 1.5rem;margin:2.5rem 0;border-radius:4px}
+.cta h2{color:var(--gold);border:none;margin-top:0}
+.cta a{color:#e8c87e}
+.cta ul{padding-left:1.2rem}
+.pager{display:flex;justify-content:space-between;font-family:'Helvetica Neue',Arial,sans-serif;margin:2.5rem 0 0}
+.pager a{text-decoration:none}
+.cards{display:grid;gap:1rem;margin:1.5rem 0}
+.card{background:#fff;border:1px solid var(--taupe);padding:1.1rem 1.3rem;border-radius:4px}
+.card h3{margin:.2rem 0}
+.card h3 a{text-decoration:none;color:var(--black)}
+.card .meta{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.85rem;color:#7a5a1d}
+.soon{color:#666;font-style:italic}
+footer.site{background:var(--charcoal);color:var(--taupe);padding:1.6rem 1rem;text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.9rem}
+footer.site a{color:#e8c87e}
+.price{font-family:'Helvetica Neue',Arial,sans-serif;font-weight:bold;color:#7a5a1d}
+@media (max-width:600px){body{font-size:17px}header.site h1{font-size:1.2rem}}
