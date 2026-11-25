@@ -32,6 +32,9 @@ li{margin:.35rem 0}
 .cta h2{color:var(--gold);border:none;margin-top:0}
 .cta a{color:#e8c87e}
 .cta ul{padding-left:1.2rem}
+.subscribe{background:#fff;border:1px solid var(--gold);padding:1.4rem 1.5rem;margin:2.5rem 0;border-radius:4px}
+.subscribe h2{border:none;margin-top:0;color:var(--black)}
+.subscribe ul{padding-left:1.2rem}
 .pager{display:flex;justify-content:space-between;font-family:'Helvetica Neue',Arial,sans-serif;margin:2.5rem 0 0}
 .pager a{text-decoration:none}
 .cards{display:grid;gap:1rem;margin:1.5rem 0}
