@@ -1,6 +1,8 @@
 # Paquetes del producto — inventario
 
-> **Los archivos `.zip` y `.docx` de esta tabla NO están incluidos en este repositorio.** El conector de GitHub que publica este repo no admite contenido binario (`push_files` acepta solo UTF-8; `create_or_update_file` trata el contenido como texto). Para completar `packages/`, sube un ejemplar de cada paquete por la web de GitHub, por git o como Release, y verifica el md5 después de subirlo. La lista de abajo es el inventario verificado para hacerlo, con el nombre canónico del ejemplar.
+> **Actualización 25 de noviembre de 2026 — los 14 paquetes SÍ están incluidos.** El aviso anterior («los archivos `.zip` y `.docx` de esta tabla NO están incluidos en este repositorio») quedó desactualizado el 23 de noviembre de 2026, cuando los 14 paquetes se subieron por la web de GitHub en un solo commit (`534ba68`, md5s verificados antes de subir). El único paquete NO incluido es el **Anexo de originales** (fila 6, marcado «revisar antes de compartir», pendiente de revisión de Rey). La tabla de abajo sigue siendo el inventario verificado, con el nombre canónico de cada ejemplar.
+>
+> **Historia (conservada, no borrada):** el aviso original decía que el conector de GitHub que publica este repo no admite contenido binario (`push_files` acepta solo UTF-8; `create_or_update_file` trata el contenido como texto), por eso los paquetes se subieron por la web de GitHub, por git o como Release, verificando el md5 después de subirlos. Esa limitación del conector sigue siendo la razón por la que la subida se hizo por web.
 
 ## Inventario verificado
 
@@ -11,7 +13,7 @@
 | 3 | Skill Complement | `RENOVA_AI_SAFETY_GOVERNANCE_SKILL_COMPLEMENT_2026-11-10.zip` | 2026-11-10 | 11 | 12.297 | `7e4181f79a43422b5c7c4e766387b2a6` | Reglas fail-closed; no hay API, webhook ni URL MCP públicos para Grok Bot |
 | 4 | 0.1 LOCAL | `RENOVA_AI_SAFETY_GOVERNANCE_0.1_LOCAL.zip` | 2026-11-09 | 41 | 67.233 | `9dc58835cc72f9bcf608c175732b2df3` | **122** tests pytest OK |
 | 5 | Federación Claude / DeepSeek / Qwen / Perplexity v1 | `RENOVA_FEDERACION_CLAUDE_DEEPSEEK_QWEN_PERPLEXITY_v1_2026-11-09.zip` | 2026-11-09 | 38 | 60.760 | `c335488c221660861c80a30db7bc99ef` | Federación no ejecutada en vivo |
-| 6 | Anexo originales | `RENOVA_ANEXO_ORIGINALES_REVISAR_ANTES_DE_COMPARTIR_2026-11-09.zip` | 2026-11-09 | 7 | 14.513 | `194f6319715330b3e01ca9d64e728fef` | Marcado «revisar antes de compartir» |
+| 6 | Anexo originales | `RENOVA_ANEXO_ORIGINALES_REVISAR_ANTES_DE_COMPARTIR_2026-11-09.zip` | 2026-11-09 | 7 | 14.513 | `194f6319715330b3e01ca9d64e728fef` | **NO incluido — pendiente de revisión de Rey** (marcado «revisar antes de compartir») |
 | 7 | GOV OS v3 | `RENOVA_AI_GOV_OS_V3_CENTRO_LUCEM_SITUATIVITY_KAMMERER.zip` | 2026-11-10 | 138 | 153.593 | `97587c026d293ec8972d10456f10e130` | 5 escenarios ponderados v3 (no son el Benchmark ℛ) |
 | 8 | LUCEM / CENTRO safe bundle | `LUCEM_CENTRO_SAFE_BUNDLE.zip` | 2026-11-10 | 11 | 7.124 | `a689e4b66ad9c0a963ec1688b0315aaa` | Declara no jailbreaks, exploits ni inyecciones |
 | 9 | Governance Test — Libro Maestro v2.0 | `RENOVA_SERESARTE_Governance_Test_Libro_Maestro_v2.0.docx` | 2026-11-10 | 1 docx | 47.514 | `dc6fca0789a1f7896e7d9e8863f78156` | No es una certificación |
