@@ -4,6 +4,28 @@ Fecha: 2026-11-23. Servidor: `renova-mcp-server/` v0.1.0 (stdlib, sin
 dependencias). Nada de lo aquí anotado es una prueba en público ni una
 validación externa: son llamadas locales contra los archivos canónicos.
 
+## Nota de actualización — 27 de noviembre de 2026
+
+Este archivo es un registro fechado de pruebas locales (fecha: 2026-11-23,
+con ampliaciones fechadas en las secciones 8–11). Nada de lo que sigue se
+reescribe: lo que cambió después se anota aquí, con su fecha.
+
+- **Licencia:** las menciones a «UNLICENSED» en este archivo (§7 y §10)
+  describen el estado del 23–24 nov 2026, cuando la licencia estaba
+  pendiente de decisión de Rey. La decisión se tomó el 24 nov 2026:
+  **Apache 2.0** para el código y la documentación del servidor MCP
+  (commit `5c14792a`, `LICENSE` + `NOTICE` en el repo;
+  `server/UNLICENSED.txt` eliminado del repo). Los textos completos de
+  las obras del corpus siguen con todos los derechos reservados.
+- **Despliegue remoto:** lo que §7 dice del despliegue remoto («solo
+  instrucciones», endpoint de ejemplo `https://mcp.renova.example/mcp`
+  inexistente) era el estado del 23 nov 2026 antes de las 23:11 CST. El
+  endpoint público **https://renova-mcp.vercel.app/mcp está en vivo desde
+  el 23 nov 2026, 23:11 CST**; `renova_get_state` verificado en vivo el
+  27 nov 2026: `deployment_commit` = HEAD del repo (`c6dd33b1`), licencia
+  Apache-2.0, 8 herramientas. El endpoint de ejemplo de §7 sigue sin
+  existir; el endpoint real es el de Vercel.
+
 ## 1. Compilación
 
 ```text
